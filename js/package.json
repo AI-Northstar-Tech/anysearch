@@ -22,7 +22,7 @@
     "prepublishOnly": "npm run build"
   },
   "keywords": [
-    "search", "search-api", "exa", "brave", "tavily", "serpapi", "parallel",
+    "search", "search-api", "exa", "brave", "tavily", "keiro", "serpapi", "parallel",
     "perplexity", "mcp", "llm", "rag", "websearch"
   ],
   "devDependencies": {

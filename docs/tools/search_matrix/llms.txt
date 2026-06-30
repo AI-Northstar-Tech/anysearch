@@ -11,7 +11,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: balanced: $25 starter; ~$7.25-$15 volume
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -27,7 +26,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: balanced: $25 starter; ~$7.25-$15 volume
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -43,7 +41,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: full
 - Safe search: full
 - Mode: balanced, deep
-- Pricing / 1K: balanced/search: $5-$9; deep/answers: $4 + tokens
 - AI Answer: full
 - Full text: partial
 - Summary: none
@@ -59,7 +56,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: $0 API fee via keyless DDGS client; unofficial/fragile
 - AI Answer: none
 - Full text: none
 - Summary: none
@@ -75,7 +71,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: balanced: $25 starter; ~$7.25-$15 volume
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -91,7 +86,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: full
 - Safe search: full
 - Mode: fast, balanced, deep
-- Pricing / 1K: fast/balanced: $7; deep: $12; deep reasoning: $15
 - AI Answer: none
 - Full text: full
 - Summary: full
@@ -107,7 +101,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: none
 - Mode: balanced
-- Pricing / 1K: balanced/search: 1 credit; with scrape: +1 credit/result
 - AI Answer: none
 - Full text: full
 - Summary: none
@@ -123,7 +116,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: none
 - Mode: balanced
-- Pricing / 1K: balanced grounding: $35 + model tokens
 - AI Answer: full
 - Full text: none
 - Summary: none
@@ -139,7 +131,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: partial
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: balanced: $5
 - AI Answer: none
 - Full text: none
 - Summary: none
@@ -155,7 +146,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: balanced: $25 starter; ~$7.25-$15 volume
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -171,7 +161,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: none
 - Mode: balanced
-- Pricing / 1K: token-based; no fixed per-query CPM
 - AI Answer: none
 - Full text: full
 - Summary: none
@@ -187,7 +176,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: none
 - Mode: balanced
-- Pricing / 1K: not publicly itemized per 1K for Search API
 - AI Answer: none
 - Full text: none
 - Summary: none
@@ -196,14 +184,13 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 
 ## Keiro
 - Docs: https://keirolabs.cloud/
-- Env: KEIRO_API_KEY, KEIROLABS_API_KEY
+- Env: KEIRO_API_KEY
 - Domain filters: none
 - Country: none
 - Language: none
 - Date range: none
 - Safe search: none
 - Mode: fast, balanced, deep
-- Pricing / 1K: fast/balanced: ~$0.50; content: ~$1.50; batch: ~$0.50
 - AI Answer: none
 - Full text: full
 - Summary: none
@@ -219,7 +206,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: full
 - Safe search: none
 - Mode: fast, balanced, deep
-- Pricing / 1K: fast: €5; balanced/standard: €5; deep: €50
 - AI Answer: full
 - Full text: full
 - Summary: none
@@ -235,7 +221,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: full
 - Safe search: none
 - Mode: fast, balanced, deep
-- Pricing / 1K: fast/search: $5; balanced/task: $10-$25; deep/task: $100-$300+
 - AI Answer: full
 - Full text: full
 - Summary: none
@@ -251,7 +236,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: none
 - Mode: balanced, deep
-- Pricing / 1K: search: $5; fast/sonar low: $5; balanced: $8-$10; deep/high/pro: $12-$22 + tokens
 - AI Answer: full
 - Full text: full
 - Summary: none
@@ -267,7 +251,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: $0 API fee if self-hosted; infra/proxy costs separate
 - AI Answer: full
 - Full text: none
 - Summary: none
@@ -283,7 +266,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: none
 - Mode: balanced
-- Pricing / 1K: balanced: published plans vary; roughly $2-$4+
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -299,7 +281,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: none
 - Mode: balanced
-- Pricing / 1K: balanced: $1.00 starter; $0.30-$0.75 volume
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -315,7 +296,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: full
 - Safe search: none
 - Mode: fast, balanced, deep
-- Pricing / 1K: fast/basic: ~$8; balanced/advanced: ~$16; deep/research: plan/model dependent
 - AI Answer: full
 - Full text: partial
 - Summary: none
@@ -331,7 +311,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: balanced: $25 starter; ~$7.25-$15 volume
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -347,7 +326,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: balanced: $25 starter; ~$7.25-$15 volume
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -363,7 +341,6 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: partial
 - Safe search: none
 - Mode: fast, balanced, deep
-- Pricing / 1K: search: $5; research lite: $12; deeper research: tier dependent
 - AI Answer: full
 - Full text: partial
 - Summary: none

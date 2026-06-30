@@ -56,6 +56,7 @@ the selection syntax is uniform.
 | Parallel | `parallel` | `PARALLEL_API_KEY` | `parallel-web` |
 | Tavily | `tavily` | `TAVILY_API_KEY` | `tavily-python` |
 | Brave | `brave` | `BRAVE_API_KEY` | — |
+| Keiro | `keiro` | `KEIRO_API_KEY` | — |
 | Linkup | `linkup` | `LINKUP_API_KEY` | `linkup-sdk` |
 | Perplexity | `perplexity`, `pplx` | `PERPLEXITY_API_KEY` | `perplexityai` |
 | Serper | `serper` | `SERPER_API_KEY` | — |

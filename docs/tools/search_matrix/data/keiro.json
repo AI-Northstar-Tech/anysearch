@@ -7,14 +7,14 @@
     "slug": "keiro"
   },
   "env_keys": {
-    "value": "KEIRO_API_KEY, KEIROLABS_API_KEY",
+    "value": "KEIRO_API_KEY",
     "source_url": "https://keirolabs.cloud/",
     "comment": "API keys and configuration variables documented by the provider."
   },
   "python_extra": {
-    "value": "keirolabs",
-    "source_url": "https://pypi.org/project/keirolabs/",
-    "comment": "Optional PyPI package: keirolabs (install via anysearch-sdk extra `keiro`)."
+    "value": "\u2014 (REST only)",
+    "source_url": "https://keirolabs.cloud/",
+    "comment": "HTTP API only; no required vendor Python SDK."
   },
   "requires_key": {
     "support": "full",
@@ -24,7 +24,7 @@
   "snippet": {
     "support": "full",
     "source_url": "https://keirolabs.cloud/",
-    "comment": "`results[]` include title, URL, snippet, score, and optional published date."
+    "comment": "Source rows are normalized from v2 `results` or compatible source arrays."
   },
   "domains": {
     "support": "none",
@@ -59,7 +59,7 @@
   "content": {
     "support": "full",
     "source_url": "https://keirolabs.cloud/",
-    "comment": "`/api/v2/search/content` returns full page markdown (`full_text`) and optional chunks."
+    "comment": "`include_content=true` routes to `/api/v2/search/content` and maps `full_text`."
   },
   "summary": {
     "support": "none",
@@ -83,12 +83,7 @@
       "deep"
     ],
     "source_url": "https://keirolabs.cloud/",
-    "comment": "v2 Search `mode`: `light`\u2192fast, `ai`\u2192balanced, `deep`\u2192deep. anysearch uses `/api/v2/search/flash` for fast mode, `/api/v2/keiro` by default, and `/api/v2/search/content` for full-text content."
+    "comment": "v2 search endpoints exposed through `mode`: balanced uses `/api/v2/keirolabs`, fast/deep use `/api/v2/search/fast`, and content requests use `/api/v2/search/content`. KeiroLabs expects the API key in the JSON body."
   },
-  "pricing_per_1k": {
-    "value": "fast/balanced: ~$0.50; content: ~$1.50; batch: ~$0.50",
-    "source_url": "https://keirolabs.cloud/",
-    "comment": "Keiro docs list credit costs per v2 endpoint and headline cost per 1,000 searches."
-  },
-  "notes": "Native SDK package: keirolabs. SDK maps default v2 search to `/api/v2/keiro`, `mode=fast` to `/api/v2/search/flash`, and `include_content=true` to `/api/v2/search/content`."
+  "notes": "KeiroLabs v2 search is wired in the anysearch SDK as REST-only. The provider expects `apiKey`, `query`, and `maxResults` in the JSON request body."
 }

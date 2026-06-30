@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
 authors = [{ name = "anysearch contributors" }]
-keywords = ["search", "search-api", "exa", "brave", "tavily", "serpapi", "parallel", "mcp", "llm", "rag"]
+keywords = ["search", "search-api", "exa", "brave", "tavily", "keiro", "serpapi", "parallel", "mcp", "llm", "rag"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",

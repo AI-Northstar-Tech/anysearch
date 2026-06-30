@@ -41,7 +41,7 @@ npm install @tavily/core    # then: await native("tavily")
 
 ## Providers
 
-`exa`, `parallel`, `tavily`, `brave`, `linkup`, `perplexity`, `serper`, `serpapi`,
+`exa`, `parallel`, `tavily`, `brave`, `keiro`, `linkup`, `perplexity`, `serper`, `serpapi`,
 `searchapi`, `you`, `jina`, `kagi`, `firecrawl`, `google_pse`, `searxng`, `duckduckgo`
 (keyless fallback). Each reads its API key from the environment — see the
 [root README](../README.md) for the full env-var table.

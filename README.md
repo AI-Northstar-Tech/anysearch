@@ -3,7 +3,7 @@
 **One interface for every web search API.** `anysearch` is an adapter layer for search
 providers — inspired by [LiteLLM](https://github.com/BerriAI/litellm) (one interface for
 every LLM) and [vector-io](https://github.com/AI-Northstar-Tech/vector-io) (one interface
-for every vector DB). Call Exa, Parallel, Brave, Tavily, SerpAPI, Perplexity, Linkup,
+for every vector DB). Call Exa, Parallel, Brave, Tavily, Keiro, SerpAPI, Perplexity, Linkup,
 Firecrawl, and 8 more through a **single function**, with **common parameters** and a
 **common response shape**, in **Python and JavaScript/TypeScript** — plus a **stdio MCP
 server** and optional **FastAPI proxy** that adapt to whatever API keys you have set.
@@ -46,6 +46,7 @@ glue code each time. `anysearch` normalizes all of it:
 | [Parallel](https://parallel.ai) | `parallel` | `PARALLEL_API_KEY` | content, highlights, domains, mode |
 | [Tavily](https://tavily.com) | `tavily` | `TAVILY_API_KEY` | answer, content, domains, mode, news |
 | [Brave](https://brave.com/search/api/) | `brave` | `BRAVE_API_KEY` | highlights, country, language, dates, news |
+| [Keiro](https://keirolabs.cloud) | `keiro` | `KEIRO_API_KEY` | source-cited snippets, content endpoint, mode |
 | [Linkup](https://linkup.so) | `linkup` | `LINKUP_API_KEY` | answer, content, domains, dates, mode |
 | [Perplexity](https://docs.perplexity.ai) | `perplexity`, `pplx` | `PERPLEXITY_API_KEY` | content, domains, language |
 | [Gemini](https://ai.google.dev/gemini-api/docs/google-search) | `gemini`, `google_gemini` | `GEMINI_API_KEY` | Google Search grounding, answer, source chunks |

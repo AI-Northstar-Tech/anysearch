@@ -160,6 +160,15 @@ MODE_META: dict[str, dict] = {
             "`enable_research=true` (streaming)→deep. Same `BRAVE_API_KEY`."
         ),
     },
+    "keiro": {
+        "values": ["fast", "balanced", "deep"],
+        "source": "https://keirolabs.cloud/",
+        "comment": (
+            "v2 search endpoints exposed through `mode`: balanced uses `/api/v2/keirolabs`, "
+            "fast/deep use `/api/v2/search/fast`, and content requests use `/api/v2/search/content`. "
+            "KeiroLabs expects the API key in the JSON body."
+        ),
+    },
     "jina": {
         "values": ["balanced"],
         "source": "https://jina.ai/reader/",
@@ -411,6 +420,10 @@ MATRIX_NOTES: dict[str, str] = {
         "Search API is in the anysearch SDK; Research API (`POST /research`) is documented "
         "in the matrix (use `tavily-python` `research()` / `get_research()`)."
     ),
+    "keiro": (
+        "KeiroLabs v2 search is wired in the anysearch SDK as REST-only. "
+        "The provider expects `apiKey`, `query`, and `maxResults` in the JSON request body."
+    ),
 }
 
 # Per-feature comments and doc anchors (slug → feature key → {source, comment}).
@@ -617,6 +630,16 @@ FEATURE_META: dict[str, dict[str, dict[str, str]]] = {
         "news": {
             "source": "https://api-dashboard.search.brave.com/app/documentation/web-search/get-started",
             "comment": "Dedicated `/res/v1/news/search` endpoint (not Answers API).",
+        },
+    },
+    "keiro": {
+        "content": {
+            "source": "https://keirolabs.cloud/",
+            "comment": "`include_content=true` routes to `/api/v2/search/content` and maps `full_text`.",
+        },
+        "snippet": {
+            "source": "https://keirolabs.cloud/",
+            "comment": "Source rows are normalized from v2 `results` or compatible source arrays.",
         },
     },
     "perplexity": {

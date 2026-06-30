@@ -187,6 +187,78 @@ test("tavily answer and raw content", async () => {
   assert.equal(resp.results[0].snippet, "snippet");
 });
 
+test("keiro search sends documented body auth and normalizes results", async () => {
+  mockFetch({
+    "kierolabs.space/api/v2/keirolabs": (_url, init) => {
+      const body = JSON.parse(String(init.body));
+      const headers = init.headers as Record<string, string> | undefined;
+      assert.equal(body.apiKey, "keiro-test");
+      assert.equal(body.query, "keiro search");
+      assert.equal(body.maxResults, 7);
+      assert.equal(headers?.Authorization, undefined);
+      return {
+        status: 200,
+        body: {
+          query: "keiro search",
+          total_results: 1,
+          request_id: "keiro-req-1",
+          results: [
+            {
+              title: "Keiro source",
+              url: "https://example.com/keiro",
+              snippet: "source snippet",
+              content: "source body",
+              score: 0.82,
+              published_date: "2026-06-01",
+            },
+          ],
+        },
+      };
+    },
+  });
+  const client = new AnySearch({ provider: "keiro", apiKey: "keiro-test", env: {} });
+  const resp = await client.search("keiro search", { maxResults: 7 });
+  assert.equal(resp.provider, "keiro");
+  assert.equal(resp.requestId, "keiro-req-1");
+  assert.equal(resp.totalResults, 1);
+  assert.equal(resp.results[0].title, "Keiro source");
+  assert.equal(resp.results[0].snippet, "source snippet");
+  assert.equal(resp.results[0].source, "example.com");
+});
+
+test("keiro content mode uses content endpoint and full text", async () => {
+  mockFetch({
+    "kierolabs.space/api/v2/search/content": (_url, init) => {
+      const body = JSON.parse(String(init.body));
+      assert.equal(body.apiKey, "keiro-test");
+      assert.equal(body.query, "keiro content");
+      assert.equal(body.maxResults, 2);
+      assert.equal(body.mode, "deep");
+      return {
+        status: 200,
+        body: {
+          results: [
+            {
+              title: "Deep source",
+              url: "https://example.com/deep",
+              snippet: "deep snippet",
+              full_text: "full page markdown",
+              score: 0.91,
+            },
+          ],
+        },
+      };
+    },
+  });
+  const client = new AnySearch({ provider: "keiro", apiKey: "keiro-test", env: {} });
+  const resp = await client.search("keiro content", {
+    includeContent: true,
+    maxResults: 2,
+    mode: "deep",
+  });
+  assert.equal(resp.results[0].text, "full page markdown");
+});
+
 test("fallback on provider error", async () => {
   mockFetch({
     "api.exa.ai/search": () => ({ status: 500, body: { error: "boom" } }),
