@@ -6,6 +6,7 @@ on:
     paths:
       - ".github/workflows/deploy-matrix.yml"
       - "docs/tools/search_matrix/**"
+      - "scripts/generate_matrix_changelog.py"
       - "scripts/generate_search_matrix_data.py"
       - "scripts/verify_matrix_page.mjs"
       - "scripts/matrix_import_hooks.mjs"
@@ -41,7 +42,9 @@ jobs:
           npm run matrix:sync
 
       - name: Verify matrix page renders
-        run: npm run matrix:verify-page
+        run: |
+          npm run matrix:verify-page
+          git diff --exit-code -- docs/tools/search_matrix/changelog.json
 
   deploy:
     needs: sync
@@ -71,6 +74,7 @@ jobs:
           pip install -e ./python
           npm run matrix:sync
           npm run matrix:verify-page
+          git diff --exit-code -- docs/tools/search_matrix/changelog.json
 
       - name: Deploy to Cloudflare Workers
         env:
