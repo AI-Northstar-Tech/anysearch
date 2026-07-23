@@ -3,8 +3,8 @@
   "entries": [
     {
       "date": "2026-07-23",
-      "commit": "",
-      "title": "Unreleased matrix update",
+      "commit": "f854fa5",
+      "title": "feat(matrix): add changelog and free-tier limits",
       "items": [
         {
           "summary": "Brave: Free tier limits updated to $5 credits/month (~1,000 Search requests)",
