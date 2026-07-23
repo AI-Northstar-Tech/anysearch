@@ -85,9 +85,14 @@
     "comment": "**Web/news SERP** (`/res/v1/web/search`) \u2192 matrix `balanced`. **Answers API** (`POST /res/v1/chat/completions`, `model=brave`) \u2192 balanced (single-pass grounded answer); `enable_research=true` (streaming)\u2192deep. Same `BRAVE_API_KEY`."
   },
   "pricing_per_1k": {
-    "value": "balanced/search: $5-$9; deep/answers: $4 + tokens",
+    "value": "balanced/search: $5; deep/answers: $4 + tokens",
     "source_url": "https://brave.com/search/api/",
-    "comment": "Search API pricing depends on Base AI vs Pro AI plan; Answers adds token charges."
+    "comment": "Search is $5/1K requests; Answers is $4/1K plus input/output token charges."
+  },
+  "free_tier_limits": {
+    "value": "$5 credits/month (~1,000 Search requests)",
+    "source_url": "https://brave.com/search/api/",
+    "comment": "Credits are applied automatically each month to Search or Answers usage."
   },
   "notes": "Web/news Search API is in the anysearch SDK; Answers API (`/res/v1/chat/completions`) is documented in the matrix but not wired in the SDK yet."
 }

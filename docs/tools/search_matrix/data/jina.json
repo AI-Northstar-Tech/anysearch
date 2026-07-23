@@ -88,5 +88,10 @@
     "source_url": "https://jina.ai/reader/",
     "comment": "Reader/Search usage is priced by tokens/usage tiers rather than a fixed per-1K query price."
   },
+  "free_tier_limits": {
+    "value": "10M tokens for new users; 500 RPM / 1M TPM",
+    "source_url": "https://api.jina.ai/docs",
+    "comment": "Free Search Foundation tier also limits concurrency to five requests."
+  },
   "notes": ""
 }

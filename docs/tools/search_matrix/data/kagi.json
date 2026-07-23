@@ -88,5 +88,10 @@
     "source_url": "https://help.kagi.com/kagi/api/overview.html",
     "comment": "Kagi documents pay-per-use API portal billing but not a stable public Search API CPM in docs."
   },
+  "free_tier_limits": {
+    "value": "No free Search API allowance documented",
+    "source_url": "https://help.kagi.com/kagi/api/quick-start.html",
+    "comment": "API billing is separate from Kagi's consumer trial and requires a payment method or prepaid API credit."
+  },
   "notes": ""
 }

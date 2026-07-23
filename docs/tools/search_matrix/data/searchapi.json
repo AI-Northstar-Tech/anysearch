@@ -84,9 +84,14 @@
     "comment": "Google engine wrapper: single SERP depth per request (no native fast/deep tier)."
   },
   "pricing_per_1k": {
-    "value": "balanced: published plans vary; roughly $2-$4+",
+    "value": "balanced: $4 starter; $1-$3 volume",
     "source_url": "https://www.searchapi.io/pricing",
     "comment": "Pricing is plan/volume based; verify current SearchApi.io plan before budgeting."
+  },
+  "free_tier_limits": {
+    "value": "100 one-time requests; no card",
+    "source_url": "https://www.searchapi.io/pricing",
+    "comment": "Complimentary requests are for newly registered accounts and do not renew monthly."
   },
   "notes": ""
 }

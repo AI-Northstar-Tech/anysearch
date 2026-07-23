@@ -11,7 +11,8 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: balanced: $25 starter; ~$7.25-$15 volume
+- Pricing / 1K: balanced: $25 starter; ~$3.75-$15 volume
+- Free tier limits: 250 searches/month; 50/hour
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -27,7 +28,8 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: balanced: $25 starter; ~$7.25-$15 volume
+- Pricing / 1K: balanced: $25 starter; ~$3.75-$15 volume
+- Free tier limits: 250 searches/month; 50/hour
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -43,7 +45,8 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: full
 - Safe search: full
 - Mode: balanced, deep
-- Pricing / 1K: balanced/search: $5-$9; deep/answers: $4 + tokens
+- Pricing / 1K: balanced/search: $5; deep/answers: $4 + tokens
+- Free tier limits: $5 credits/month (~1,000 Search requests)
 - AI Answer: full
 - Full text: partial
 - Summary: none
@@ -60,6 +63,7 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Safe search: full
 - Mode: balanced
 - Pricing / 1K: $0 API fee via keyless DDGS client; unofficial/fragile
+- Free tier limits: No fixed quota or API fee; upstream rate limits apply
 - AI Answer: none
 - Full text: none
 - Summary: none
@@ -75,7 +79,8 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: balanced: $25 starter; ~$7.25-$15 volume
+- Pricing / 1K: balanced: $25 starter; ~$3.75-$15 volume
+- Free tier limits: 250 searches/month; 50/hour
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -92,6 +97,7 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Safe search: full
 - Mode: fast, balanced, deep
 - Pricing / 1K: fast/balanced: $7; deep: $12; deep reasoning: $15
+- Free tier limits: $10/month (~1,428 base searches) + $20 signup (~2,857)
 - AI Answer: none
 - Full text: full
 - Summary: full
@@ -107,7 +113,8 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: none
 - Mode: balanced
-- Pricing / 1K: balanced/search: 1 credit; with scrape: +1 credit/result
+- Pricing / 1K: balanced/search: 2 credits per 10 results
+- Free tier limits: 1,000 credits/month (~500 searches at 10 results)
 - AI Answer: none
 - Full text: full
 - Summary: none
@@ -124,6 +131,7 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Safe search: none
 - Mode: balanced
 - Pricing / 1K: balanced grounding: $35 + model tokens
+- Free tier limits: 500 grounded prompts/day on eligible Flash models
 - AI Answer: full
 - Full text: none
 - Summary: none
@@ -140,6 +148,7 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Safe search: full
 - Mode: balanced
 - Pricing / 1K: balanced: $5
+- Free tier limits: 100 queries/day; existing customers only
 - AI Answer: none
 - Full text: none
 - Summary: none
@@ -155,7 +164,8 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: balanced: $25 starter; ~$7.25-$15 volume
+- Pricing / 1K: balanced: $25 starter; ~$3.75-$15 volume
+- Free tier limits: 250 searches/month; 50/hour
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -172,6 +182,7 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Safe search: none
 - Mode: balanced
 - Pricing / 1K: token-based; no fixed per-query CPM
+- Free tier limits: 10M tokens for new users; 500 RPM / 1M TPM
 - AI Answer: none
 - Full text: full
 - Summary: none
@@ -188,6 +199,7 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Safe search: none
 - Mode: balanced
 - Pricing / 1K: not publicly itemized per 1K for Search API
+- Free tier limits: No free Search API allowance documented
 - AI Answer: none
 - Full text: none
 - Summary: none
@@ -204,6 +216,7 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Safe search: none
 - Mode: fast, balanced, deep
 - Pricing / 1K: fast/balanced: ~$0.50; content: ~$1.50; batch: ~$0.50
+- Free tier limits: 500 searches/month; 30 req/min; no card
 - AI Answer: none
 - Full text: full
 - Summary: none
@@ -219,7 +232,8 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: full
 - Safe search: none
 - Mode: fast, balanced, deep
-- Pricing / 1K: fast: €5; balanced/standard: €5; deep: €50
+- Pricing / 1K: fast/standard: $5-$6; deep: $50-$55
+- Free tier limits: $20/month (~4,000 standard or 400 deep searches; eligible)
 - AI Answer: full
 - Full text: full
 - Summary: none
@@ -235,7 +249,8 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: full
 - Safe search: none
 - Mode: fast, balanced, deep
-- Pricing / 1K: fast/search: $5; balanced/task: $10-$25; deep/task: $100-$300+
+- Pricing / 1K: search: $1-$5; task: $5-$2,400
+- Free tier limits: 1,000 requests/month; up to $80 signup + $5/month
 - AI Answer: full
 - Full text: full
 - Summary: none
@@ -252,6 +267,7 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Safe search: none
 - Mode: balanced, deep
 - Pricing / 1K: search: $5; fast/sonar low: $5; balanced: $8-$10; deep/high/pro: $12-$22 + tokens
+- Free tier limits: No standing free API credits documented
 - AI Answer: full
 - Full text: full
 - Summary: none
@@ -268,6 +284,7 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Safe search: full
 - Mode: balanced
 - Pricing / 1K: $0 API fee if self-hosted; infra/proxy costs separate
+- Free tier limits: No software quota when self-hosted; instance limits apply
 - AI Answer: full
 - Full text: none
 - Summary: none
@@ -283,7 +300,8 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: none
 - Mode: balanced
-- Pricing / 1K: balanced: published plans vary; roughly $2-$4+
+- Pricing / 1K: balanced: $4 starter; $1-$3 volume
+- Free tier limits: 100 one-time requests; no card
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -300,6 +318,7 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Safe search: none
 - Mode: balanced
 - Pricing / 1K: balanced: $1.00 starter; $0.30-$0.75 volume
+- Free tier limits: 2,500 one-time queries; no card
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -316,6 +335,7 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Safe search: none
 - Mode: fast, balanced, deep
 - Pricing / 1K: fast/basic: ~$8; balanced/advanced: ~$16; deep/research: plan/model dependent
+- Free tier limits: 1,000 basic or 500 advanced searches/month; no card
 - AI Answer: full
 - Full text: partial
 - Summary: none
@@ -331,7 +351,8 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: balanced: $25 starter; ~$7.25-$15 volume
+- Pricing / 1K: balanced: $25 starter; ~$3.75-$15 volume
+- Free tier limits: 250 searches/month; 50/hour
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -347,7 +368,8 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: none
 - Safe search: full
 - Mode: balanced
-- Pricing / 1K: balanced: $25 starter; ~$7.25-$15 volume
+- Pricing / 1K: balanced: $25 starter; ~$3.75-$15 volume
+- Free tier limits: 250 searches/month; 50/hour
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -363,7 +385,8 @@ Providers: 23. Unified parameters and response fields supported via anysearch.
 - Date range: partial
 - Safe search: none
 - Mode: fast, balanced, deep
-- Pricing / 1K: search: $5; research lite: $12; deeper research: tier dependent
+- Pricing / 1K: search: $5; research: $12/$50/$100/$450 by effort
+- Free tier limits: $100 signup (~20,000 searches); keyless MCP: 100/day
 - AI Answer: full
 - Full text: partial
 - Summary: none

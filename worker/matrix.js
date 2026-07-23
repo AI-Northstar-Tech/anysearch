@@ -2,10 +2,11 @@ import matrix from "../docs/tools/search_matrix/bundle.json";
 import llmsTxt from "../docs/tools/search_matrix/llms.txt";
 import schema from "../docs/tools/search_matrix/schema.json";
 import updatedMeta from "../docs/tools/search_matrix/updated.json";
+import changelog from "../docs/tools/search_matrix/changelog.json";
 
 const CANONICAL_ORIGIN = "https://compare-anysearch.ainorthstar.tech";
 const GITHUB_REPO = "https://github.com/dhruv-anand-aintech/anysearch";
-const DEPLOYMENT_MARKER = "seo-discovery-2026-07-23";
+const DEPLOYMENT_MARKER = "changelog-free-tier-2026-07-23";
 const PWA = {
   name: "Anysearch Compare",
   shortName: "Anysearch",
@@ -99,6 +100,24 @@ function formatUpdatedLabel(iso) {
   return `Updated ${new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(new Date(then))}`;
 }
 
+function renderChangelog() {
+  const byDate = new Map();
+  for (const entry of changelog.entries || []) {
+    if (!byDate.has(entry.date)) byDate.set(entry.date, []);
+    byDate.get(entry.date).push(...entry.items);
+  }
+  return [...byDate].map(([date, items]) => `
+    <section class="change-group">
+      <h2>${htmlEscape(new Intl.DateTimeFormat("en-US", {
+        year: "numeric", month: "long", day: "numeric", timeZone: "UTC",
+      }).format(new Date(`${date}T12:00:00Z`)))}</h2>
+      <ul>${items.map(item => `
+        <li><a class="changelog-cell-link" href="#${htmlEscape(item.target)}" data-target-id="${htmlEscape(item.target)}">${htmlEscape(item.summary)}</a></li>
+      `).join("")}</ul>
+    </section>
+  `).join("");
+}
+
 function render() {
   const payload = JSON.stringify({ matrix, columns, groups, faviconOverrides: FAVICON_OVERRIDES }).replaceAll("</", "<\\/");
   const updatedAt = updatedMeta.updated_at || new Date().toISOString();
@@ -132,6 +151,14 @@ a { color: inherit; text-decoration: none; }
 .brand h1 { margin: 0; font: inherit; }
 .mark { width: 20px; height: 20px; border: 1px solid var(--ink); display: grid; place-items: center; font-size: 10px; }
 .topnav { display: flex; gap: 8px; align-items: center; }
+.view-tabs { display: flex; align-items: center; border: 1px solid var(--line); background: #fff; }
+.tab-button {
+  appearance: none; border: 0; border-right: 1px solid var(--line); background: transparent;
+  color: var(--muted); padding: 4px 9px; font: inherit; font-size: 11px; cursor: pointer;
+}
+.tab-button:last-child { border-right: 0; }
+.tab-button:hover { background: #f0eeeb; color: var(--ink); }
+.tab-button[aria-selected="true"] { background: var(--ink); color: var(--panel); }
 .gh-btn {
   display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--line);
   background: #fff; padding: 3px 8px; font-size: 12px; color: var(--ink); white-space: nowrap;
@@ -143,6 +170,23 @@ a { color: inherit; text-decoration: none; }
 .hero p { margin: 0; color: var(--muted); font-size: 12px; }
 .meta-row { margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
 .pill { border: 1px solid var(--line); padding: 3px 7px; background: #fff; font-size: 11px; color: var(--muted); }
+.view-panel[hidden] { display: none !important; }
+.matrix-view { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+.changelog-view { flex: 1 1 auto; min-height: 0; overflow: auto; background: var(--bg); }
+.changelog-shell { width: min(860px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 52px; }
+.changelog-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+  padding-bottom: 12px; border-bottom: 2px solid var(--ink);
+}
+.changelog-head h1 { margin: 0; font-size: clamp(24px, 4vw, 42px); letter-spacing: -.04em; }
+.changelog-head span { color: var(--muted); font-size: 11px; white-space: nowrap; }
+.change-group { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 19px 0; border-bottom: 1px solid var(--line); }
+.change-group h2 { margin: 2px 0 0; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.change-group ul { margin: 0; padding-left: 18px; }
+.change-group li { margin: 0 0 7px; padding-left: 3px; font-size: 13px; line-height: 1.4; }
+.change-group li:last-child { margin-bottom: 0; }
+.changelog-cell-link { text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 3px; }
+.changelog-cell-link:hover { color: var(--accent); text-decoration-color: var(--accent); }
 .table-wrap {
   flex: 1 1 auto; overflow: auto; min-height: 0; position: relative;
 }
@@ -298,13 +342,28 @@ td.value .cell-value {
   opacity: .35;
 }
 .cell-wrap:hover .source-mark { opacity: 1; }
+.cell-anchor-flash { animation: cell-anchor-flash 1.8s ease-out; }
+@keyframes cell-anchor-flash {
+  0%, 28% { outline: 3px solid var(--accent); outline-offset: -3px; background: #dff2ec; }
+  100% { outline-color: transparent; }
+}
 .hidden { display: none; }
+@media (max-width: 680px) {
+  .topbar { height: auto; min-height: 44px; flex-wrap: wrap; gap: 6px; padding: 6px 10px; }
+  .topnav { width: 100%; justify-content: space-between; flex-wrap: wrap; }
+  .change-group { grid-template-columns: 1fr; gap: 8px; }
+  .changelog-shell { padding-top: 20px; }
+}
 </style>
 </head>
 <body>
 <header class="topbar">
   <a class="brand" href="/"><span class="mark">AS</span><h1>Compare Web Search APIs</h1></a>
   <nav class="topnav">
+    <div class="view-tabs" role="tablist" aria-label="Matrix views">
+      <button type="button" class="tab-button" id="compareTab" role="tab" aria-controls="matrixView" aria-selected="true" onclick="showView('matrix')">Compare</button>
+      <button type="button" class="tab-button" id="changelogTab" role="tab" aria-controls="changelogView" aria-selected="false" onclick="showView('changelog')">Changelog</button>
+    </div>
     <a href="${htmlEscape(feedbackIssueUrl())}" class="gh-btn feedback-btn" target="_blank" rel="noreferrer">Report fix</a>
     <a href="${GITHUB_REPO}" class="gh-btn" target="_blank" rel="noreferrer">
       <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -312,6 +371,7 @@ td.value .cell-value {
     </a>
   </nav>
 </header>
+<main id="matrixView" class="view-panel matrix-view">
 <section class="hero">
   <p>Compare ${htmlEscape(matrix.length)} web search API providers for AI agents by features, pricing, SDK support, search modes, and unified <strong>anysearch</strong> parameters. <strong>Name or icon</strong> opens the provider site; <strong>⊙</strong> hides or shows a column; drag headers to reorder; use the <strong>API docs</strong> row for official references.</p>
   <div class="meta-row">
@@ -326,6 +386,16 @@ td.value .cell-value {
 <tbody id="tbody"></tbody>
 </table>
 </div>
+</main>
+<main id="changelogView" class="view-panel changelog-view" hidden>
+  <div class="changelog-shell">
+    <header class="changelog-head">
+      <h1>Changelog</h1>
+      <span>${htmlEscape(changelog.entry_count)} tracked changes</span>
+    </header>
+    ${renderChangelog()}
+  </div>
+</main>
 <script type="application/json" id="payload">${payload}</script>
 <script>
 function agentDomain(agent) {
@@ -479,6 +549,11 @@ function saveState() {
   document.cookie = COOKIE + '=' + encodeURIComponent(JSON.stringify({cols:colOrder, rows:rowOrder})) + ';path=/;max-age=31536000';
 }
 function esc(v) { return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function slugify(v) { return String(v||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
+function cellId(agent, key) {
+  var agentSlug = (agent.links && agent.links.slug) || agent.name;
+  return 'cell-' + slugify(agentSlug) + '-' + slugify(key);
+}
 function rowLabelCell(label, extraClass, extraAttrs) {
   return '<td class="row-label'+extraClass+'"'+extraAttrs+'><span class="row-label-tip">'+esc(label)+'</span>'+esc(label)+'</td>';
 }
@@ -545,36 +620,37 @@ function favimg(agent, idx) {
 }
 function cell(agent, col) {
   var v = agent[col.key];
-  if (!v) return '<td>&mdash;</td>';
+  var idAttr = ' id="'+cellId(agent, col.key)+'"';
+  if (!v) return '<td'+idAttr+'>&mdash;</td>';
   if (MULTI_VALUE_COLS.has(col.key)) {
     var sortFn = col.key === 'mode' ? sortModes : sortFormFactors;
     var tags = sortFn((v.values||[v.value]).filter(Boolean));
     var links = v.links || {};
     var tip = cellTipHtml(v.comment, v.source_url, links);
-    if (!tags.length) return '<td class="cell-wrap value"><span class="cell-value">&mdash;</span>'+tip+'</td>';
+    if (!tags.length) return '<td'+idAttr+' class="cell-wrap value"><span class="cell-value">&mdash;</span>'+tip+'</td>';
     var tagHtml = tags.map(function(x){
       var href = links[x];
       if (href) return '<a class="form-tag" href="'+esc(href)+'" target="_blank" rel="noreferrer">'+esc(x)+'</a>';
       return '<span class="form-tag">'+esc(x)+'</span>';
     }).join('');
     if (agent.deprecated) tagHtml += '<span class="form-tag deprecated-tag">deprecated</span>';
-    return '<td class="cell-wrap"><div class="form-tags">'+tagHtml+'</div>'+tip+'</td>';
+    return '<td'+idAttr+' class="cell-wrap"><div class="form-tags">'+tagHtml+'</div>'+tip+'</td>';
   }
   var tip = cellTipHtml(v.comment, v.source_url);
   var hasSrc = !!v.source_url;
   var link = hasSrc ? '<a class="cell-link" href="'+esc(v.source_url)+'" target="_blank" rel="noreferrer" title="Open source" aria-label="Open source"></a>' : '';
   var mark = hasSrc ? '<span class="source-mark" aria-hidden="true"></span>' : '';
   var wrapCls = 'cell-wrap'+(hasSrc?' has-source':'');
-  if (v.value !== undefined) return '<td class="'+wrapCls+' value"><span class="cell-value">'+esc(v.value)+'</span>'+link+mark+tip+'</td>';
+  if (v.value !== undefined) return '<td'+idAttr+' class="'+wrapCls+' value"><span class="cell-value">'+esc(v.value)+'</span>'+link+mark+tip+'</td>';
   if (featureCols.some(function(c){ return c.key===col.key; })) {
     var g = {full:'&#10003;',partial:'&#9678;',none:'&#10005;',unknown:'?','':'—'};
-    return '<td class="'+wrapCls+'">'+link+'<span class="support '+(v.support||'')+'"><span class="dot">'+(g[v.support||'']||'?')+'</span></span>'+mark+tip+'</td>';
+    return '<td'+idAttr+' class="'+wrapCls+'">'+link+'<span class="support '+(v.support||'')+'"><span class="dot">'+(g[v.support||'']||'?')+'</span></span>'+mark+tip+'</td>';
   }
   if (v.support !== undefined) {
     var g = {full:'&#10003;',partial:'&#9678;',none:'&#10005;',unknown:'?','':'—'};
-    return '<td class="'+wrapCls+'">'+link+'<span class="support '+(v.support||'')+'"><span class="dot">'+(g[v.support||'']||'?')+'</span></span>'+mark+tip+'</td>';
+    return '<td'+idAttr+' class="'+wrapCls+'">'+link+'<span class="support '+(v.support||'')+'"><span class="dot">'+(g[v.support||'']||'?')+'</span></span>'+mark+tip+'</td>';
   }
-  return '<td>&mdash;</td>';
+  return '<td'+idAttr+'>&mdash;</td>';
 }
 function updateColWidths() {
   var wrap = document.querySelector('.table-wrap');
@@ -784,8 +860,61 @@ function setupCellTips() {
     tip.addEventListener('click', function(e){ e.stopPropagation(); });
   });
 }
+function showView(view, updateHash) {
+  var isChangelog = view === 'changelog';
+  var matrixView = document.getElementById('matrixView');
+  var changelogView = document.getElementById('changelogView');
+  var compareTab = document.getElementById('compareTab');
+  var changelogTab = document.getElementById('changelogTab');
+  if (!matrixView || !changelogView) return;
+  matrixView.hidden = isChangelog;
+  changelogView.hidden = !isChangelog;
+  if (compareTab) compareTab.setAttribute('aria-selected', String(!isChangelog));
+  if (changelogTab) changelogTab.setAttribute('aria-selected', String(isChangelog));
+  if (updateHash !== false && window.history && window.location) {
+    var next = isChangelog ? '#changelog' : window.location.pathname + window.location.search;
+    window.history.pushState(null, '', next);
+  }
+}
+function revealCell(targetId) {
+  var matrixIndex = -1;
+  for (var i=0; i<matrix.length; i++) {
+    for (var j=0; j<columns.length; j++) {
+      if (cellId(matrix[i], columns[j].key) === targetId) { matrixIndex = i; break; }
+    }
+    if (matrixIndex !== -1) break;
+  }
+  if (matrixIndex !== -1 && hidden.has(matrixIndex)) {
+    hidden.delete(matrixIndex);
+    saveState();
+    renderHeader();
+    renderBody();
+    updateColWidths();
+  }
+  showView('matrix', false);
+  var target = document.getElementById(targetId);
+  if (!target) return;
+  document.querySelectorAll('.cell-anchor-flash').forEach(function(el){el.classList.remove('cell-anchor-flash')});
+  target.scrollIntoView({behavior:'smooth', block:'center', inline:'center'});
+  target.classList.add('cell-anchor-flash');
+  if (window.history) window.history.replaceState(null, '', '#'+targetId);
+}
+function setupChangelogLinks() {
+  document.querySelectorAll('.changelog-cell-link').forEach(function(link){
+    link.addEventListener('click', function(event){
+      event.preventDefault();
+      revealCell(link.dataset.targetId);
+    });
+  });
+}
 var state = loadState(); colOrder = state.cols; rowOrder = state.rows;
 renderHeader(); renderBody();
+setupChangelogLinks();
+if (window.location && window.location.hash === '#changelog') showView('changelog', false);
+else showView('matrix', false);
+if (window.location && window.location.hash.indexOf('#cell-') === 0) {
+  setTimeout(function(){ revealCell(window.location.hash.slice(1)); }, 0);
+}
 window.addEventListener('resize', function(){ updateColWidths(); scheduleFitAgentHeaderNames(); });
 </script>
 ${pwaScript()}

@@ -86,9 +86,14 @@
     "comment": "**Search API** (`POST /v1/search`) \u2192 matrix `balanced` (ranked snippets, SDK). **Research API** (`POST /v1/research`) \u2192 `research_effort`: `lite`\u2192fast, `standard`\u2192balanced, `deep` / `exhaustive`\u2192deep (cited synthesis). Same `YDC_API_KEY`."
   },
   "pricing_per_1k": {
-    "value": "search: $5; research lite: $12; deeper research: tier dependent",
-    "source_url": "https://you.com/pricing",
-    "comment": "Search API is $5/1K calls; Research API starts at $12/1K and increases by effort tier."
+    "value": "search: $5; research: $12/$50/$100/$450 by effort",
+    "source_url": "https://you.com/docs/administration/billing",
+    "comment": "Research prices map to lite, standard, deep, and exhaustive effort tiers."
+  },
+  "free_tier_limits": {
+    "value": "$100 signup (~20,000 searches); keyless MCP: 100/day",
+    "source_url": "https://you.com/docs/welcome",
+    "comment": "Signup credit covers roughly 20,000 base Search calls; the no-signup MCP profile has a separate daily limit."
   },
   "notes": "Search API (`POST /v1/search`) is in the anysearch SDK; Research API (`POST /v1/research`) is documented in the matrix but not wired in the SDK yet."
 }

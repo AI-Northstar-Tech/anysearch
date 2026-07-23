@@ -22,6 +22,7 @@ from search_matrix_provider_meta import (  # noqa: E402
     MATRIX_NOTES,
     PARTIAL_NOTES,
     PRICING_META,
+    FREE_TIER_META,
     SERPAPI_MATRIX_ENGINES,
     SUPPORT_OVERRIDE,
     ai_matrix_display,
@@ -167,6 +168,20 @@ def build_provider(row: dict, *, slug: str | None = None, display: str | None = 
         pricing["source_url"],
         pricing["comment"],
     )
+    free_tier = FREE_TIER_META.get(slug)
+    if free_tier is None and slug.startswith("serpapi_"):
+        free_tier = FREE_TIER_META.get("serpapi")
+    if free_tier is None:
+        free_tier = {
+            "value": "No public free API allowance documented.",
+            "source_url": docs or website,
+            "comment": "Provider documentation does not publish a standing free request or credit allowance.",
+        }
+    out["free_tier_limits"] = string_val(
+        free_tier["value"],
+        free_tier["source_url"],
+        free_tier["comment"],
+    )
 
     notes = []
     if not row["requires_key"]:
@@ -283,6 +298,16 @@ def build_ai_matrix_provider(base_row: dict, entry: dict) -> dict:
         pricing["value"],
         pricing["source_url"],
         pricing["comment"],
+    )
+    free_tier = FREE_TIER_META.get(slug) or {
+        "value": "No public free API allowance documented.",
+        "source_url": docs,
+        "comment": "Provider documentation does not publish a standing free request or credit allowance.",
+    }
+    out["free_tier_limits"] = string_val(
+        free_tier["value"],
+        free_tier["source_url"],
+        free_tier["comment"],
     )
     note = str(entry.get("notes") or "")
     endpoint = entry.get("endpoint")

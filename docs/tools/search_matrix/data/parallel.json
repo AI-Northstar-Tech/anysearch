@@ -86,9 +86,14 @@
     "comment": "**Search API** `mode`: `basic`\u2192fast, `advanced`\u2192balanced (richer retrieval, not synthesis). **Task API** (`POST /v1/tasks/runs`) `processor`: Lite/Base\u2192fast, Core\u2192balanced, Pro/Ultra\u2192deep (structured output with citations). Same `PARALLEL_API_KEY`."
   },
   "pricing_per_1k": {
-    "value": "fast/search: $5; balanced/task: $10-$25; deep/task: $100-$300+",
-    "source_url": "https://docs.parallel.ai/resources/pricing",
-    "comment": "Search API is $5/1K requests; Task processors map roughly from Base/Core to Pro/Ultra for deeper modes."
+    "value": "search: $1-$5; task: $5-$2,400",
+    "source_url": "https://parallel.ai/pricing",
+    "comment": "Search varies by mode; Task processors range from Lite through Ultra8x per 1K requests."
+  },
+  "free_tier_limits": {
+    "value": "1,000 requests/month; up to $80 signup + $5/month",
+    "source_url": "https://parallel.ai/pricing",
+    "comment": "Parallel publishes a monthly free request allowance plus promotional signup and recurring credits."
   },
   "notes": "Native SDK package: parallel-web. Search API is in the anysearch SDK; Task API (`POST /v1/tasks/runs`) is documented in the matrix but not wired in the SDK yet."
 }

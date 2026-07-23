@@ -19,6 +19,8 @@ const REQUIRED_CLIENT_SYMBOLS = [
   "function renderHeader",
   "function renderBody",
   "function favimg",
+  "function showView",
+  "function revealCell",
   "renderHeader(); renderBody();",
 ];
 
@@ -113,6 +115,9 @@ async function main() {
   if (!html.includes('id="headerRow"') || !html.includes('id="tbody"')) {
     throw new Error("Rendered HTML missing table skeleton");
   }
+  if (!html.includes('id="changelogView"') || !html.includes("changelog-cell-link")) {
+    throw new Error("Rendered HTML missing changelog view or cell links");
+  }
 
   for (const sym of REQUIRED_CLIENT_SYMBOLS) {
     if (!html.includes(sym)) {
@@ -131,6 +136,30 @@ async function main() {
   }
   if (!Array.isArray(columns) || !columns.length) {
     throw new Error("payload.columns missing or empty");
+  }
+  if (!columns.some((column) => column.key === "free_tier_limits")) {
+    throw new Error("payload.columns missing free_tier_limits");
+  }
+
+  const slugify = (value) =>
+    String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const cellTargets = new Set(
+    matrix.flatMap((provider) =>
+      columns.map((column) => {
+        const providerSlug = provider.links?.slug || provider.name;
+        return `cell-${slugify(providerSlug)}-${slugify(column.key)}`;
+      })
+    )
+  );
+  const changelogTargets = [
+    ...html.matchAll(/data-target-id="(cell-[^"]+)"/g),
+  ].map((match) => match[1]);
+  if (!changelogTargets.length) {
+    throw new Error("Changelog has no cell targets");
+  }
+  const missingTargets = changelogTargets.filter((target) => !cellTargets.has(target));
+  if (missingTargets.length) {
+    throw new Error(`Changelog targets missing cells: ${missingTargets.slice(0, 3).join(", ")}`);
   }
 
   const clientScript = extractClientScript(html);

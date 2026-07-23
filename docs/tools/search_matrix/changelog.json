@@ -1,0 +1,1773 @@
+{
+  "entry_count": 414,
+  "entries": [
+    {
+      "date": "2026-07-23",
+      "commit": "",
+      "title": "Unreleased matrix update",
+      "items": [
+        {
+          "summary": "Brave: Free tier limits updated to $5 credits/month (~1,000 Search requests)",
+          "target": "cell-brave-free-tier-limits"
+        },
+        {
+          "summary": "Brave: Pricing / 1K updated to balanced/search: $5; deep/answers: $4 + tokens",
+          "target": "cell-brave-pricing-per-1k"
+        },
+        {
+          "summary": "DuckDuckGo: Free tier limits updated to No fixed quota or API fee; upstream rate limits apply",
+          "target": "cell-duckduckgo-free-tier-limits"
+        },
+        {
+          "summary": "Exa: Free tier limits updated to $10/month (~1,428 base searches) + $20 signup (~2,857)",
+          "target": "cell-exa-free-tier-limits"
+        },
+        {
+          "summary": "Firecrawl: Free tier limits updated to 1,000 credits/month (~500 searches at 10 results)",
+          "target": "cell-firecrawl-free-tier-limits"
+        },
+        {
+          "summary": "Firecrawl: Pricing / 1K updated to balanced/search: 2 credits per 10 results",
+          "target": "cell-firecrawl-pricing-per-1k"
+        },
+        {
+          "summary": "Gemini: Free tier limits updated to 500 grounded prompts/day on eligible Flash models",
+          "target": "cell-gemini-free-tier-limits"
+        },
+        {
+          "summary": "Google PSE: Free tier limits updated to 100 queries/day; existing customers only",
+          "target": "cell-google-pse-free-tier-limits"
+        },
+        {
+          "summary": "Jina: Free tier limits updated to 10M tokens for new users; 500 RPM / 1M TPM",
+          "target": "cell-jina-free-tier-limits"
+        },
+        {
+          "summary": "Kagi: Free tier limits updated to No free Search API allowance documented",
+          "target": "cell-kagi-free-tier-limits"
+        },
+        {
+          "summary": "Keiro: Free tier limits updated to 500 searches/month; 30 req/min; no card",
+          "target": "cell-keiro-free-tier-limits"
+        },
+        {
+          "summary": "Linkup: Free tier limits updated to $20/month (~4,000 standard or 400 deep searches; eligible)",
+          "target": "cell-linkup-free-tier-limits"
+        },
+        {
+          "summary": "Linkup: Pricing / 1K updated to fast/standard: $5-$6; deep: $50-$55",
+          "target": "cell-linkup-pricing-per-1k"
+        },
+        {
+          "summary": "Parallel: Free tier limits updated to 1,000 requests/month; up to $80 signup + $5/month",
+          "target": "cell-parallel-free-tier-limits"
+        },
+        {
+          "summary": "Parallel: Pricing / 1K updated to search: $1-$5; task: $5-$2,400",
+          "target": "cell-parallel-pricing-per-1k"
+        },
+        {
+          "summary": "Perplexity: Free tier limits updated to No standing free API credits documented",
+          "target": "cell-perplexity-free-tier-limits"
+        },
+        {
+          "summary": "Searchapi: Free tier limits updated to 100 one-time requests; no card",
+          "target": "cell-searchapi-free-tier-limits"
+        },
+        {
+          "summary": "Searchapi: Pricing / 1K updated to balanced: $4 starter; $1-$3 volume",
+          "target": "cell-searchapi-pricing-per-1k"
+        },
+        {
+          "summary": "SearXNG: Free tier limits updated to No software quota when self-hosted; instance limits apply",
+          "target": "cell-searxng-free-tier-limits"
+        },
+        {
+          "summary": "Baidu · SerpApi: Free tier limits updated to 250 searches/month; 50/hour",
+          "target": "cell-serpapi-baidu-free-tier-limits"
+        },
+        {
+          "summary": "Baidu · SerpApi: Pricing / 1K updated to balanced: $25 starter; ~$3.75-$15 volume",
+          "target": "cell-serpapi-baidu-pricing-per-1k"
+        },
+        {
+          "summary": "Bing · SerpApi: Free tier limits updated to 250 searches/month; 50/hour",
+          "target": "cell-serpapi-bing-free-tier-limits"
+        },
+        {
+          "summary": "Bing · SerpApi: Pricing / 1K updated to balanced: $25 starter; ~$3.75-$15 volume",
+          "target": "cell-serpapi-bing-pricing-per-1k"
+        },
+        {
+          "summary": "DuckDuckGo · SerpApi: Free tier limits updated to 250 searches/month; 50/hour",
+          "target": "cell-serpapi-duckduckgo-free-tier-limits"
+        },
+        {
+          "summary": "DuckDuckGo · SerpApi: Pricing / 1K updated to balanced: $25 starter; ~$3.75-$15 volume",
+          "target": "cell-serpapi-duckduckgo-pricing-per-1k"
+        },
+        {
+          "summary": "Google · SerpApi: Free tier limits updated to 250 searches/month; 50/hour",
+          "target": "cell-serpapi-google-free-tier-limits"
+        },
+        {
+          "summary": "Google · SerpApi: Pricing / 1K updated to balanced: $25 starter; ~$3.75-$15 volume",
+          "target": "cell-serpapi-google-pricing-per-1k"
+        },
+        {
+          "summary": "Yahoo · SerpApi: Free tier limits updated to 250 searches/month; 50/hour",
+          "target": "cell-serpapi-yahoo-free-tier-limits"
+        },
+        {
+          "summary": "Yahoo · SerpApi: Pricing / 1K updated to balanced: $25 starter; ~$3.75-$15 volume",
+          "target": "cell-serpapi-yahoo-pricing-per-1k"
+        },
+        {
+          "summary": "Yandex · SerpApi: Free tier limits updated to 250 searches/month; 50/hour",
+          "target": "cell-serpapi-yandex-free-tier-limits"
+        },
+        {
+          "summary": "Yandex · SerpApi: Pricing / 1K updated to balanced: $25 starter; ~$3.75-$15 volume",
+          "target": "cell-serpapi-yandex-pricing-per-1k"
+        },
+        {
+          "summary": "Serper: Free tier limits updated to 2,500 one-time queries; no card",
+          "target": "cell-serper-free-tier-limits"
+        },
+        {
+          "summary": "Tavily: Free tier limits updated to 1,000 basic or 500 advanced searches/month; no card",
+          "target": "cell-tavily-free-tier-limits"
+        },
+        {
+          "summary": "You: Free tier limits updated to $100 signup (~20,000 searches); keyless MCP: 100/day",
+          "target": "cell-you-free-tier-limits"
+        },
+        {
+          "summary": "You: Pricing / 1K updated to search: $5; research: $12/$50/$100/$450 by effort",
+          "target": "cell-you-pricing-per-1k"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "commit": "611f1de",
+      "title": "docs(matrix): refresh published provider pricing data",
+      "items": [
+        {
+          "summary": "Keiro: Pricing / 1K updated to fast/balanced: ~$0.50; content: ~$1.50; batch: ~$0.50",
+          "target": "cell-keiro-pricing-per-1k"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10",
+      "commit": "3b70ad4",
+      "title": "fix: align keiro provider with documented api",
+      "items": [
+        {
+          "summary": "Keiro: AI Answer now marked unsupported",
+          "target": "cell-keiro-answer"
+        },
+        {
+          "summary": "Keiro: Full text evidence refreshed",
+          "target": "cell-keiro-content"
+        },
+        {
+          "summary": "Keiro: Country evidence refreshed",
+          "target": "cell-keiro-country"
+        },
+        {
+          "summary": "Keiro: Date range now marked unsupported",
+          "target": "cell-keiro-date"
+        },
+        {
+          "summary": "Keiro: Domain filters now marked unsupported",
+          "target": "cell-keiro-domains"
+        },
+        {
+          "summary": "Keiro: Env vars evidence refreshed",
+          "target": "cell-keiro-env-keys"
+        },
+        {
+          "summary": "Keiro: Highlights evidence refreshed",
+          "target": "cell-keiro-highlights"
+        },
+        {
+          "summary": "Keiro: Language evidence refreshed",
+          "target": "cell-keiro-language"
+        },
+        {
+          "summary": "Keiro: Mode evidence refreshed",
+          "target": "cell-keiro-mode"
+        },
+        {
+          "summary": "Keiro: News evidence refreshed",
+          "target": "cell-keiro-news"
+        },
+        {
+          "summary": "Keiro: pip extra evidence refreshed",
+          "target": "cell-keiro-python-extra"
+        },
+        {
+          "summary": "Keiro: API key required evidence refreshed",
+          "target": "cell-keiro-requires-key"
+        },
+        {
+          "summary": "Keiro: Safe search evidence refreshed",
+          "target": "cell-keiro-safe-search"
+        },
+        {
+          "summary": "Keiro: Snippet evidence refreshed",
+          "target": "cell-keiro-snippet"
+        },
+        {
+          "summary": "Keiro: Summary evidence refreshed",
+          "target": "cell-keiro-summary"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10",
+      "commit": "d680ed2",
+      "title": "checkpoint: capture keiro provider worktree",
+      "items": [
+        {
+          "summary": "Keiro added to the comparison",
+          "target": "cell-keiro-requires-key"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-06",
+      "commit": "70d169a",
+      "title": "feat(search): add keiro provider and pricing matrix",
+      "items": [
+        {
+          "summary": "Brave: Pricing / 1K updated to balanced/search: $5-$9; deep/answers: $4 + tokens",
+          "target": "cell-brave-pricing-per-1k"
+        },
+        {
+          "summary": "DuckDuckGo: Pricing / 1K updated to $0 API fee via keyless DDGS client; unofficial/fragile",
+          "target": "cell-duckduckgo-pricing-per-1k"
+        },
+        {
+          "summary": "Exa: Pricing / 1K updated to fast/balanced: $7; deep: $12; deep reasoning: $15",
+          "target": "cell-exa-pricing-per-1k"
+        },
+        {
+          "summary": "Firecrawl: Pricing / 1K updated to balanced/search: 1 credit; with scrape: +1 credit/result",
+          "target": "cell-firecrawl-pricing-per-1k"
+        },
+        {
+          "summary": "Gemini: Pricing / 1K updated to balanced grounding: $35 + model tokens",
+          "target": "cell-gemini-pricing-per-1k"
+        },
+        {
+          "summary": "Google PSE: Pricing / 1K updated to balanced: $5",
+          "target": "cell-google-pse-pricing-per-1k"
+        },
+        {
+          "summary": "Jina: Pricing / 1K updated to token-based; no fixed per-query CPM",
+          "target": "cell-jina-pricing-per-1k"
+        },
+        {
+          "summary": "Kagi: Pricing / 1K updated to not publicly itemized per 1K for Search API",
+          "target": "cell-kagi-pricing-per-1k"
+        },
+        {
+          "summary": "Keiro added to the comparison",
+          "target": "cell-keiro-requires-key"
+        },
+        {
+          "summary": "Linkup: Pricing / 1K updated to fast: €5; balanced/standard: €5; deep: €50",
+          "target": "cell-linkup-pricing-per-1k"
+        },
+        {
+          "summary": "Parallel: Pricing / 1K updated to fast/search: $5; balanced/task: $10-$25; deep/task: $100-$300+",
+          "target": "cell-parallel-pricing-per-1k"
+        },
+        {
+          "summary": "Perplexity: Pricing / 1K updated to search: $5; fast/sonar low: $5; balanced: $8-$10; deep/high/pro: $12-$2…",
+          "target": "cell-perplexity-pricing-per-1k"
+        },
+        {
+          "summary": "Searchapi: Pricing / 1K updated to balanced: published plans vary; roughly $2-$4+",
+          "target": "cell-searchapi-pricing-per-1k"
+        },
+        {
+          "summary": "SearXNG: Pricing / 1K updated to $0 API fee if self-hosted; infra/proxy costs separate",
+          "target": "cell-searxng-pricing-per-1k"
+        },
+        {
+          "summary": "Baidu · SerpApi: Pricing / 1K updated to balanced: $25 starter; ~$7.25-$15 volume",
+          "target": "cell-serpapi-baidu-pricing-per-1k"
+        },
+        {
+          "summary": "Bing · SerpApi: Pricing / 1K updated to balanced: $25 starter; ~$7.25-$15 volume",
+          "target": "cell-serpapi-bing-pricing-per-1k"
+        },
+        {
+          "summary": "DuckDuckGo · SerpApi: Pricing / 1K updated to balanced: $25 starter; ~$7.25-$15 volume",
+          "target": "cell-serpapi-duckduckgo-pricing-per-1k"
+        },
+        {
+          "summary": "Google · SerpApi: Pricing / 1K updated to balanced: $25 starter; ~$7.25-$15 volume",
+          "target": "cell-serpapi-google-pricing-per-1k"
+        },
+        {
+          "summary": "Yahoo · SerpApi: Pricing / 1K updated to balanced: $25 starter; ~$7.25-$15 volume",
+          "target": "cell-serpapi-yahoo-pricing-per-1k"
+        },
+        {
+          "summary": "Yandex · SerpApi: Pricing / 1K updated to balanced: $25 starter; ~$7.25-$15 volume",
+          "target": "cell-serpapi-yandex-pricing-per-1k"
+        },
+        {
+          "summary": "Serper: Pricing / 1K updated to balanced: $1.00 starter; $0.30-$0.75 volume",
+          "target": "cell-serper-pricing-per-1k"
+        },
+        {
+          "summary": "Tavily: Pricing / 1K updated to fast/basic: ~$8; balanced/advanced: ~$16; deep/research: plan/model dep…",
+          "target": "cell-tavily-pricing-per-1k"
+        },
+        {
+          "summary": "You: Pricing / 1K updated to search: $5; research lite: $12; deeper research: tier dependent",
+          "target": "cell-you-pricing-per-1k"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "commit": "fb13f2f",
+      "title": "refactor(matrix): merge Tavily Research into Tavily column.",
+      "items": [
+        {
+          "summary": "Tavily: AI Answer evidence refreshed",
+          "target": "cell-tavily-answer"
+        },
+        {
+          "summary": "Tavily: Full text now partially supported",
+          "target": "cell-tavily-content"
+        },
+        {
+          "summary": "Tavily: Country evidence refreshed",
+          "target": "cell-tavily-country"
+        },
+        {
+          "summary": "Tavily: Date range evidence refreshed",
+          "target": "cell-tavily-date"
+        },
+        {
+          "summary": "Tavily: Domain filters evidence refreshed",
+          "target": "cell-tavily-domains"
+        },
+        {
+          "summary": "Tavily: Mode updated to fast, balanced, deep",
+          "target": "cell-tavily-mode"
+        },
+        {
+          "summary": "Tavily: News evidence refreshed",
+          "target": "cell-tavily-news"
+        },
+        {
+          "summary": "Tavily: Snippet evidence refreshed",
+          "target": "cell-tavily-snippet"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "commit": "75444aa",
+      "title": "refactor(matrix): merge synthesis columns into base providers.",
+      "items": [
+        {
+          "summary": "Brave: AI Answer now supported",
+          "target": "cell-brave-answer"
+        },
+        {
+          "summary": "Brave: Full text now partially supported",
+          "target": "cell-brave-content"
+        },
+        {
+          "summary": "Brave: Country evidence refreshed",
+          "target": "cell-brave-country"
+        },
+        {
+          "summary": "Brave: Date range evidence refreshed",
+          "target": "cell-brave-date"
+        },
+        {
+          "summary": "Brave: Language evidence refreshed",
+          "target": "cell-brave-language"
+        },
+        {
+          "summary": "Brave: Mode updated to balanced, deep",
+          "target": "cell-brave-mode"
+        },
+        {
+          "summary": "Brave: News evidence refreshed",
+          "target": "cell-brave-news"
+        },
+        {
+          "summary": "Brave: Safe search evidence refreshed",
+          "target": "cell-brave-safe-search"
+        },
+        {
+          "summary": "Brave: Snippet evidence refreshed",
+          "target": "cell-brave-snippet"
+        },
+        {
+          "summary": "Parallel: AI Answer now supported",
+          "target": "cell-parallel-answer"
+        },
+        {
+          "summary": "Parallel: Full text evidence refreshed",
+          "target": "cell-parallel-content"
+        },
+        {
+          "summary": "Parallel: Country evidence refreshed",
+          "target": "cell-parallel-country"
+        },
+        {
+          "summary": "Parallel: Date range evidence refreshed",
+          "target": "cell-parallel-date"
+        },
+        {
+          "summary": "Parallel: Domain filters evidence refreshed",
+          "target": "cell-parallel-domains"
+        },
+        {
+          "summary": "Parallel: Highlights evidence refreshed",
+          "target": "cell-parallel-highlights"
+        },
+        {
+          "summary": "Parallel: Mode updated to fast, balanced, deep",
+          "target": "cell-parallel-mode"
+        },
+        {
+          "summary": "Parallel: Snippet evidence refreshed",
+          "target": "cell-parallel-snippet"
+        },
+        {
+          "summary": "Perplexity: AI Answer now supported",
+          "target": "cell-perplexity-answer"
+        },
+        {
+          "summary": "Perplexity: Full text evidence refreshed",
+          "target": "cell-perplexity-content"
+        },
+        {
+          "summary": "Perplexity: Country now partially supported",
+          "target": "cell-perplexity-country"
+        },
+        {
+          "summary": "Perplexity: Domain filters evidence refreshed",
+          "target": "cell-perplexity-domains"
+        },
+        {
+          "summary": "Perplexity: Language evidence refreshed",
+          "target": "cell-perplexity-language"
+        },
+        {
+          "summary": "Perplexity: Mode updated to balanced, deep",
+          "target": "cell-perplexity-mode"
+        },
+        {
+          "summary": "Perplexity: Snippet evidence refreshed",
+          "target": "cell-perplexity-snippet"
+        },
+        {
+          "summary": "You: AI Answer now supported",
+          "target": "cell-you-answer"
+        },
+        {
+          "summary": "You: Full text now partially supported",
+          "target": "cell-you-content"
+        },
+        {
+          "summary": "You: Country evidence refreshed",
+          "target": "cell-you-country"
+        },
+        {
+          "summary": "You: Date range now partially supported",
+          "target": "cell-you-date"
+        },
+        {
+          "summary": "You: Domain filters evidence refreshed",
+          "target": "cell-you-domains"
+        },
+        {
+          "summary": "You: Highlights evidence refreshed",
+          "target": "cell-you-highlights"
+        },
+        {
+          "summary": "You: Mode updated to fast, balanced, deep",
+          "target": "cell-you-mode"
+        },
+        {
+          "summary": "You: Snippet evidence refreshed",
+          "target": "cell-you-snippet"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "commit": "a1b981b",
+      "title": "feat(gemini): add Google Search grounding provider.",
+      "items": [
+        {
+          "summary": "Gemini added to the comparison",
+          "target": "cell-gemini-requires-key"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "commit": "f535cea",
+      "title": "feat(matrix): add synthesis API columns and deepen mode docs.",
+      "items": [
+        {
+          "summary": "Brave: Mode evidence refreshed",
+          "target": "cell-brave-mode"
+        },
+        {
+          "summary": "Exa: Mode evidence refreshed",
+          "target": "cell-exa-mode"
+        },
+        {
+          "summary": "Linkup: Mode updated to fast, balanced, deep",
+          "target": "cell-linkup-mode"
+        },
+        {
+          "summary": "Parallel: Mode evidence refreshed",
+          "target": "cell-parallel-mode"
+        },
+        {
+          "summary": "Perplexity: Mode evidence refreshed",
+          "target": "cell-perplexity-mode"
+        },
+        {
+          "summary": "Tavily: Mode evidence refreshed",
+          "target": "cell-tavily-mode"
+        },
+        {
+          "summary": "You: Mode evidence refreshed",
+          "target": "cell-you-mode"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "commit": "179d9c8",
+      "title": "fix(matrix): only tag fast and deep modes when APIs truly offer them.",
+      "items": [
+        {
+          "summary": "Brave: Mode updated to balanced",
+          "target": "cell-brave-mode"
+        },
+        {
+          "summary": "Exa: Mode evidence refreshed",
+          "target": "cell-exa-mode"
+        },
+        {
+          "summary": "Firecrawl: Mode updated to balanced",
+          "target": "cell-firecrawl-mode"
+        },
+        {
+          "summary": "Jina: Mode updated to balanced",
+          "target": "cell-jina-mode"
+        },
+        {
+          "summary": "Kagi: Mode updated to balanced",
+          "target": "cell-kagi-mode"
+        },
+        {
+          "summary": "Linkup: Mode updated to fast, balanced",
+          "target": "cell-linkup-mode"
+        },
+        {
+          "summary": "Parallel: Mode updated to fast, balanced",
+          "target": "cell-parallel-mode"
+        },
+        {
+          "summary": "Perplexity: Mode updated to balanced",
+          "target": "cell-perplexity-mode"
+        },
+        {
+          "summary": "Tavily: Mode updated to fast, balanced",
+          "target": "cell-tavily-mode"
+        },
+        {
+          "summary": "You: Mode updated to balanced",
+          "target": "cell-you-mode"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "commit": "27006bb",
+      "title": "fix(matrix): use correct doc URLs on SerpApi engine columns.",
+      "items": [
+        {
+          "summary": "Baidu · SerpApi: Full text evidence refreshed",
+          "target": "cell-serpapi-baidu-content"
+        },
+        {
+          "summary": "Baidu · SerpApi: Country evidence refreshed",
+          "target": "cell-serpapi-baidu-country"
+        },
+        {
+          "summary": "Baidu · SerpApi: Date range evidence refreshed",
+          "target": "cell-serpapi-baidu-date"
+        },
+        {
+          "summary": "Baidu · SerpApi: Domain filters evidence refreshed",
+          "target": "cell-serpapi-baidu-domains"
+        },
+        {
+          "summary": "Baidu · SerpApi: Highlights evidence refreshed",
+          "target": "cell-serpapi-baidu-highlights"
+        },
+        {
+          "summary": "Baidu · SerpApi: Mode evidence refreshed",
+          "target": "cell-serpapi-baidu-mode"
+        },
+        {
+          "summary": "Baidu · SerpApi: API key required evidence refreshed",
+          "target": "cell-serpapi-baidu-requires-key"
+        },
+        {
+          "summary": "Baidu · SerpApi: Safe search evidence refreshed",
+          "target": "cell-serpapi-baidu-safe-search"
+        },
+        {
+          "summary": "Baidu · SerpApi: Summary evidence refreshed",
+          "target": "cell-serpapi-baidu-summary"
+        },
+        {
+          "summary": "Bing · SerpApi: Full text evidence refreshed",
+          "target": "cell-serpapi-bing-content"
+        },
+        {
+          "summary": "Bing · SerpApi: Date range evidence refreshed",
+          "target": "cell-serpapi-bing-date"
+        },
+        {
+          "summary": "Bing · SerpApi: Domain filters evidence refreshed",
+          "target": "cell-serpapi-bing-domains"
+        },
+        {
+          "summary": "Bing · SerpApi: Highlights evidence refreshed",
+          "target": "cell-serpapi-bing-highlights"
+        },
+        {
+          "summary": "Bing · SerpApi: Mode evidence refreshed",
+          "target": "cell-serpapi-bing-mode"
+        },
+        {
+          "summary": "Bing · SerpApi: API key required evidence refreshed",
+          "target": "cell-serpapi-bing-requires-key"
+        },
+        {
+          "summary": "Bing · SerpApi: Summary evidence refreshed",
+          "target": "cell-serpapi-bing-summary"
+        },
+        {
+          "summary": "DuckDuckGo · SerpApi: Full text evidence refreshed",
+          "target": "cell-serpapi-duckduckgo-content"
+        },
+        {
+          "summary": "DuckDuckGo · SerpApi: Date range evidence refreshed",
+          "target": "cell-serpapi-duckduckgo-date"
+        },
+        {
+          "summary": "DuckDuckGo · SerpApi: Domain filters evidence refreshed",
+          "target": "cell-serpapi-duckduckgo-domains"
+        },
+        {
+          "summary": "DuckDuckGo · SerpApi: Highlights evidence refreshed",
+          "target": "cell-serpapi-duckduckgo-highlights"
+        },
+        {
+          "summary": "DuckDuckGo · SerpApi: Mode evidence refreshed",
+          "target": "cell-serpapi-duckduckgo-mode"
+        },
+        {
+          "summary": "DuckDuckGo · SerpApi: API key required evidence refreshed",
+          "target": "cell-serpapi-duckduckgo-requires-key"
+        },
+        {
+          "summary": "DuckDuckGo · SerpApi: Summary evidence refreshed",
+          "target": "cell-serpapi-duckduckgo-summary"
+        },
+        {
+          "summary": "Google · SerpApi: Full text evidence refreshed",
+          "target": "cell-serpapi-google-content"
+        },
+        {
+          "summary": "Google · SerpApi: Date range evidence refreshed",
+          "target": "cell-serpapi-google-date"
+        },
+        {
+          "summary": "Google · SerpApi: Domain filters evidence refreshed",
+          "target": "cell-serpapi-google-domains"
+        },
+        {
+          "summary": "Google · SerpApi: Highlights evidence refreshed",
+          "target": "cell-serpapi-google-highlights"
+        },
+        {
+          "summary": "Google · SerpApi: Mode evidence refreshed",
+          "target": "cell-serpapi-google-mode"
+        },
+        {
+          "summary": "Google · SerpApi: API key required evidence refreshed",
+          "target": "cell-serpapi-google-requires-key"
+        },
+        {
+          "summary": "Google · SerpApi: Summary evidence refreshed",
+          "target": "cell-serpapi-google-summary"
+        },
+        {
+          "summary": "Yahoo · SerpApi: Full text evidence refreshed",
+          "target": "cell-serpapi-yahoo-content"
+        },
+        {
+          "summary": "Yahoo · SerpApi: Country evidence refreshed",
+          "target": "cell-serpapi-yahoo-country"
+        },
+        {
+          "summary": "Yahoo · SerpApi: Date range evidence refreshed",
+          "target": "cell-serpapi-yahoo-date"
+        },
+        {
+          "summary": "Yahoo · SerpApi: Domain filters evidence refreshed",
+          "target": "cell-serpapi-yahoo-domains"
+        },
+        {
+          "summary": "Yahoo · SerpApi: Highlights evidence refreshed",
+          "target": "cell-serpapi-yahoo-highlights"
+        },
+        {
+          "summary": "Yahoo · SerpApi: Language evidence refreshed",
+          "target": "cell-serpapi-yahoo-language"
+        },
+        {
+          "summary": "Yahoo · SerpApi: Mode evidence refreshed",
+          "target": "cell-serpapi-yahoo-mode"
+        },
+        {
+          "summary": "Yahoo · SerpApi: API key required evidence refreshed",
+          "target": "cell-serpapi-yahoo-requires-key"
+        },
+        {
+          "summary": "Yahoo · SerpApi: Summary evidence refreshed",
+          "target": "cell-serpapi-yahoo-summary"
+        },
+        {
+          "summary": "Yandex · SerpApi: Full text evidence refreshed",
+          "target": "cell-serpapi-yandex-content"
+        },
+        {
+          "summary": "Yandex · SerpApi: Date range evidence refreshed",
+          "target": "cell-serpapi-yandex-date"
+        },
+        {
+          "summary": "Yandex · SerpApi: Domain filters evidence refreshed",
+          "target": "cell-serpapi-yandex-domains"
+        },
+        {
+          "summary": "Yandex · SerpApi: Highlights evidence refreshed",
+          "target": "cell-serpapi-yandex-highlights"
+        },
+        {
+          "summary": "Yandex · SerpApi: Mode evidence refreshed",
+          "target": "cell-serpapi-yandex-mode"
+        },
+        {
+          "summary": "Yandex · SerpApi: API key required evidence refreshed",
+          "target": "cell-serpapi-yandex-requires-key"
+        },
+        {
+          "summary": "Yandex · SerpApi: Safe search evidence refreshed",
+          "target": "cell-serpapi-yandex-safe-search"
+        },
+        {
+          "summary": "Yandex · SerpApi: Summary evidence refreshed",
+          "target": "cell-serpapi-yandex-summary"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "commit": "3c7fa39",
+      "title": "Expand matrix with per-engine SerpApi columns and SerpApi-branded names.",
+      "items": [
+        {
+          "summary": "Baidu · SerpApi added to the comparison",
+          "target": "cell-serpapi-baidu-requires-key"
+        },
+        {
+          "summary": "Bing · SerpApi added to the comparison",
+          "target": "cell-serpapi-bing-requires-key"
+        },
+        {
+          "summary": "DuckDuckGo · SerpApi added to the comparison",
+          "target": "cell-serpapi-duckduckgo-requires-key"
+        },
+        {
+          "summary": "Google · SerpApi added to the comparison",
+          "target": "cell-serpapi-google-requires-key"
+        },
+        {
+          "summary": "Yahoo · SerpApi added to the comparison",
+          "target": "cell-serpapi-yahoo-requires-key"
+        },
+        {
+          "summary": "Yandex · SerpApi added to the comparison",
+          "target": "cell-serpapi-yandex-requires-key"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "commit": "ce02e7a",
+      "title": "Add SerpApi multi-engine support and refresh capability matrix data.",
+      "items": [
+        {
+          "summary": "Brave: AI Answer evidence refreshed",
+          "target": "cell-brave-answer"
+        },
+        {
+          "summary": "Brave: Country evidence refreshed",
+          "target": "cell-brave-country"
+        },
+        {
+          "summary": "Brave: Date range evidence refreshed",
+          "target": "cell-brave-date"
+        },
+        {
+          "summary": "Brave: Env vars evidence refreshed",
+          "target": "cell-brave-env-keys"
+        },
+        {
+          "summary": "Brave: Highlights evidence refreshed",
+          "target": "cell-brave-highlights"
+        },
+        {
+          "summary": "Brave: Language evidence refreshed",
+          "target": "cell-brave-language"
+        },
+        {
+          "summary": "Brave: Mode updated to fast, balanced, deep",
+          "target": "cell-brave-mode"
+        },
+        {
+          "summary": "Brave: News evidence refreshed",
+          "target": "cell-brave-news"
+        },
+        {
+          "summary": "Brave: pip extra evidence refreshed",
+          "target": "cell-brave-python-extra"
+        },
+        {
+          "summary": "Brave: API key required evidence refreshed",
+          "target": "cell-brave-requires-key"
+        },
+        {
+          "summary": "Brave: Safe search evidence refreshed",
+          "target": "cell-brave-safe-search"
+        },
+        {
+          "summary": "Brave: Snippet evidence refreshed",
+          "target": "cell-brave-snippet"
+        },
+        {
+          "summary": "DuckDuckGo: AI Answer evidence refreshed",
+          "target": "cell-duckduckgo-answer"
+        },
+        {
+          "summary": "DuckDuckGo: Country evidence refreshed",
+          "target": "cell-duckduckgo-country"
+        },
+        {
+          "summary": "DuckDuckGo: Env vars evidence refreshed",
+          "target": "cell-duckduckgo-env-keys"
+        },
+        {
+          "summary": "DuckDuckGo: Mode updated to balanced",
+          "target": "cell-duckduckgo-mode"
+        },
+        {
+          "summary": "DuckDuckGo: pip extra evidence refreshed",
+          "target": "cell-duckduckgo-python-extra"
+        },
+        {
+          "summary": "DuckDuckGo: API key required evidence refreshed",
+          "target": "cell-duckduckgo-requires-key"
+        },
+        {
+          "summary": "DuckDuckGo: Safe search evidence refreshed",
+          "target": "cell-duckduckgo-safe-search"
+        },
+        {
+          "summary": "DuckDuckGo: Snippet evidence refreshed",
+          "target": "cell-duckduckgo-snippet"
+        },
+        {
+          "summary": "Exa: AI Answer evidence refreshed",
+          "target": "cell-exa-answer"
+        },
+        {
+          "summary": "Exa: Full text evidence refreshed",
+          "target": "cell-exa-content"
+        },
+        {
+          "summary": "Exa: Country evidence refreshed",
+          "target": "cell-exa-country"
+        },
+        {
+          "summary": "Exa: Date range evidence refreshed",
+          "target": "cell-exa-date"
+        },
+        {
+          "summary": "Exa: Domain filters evidence refreshed",
+          "target": "cell-exa-domains"
+        },
+        {
+          "summary": "Exa: Env vars evidence refreshed",
+          "target": "cell-exa-env-keys"
+        },
+        {
+          "summary": "Exa: Highlights evidence refreshed",
+          "target": "cell-exa-highlights"
+        },
+        {
+          "summary": "Exa: Language evidence refreshed",
+          "target": "cell-exa-language"
+        },
+        {
+          "summary": "Exa: Mode updated to fast, balanced, deep",
+          "target": "cell-exa-mode"
+        },
+        {
+          "summary": "Exa: News evidence refreshed",
+          "target": "cell-exa-news"
+        },
+        {
+          "summary": "Exa: pip extra evidence refreshed",
+          "target": "cell-exa-python-extra"
+        },
+        {
+          "summary": "Exa: API key required evidence refreshed",
+          "target": "cell-exa-requires-key"
+        },
+        {
+          "summary": "Exa: Safe search evidence refreshed",
+          "target": "cell-exa-safe-search"
+        },
+        {
+          "summary": "Exa: Snippet evidence refreshed",
+          "target": "cell-exa-snippet"
+        },
+        {
+          "summary": "Exa: Summary evidence refreshed",
+          "target": "cell-exa-summary"
+        },
+        {
+          "summary": "Firecrawl: AI Answer evidence refreshed",
+          "target": "cell-firecrawl-answer"
+        },
+        {
+          "summary": "Firecrawl: Full text evidence refreshed",
+          "target": "cell-firecrawl-content"
+        },
+        {
+          "summary": "Firecrawl: Country evidence refreshed",
+          "target": "cell-firecrawl-country"
+        },
+        {
+          "summary": "Firecrawl: Date range evidence refreshed",
+          "target": "cell-firecrawl-date"
+        },
+        {
+          "summary": "Firecrawl: Domain filters evidence refreshed",
+          "target": "cell-firecrawl-domains"
+        },
+        {
+          "summary": "Firecrawl: Env vars evidence refreshed",
+          "target": "cell-firecrawl-env-keys"
+        },
+        {
+          "summary": "Firecrawl: Highlights evidence refreshed",
+          "target": "cell-firecrawl-highlights"
+        },
+        {
+          "summary": "Firecrawl: Language evidence refreshed",
+          "target": "cell-firecrawl-language"
+        },
+        {
+          "summary": "Firecrawl: Mode updated to balanced, deep",
+          "target": "cell-firecrawl-mode"
+        },
+        {
+          "summary": "Firecrawl: News evidence refreshed",
+          "target": "cell-firecrawl-news"
+        },
+        {
+          "summary": "Firecrawl: pip extra evidence refreshed",
+          "target": "cell-firecrawl-python-extra"
+        },
+        {
+          "summary": "Firecrawl: API key required evidence refreshed",
+          "target": "cell-firecrawl-requires-key"
+        },
+        {
+          "summary": "Firecrawl: Safe search evidence refreshed",
+          "target": "cell-firecrawl-safe-search"
+        },
+        {
+          "summary": "Firecrawl: Snippet evidence refreshed",
+          "target": "cell-firecrawl-snippet"
+        },
+        {
+          "summary": "Firecrawl: Summary evidence refreshed",
+          "target": "cell-firecrawl-summary"
+        },
+        {
+          "summary": "Google PSE: AI Answer evidence refreshed",
+          "target": "cell-google-pse-answer"
+        },
+        {
+          "summary": "Google PSE: Full text evidence refreshed",
+          "target": "cell-google-pse-content"
+        },
+        {
+          "summary": "Google PSE: Country evidence refreshed",
+          "target": "cell-google-pse-country"
+        },
+        {
+          "summary": "Google PSE: Date range now partially supported",
+          "target": "cell-google-pse-date"
+        },
+        {
+          "summary": "Google PSE: Domain filters now partially supported",
+          "target": "cell-google-pse-domains"
+        },
+        {
+          "summary": "Google PSE: Env vars evidence refreshed",
+          "target": "cell-google-pse-env-keys"
+        },
+        {
+          "summary": "Google PSE: Highlights evidence refreshed",
+          "target": "cell-google-pse-highlights"
+        },
+        {
+          "summary": "Google PSE: Language evidence refreshed",
+          "target": "cell-google-pse-language"
+        },
+        {
+          "summary": "Google PSE: Mode updated to balanced",
+          "target": "cell-google-pse-mode"
+        },
+        {
+          "summary": "Google PSE: News evidence refreshed",
+          "target": "cell-google-pse-news"
+        },
+        {
+          "summary": "Google PSE: pip extra evidence refreshed",
+          "target": "cell-google-pse-python-extra"
+        },
+        {
+          "summary": "Google PSE: API key required evidence refreshed",
+          "target": "cell-google-pse-requires-key"
+        },
+        {
+          "summary": "Google PSE: Safe search evidence refreshed",
+          "target": "cell-google-pse-safe-search"
+        },
+        {
+          "summary": "Google PSE: Snippet evidence refreshed",
+          "target": "cell-google-pse-snippet"
+        },
+        {
+          "summary": "Google PSE: Summary evidence refreshed",
+          "target": "cell-google-pse-summary"
+        },
+        {
+          "summary": "Jina: AI Answer evidence refreshed",
+          "target": "cell-jina-answer"
+        },
+        {
+          "summary": "Jina: Full text evidence refreshed",
+          "target": "cell-jina-content"
+        },
+        {
+          "summary": "Jina: Country evidence refreshed",
+          "target": "cell-jina-country"
+        },
+        {
+          "summary": "Jina: Date range evidence refreshed",
+          "target": "cell-jina-date"
+        },
+        {
+          "summary": "Jina: Domain filters evidence refreshed",
+          "target": "cell-jina-domains"
+        },
+        {
+          "summary": "Jina: Env vars evidence refreshed",
+          "target": "cell-jina-env-keys"
+        },
+        {
+          "summary": "Jina: Highlights evidence refreshed",
+          "target": "cell-jina-highlights"
+        },
+        {
+          "summary": "Jina: Language evidence refreshed",
+          "target": "cell-jina-language"
+        },
+        {
+          "summary": "Jina: Mode updated to fast, balanced, deep",
+          "target": "cell-jina-mode"
+        },
+        {
+          "summary": "Jina: News evidence refreshed",
+          "target": "cell-jina-news"
+        },
+        {
+          "summary": "Jina: pip extra evidence refreshed",
+          "target": "cell-jina-python-extra"
+        },
+        {
+          "summary": "Jina: API key required evidence refreshed",
+          "target": "cell-jina-requires-key"
+        },
+        {
+          "summary": "Jina: Safe search evidence refreshed",
+          "target": "cell-jina-safe-search"
+        },
+        {
+          "summary": "Jina: Snippet evidence refreshed",
+          "target": "cell-jina-snippet"
+        },
+        {
+          "summary": "Jina: Summary evidence refreshed",
+          "target": "cell-jina-summary"
+        },
+        {
+          "summary": "Kagi: AI Answer evidence refreshed",
+          "target": "cell-kagi-answer"
+        },
+        {
+          "summary": "Kagi: Env vars evidence refreshed",
+          "target": "cell-kagi-env-keys"
+        },
+        {
+          "summary": "Kagi: Mode updated to balanced, deep",
+          "target": "cell-kagi-mode"
+        },
+        {
+          "summary": "Kagi: pip extra evidence refreshed",
+          "target": "cell-kagi-python-extra"
+        },
+        {
+          "summary": "Kagi: API key required evidence refreshed",
+          "target": "cell-kagi-requires-key"
+        },
+        {
+          "summary": "Kagi: Snippet evidence refreshed",
+          "target": "cell-kagi-snippet"
+        },
+        {
+          "summary": "Linkup: AI Answer evidence refreshed",
+          "target": "cell-linkup-answer"
+        },
+        {
+          "summary": "Linkup: Full text evidence refreshed",
+          "target": "cell-linkup-content"
+        },
+        {
+          "summary": "Linkup: Country evidence refreshed",
+          "target": "cell-linkup-country"
+        },
+        {
+          "summary": "Linkup: Date range evidence refreshed",
+          "target": "cell-linkup-date"
+        },
+        {
+          "summary": "Linkup: Domain filters evidence refreshed",
+          "target": "cell-linkup-domains"
+        },
+        {
+          "summary": "Linkup: Env vars evidence refreshed",
+          "target": "cell-linkup-env-keys"
+        },
+        {
+          "summary": "Linkup: Highlights evidence refreshed",
+          "target": "cell-linkup-highlights"
+        },
+        {
+          "summary": "Linkup: Language evidence refreshed",
+          "target": "cell-linkup-language"
+        },
+        {
+          "summary": "Linkup: Mode updated to fast, balanced, deep",
+          "target": "cell-linkup-mode"
+        },
+        {
+          "summary": "Linkup: News evidence refreshed",
+          "target": "cell-linkup-news"
+        },
+        {
+          "summary": "Linkup: pip extra evidence refreshed",
+          "target": "cell-linkup-python-extra"
+        },
+        {
+          "summary": "Linkup: API key required evidence refreshed",
+          "target": "cell-linkup-requires-key"
+        },
+        {
+          "summary": "Linkup: Safe search evidence refreshed",
+          "target": "cell-linkup-safe-search"
+        },
+        {
+          "summary": "Linkup: Snippet evidence refreshed",
+          "target": "cell-linkup-snippet"
+        },
+        {
+          "summary": "Linkup: Summary evidence refreshed",
+          "target": "cell-linkup-summary"
+        },
+        {
+          "summary": "Parallel: AI Answer evidence refreshed",
+          "target": "cell-parallel-answer"
+        },
+        {
+          "summary": "Parallel: Full text evidence refreshed",
+          "target": "cell-parallel-content"
+        },
+        {
+          "summary": "Parallel: Country evidence refreshed",
+          "target": "cell-parallel-country"
+        },
+        {
+          "summary": "Parallel: Date range evidence refreshed",
+          "target": "cell-parallel-date"
+        },
+        {
+          "summary": "Parallel: Domain filters evidence refreshed",
+          "target": "cell-parallel-domains"
+        },
+        {
+          "summary": "Parallel: Env vars evidence refreshed",
+          "target": "cell-parallel-env-keys"
+        },
+        {
+          "summary": "Parallel: Highlights evidence refreshed",
+          "target": "cell-parallel-highlights"
+        },
+        {
+          "summary": "Parallel: Language evidence refreshed",
+          "target": "cell-parallel-language"
+        },
+        {
+          "summary": "Parallel: Mode updated to fast, balanced, deep",
+          "target": "cell-parallel-mode"
+        },
+        {
+          "summary": "Parallel: News evidence refreshed",
+          "target": "cell-parallel-news"
+        },
+        {
+          "summary": "Parallel: pip extra evidence refreshed",
+          "target": "cell-parallel-python-extra"
+        },
+        {
+          "summary": "Parallel: API key required evidence refreshed",
+          "target": "cell-parallel-requires-key"
+        },
+        {
+          "summary": "Parallel: Safe search evidence refreshed",
+          "target": "cell-parallel-safe-search"
+        },
+        {
+          "summary": "Parallel: Snippet evidence refreshed",
+          "target": "cell-parallel-snippet"
+        },
+        {
+          "summary": "Parallel: Summary evidence refreshed",
+          "target": "cell-parallel-summary"
+        },
+        {
+          "summary": "Perplexity: AI Answer evidence refreshed",
+          "target": "cell-perplexity-answer"
+        },
+        {
+          "summary": "Perplexity: Full text evidence refreshed",
+          "target": "cell-perplexity-content"
+        },
+        {
+          "summary": "Perplexity: Country evidence refreshed",
+          "target": "cell-perplexity-country"
+        },
+        {
+          "summary": "Perplexity: Date range evidence refreshed",
+          "target": "cell-perplexity-date"
+        },
+        {
+          "summary": "Perplexity: Domain filters evidence refreshed",
+          "target": "cell-perplexity-domains"
+        },
+        {
+          "summary": "Perplexity: Env vars evidence refreshed",
+          "target": "cell-perplexity-env-keys"
+        },
+        {
+          "summary": "Perplexity: Highlights evidence refreshed",
+          "target": "cell-perplexity-highlights"
+        },
+        {
+          "summary": "Perplexity: Language evidence refreshed",
+          "target": "cell-perplexity-language"
+        },
+        {
+          "summary": "Perplexity: Mode updated to fast, balanced, deep",
+          "target": "cell-perplexity-mode"
+        },
+        {
+          "summary": "Perplexity: News evidence refreshed",
+          "target": "cell-perplexity-news"
+        },
+        {
+          "summary": "Perplexity: pip extra evidence refreshed",
+          "target": "cell-perplexity-python-extra"
+        },
+        {
+          "summary": "Perplexity: API key required evidence refreshed",
+          "target": "cell-perplexity-requires-key"
+        },
+        {
+          "summary": "Perplexity: Safe search evidence refreshed",
+          "target": "cell-perplexity-safe-search"
+        },
+        {
+          "summary": "Perplexity: Snippet evidence refreshed",
+          "target": "cell-perplexity-snippet"
+        },
+        {
+          "summary": "Perplexity: Summary evidence refreshed",
+          "target": "cell-perplexity-summary"
+        },
+        {
+          "summary": "Searchapi: AI Answer evidence refreshed",
+          "target": "cell-searchapi-answer"
+        },
+        {
+          "summary": "Searchapi: Country evidence refreshed",
+          "target": "cell-searchapi-country"
+        },
+        {
+          "summary": "Searchapi: Env vars evidence refreshed",
+          "target": "cell-searchapi-env-keys"
+        },
+        {
+          "summary": "Searchapi: Language evidence refreshed",
+          "target": "cell-searchapi-language"
+        },
+        {
+          "summary": "Searchapi: Mode updated to balanced",
+          "target": "cell-searchapi-mode"
+        },
+        {
+          "summary": "Searchapi: News evidence refreshed",
+          "target": "cell-searchapi-news"
+        },
+        {
+          "summary": "Searchapi: pip extra evidence refreshed",
+          "target": "cell-searchapi-python-extra"
+        },
+        {
+          "summary": "Searchapi: API key required evidence refreshed",
+          "target": "cell-searchapi-requires-key"
+        },
+        {
+          "summary": "Searchapi: Snippet evidence refreshed",
+          "target": "cell-searchapi-snippet"
+        },
+        {
+          "summary": "SearXNG: AI Answer evidence refreshed",
+          "target": "cell-searxng-answer"
+        },
+        {
+          "summary": "SearXNG: Env vars evidence refreshed",
+          "target": "cell-searxng-env-keys"
+        },
+        {
+          "summary": "SearXNG: Language evidence refreshed",
+          "target": "cell-searxng-language"
+        },
+        {
+          "summary": "SearXNG: Mode updated to balanced",
+          "target": "cell-searxng-mode"
+        },
+        {
+          "summary": "SearXNG: pip extra evidence refreshed",
+          "target": "cell-searxng-python-extra"
+        },
+        {
+          "summary": "SearXNG: API key required evidence refreshed",
+          "target": "cell-searxng-requires-key"
+        },
+        {
+          "summary": "SearXNG: Safe search evidence refreshed",
+          "target": "cell-searxng-safe-search"
+        },
+        {
+          "summary": "SearXNG: Snippet evidence refreshed",
+          "target": "cell-searxng-snippet"
+        },
+        {
+          "summary": "Serper: AI Answer evidence refreshed",
+          "target": "cell-serper-answer"
+        },
+        {
+          "summary": "Serper: Country evidence refreshed",
+          "target": "cell-serper-country"
+        },
+        {
+          "summary": "Serper: Env vars evidence refreshed",
+          "target": "cell-serper-env-keys"
+        },
+        {
+          "summary": "Serper: Language evidence refreshed",
+          "target": "cell-serper-language"
+        },
+        {
+          "summary": "Serper: Mode updated to balanced",
+          "target": "cell-serper-mode"
+        },
+        {
+          "summary": "Serper: News evidence refreshed",
+          "target": "cell-serper-news"
+        },
+        {
+          "summary": "Serper: pip extra evidence refreshed",
+          "target": "cell-serper-python-extra"
+        },
+        {
+          "summary": "Serper: API key required evidence refreshed",
+          "target": "cell-serper-requires-key"
+        },
+        {
+          "summary": "Serper: Snippet evidence refreshed",
+          "target": "cell-serper-snippet"
+        },
+        {
+          "summary": "Tavily: AI Answer evidence refreshed",
+          "target": "cell-tavily-answer"
+        },
+        {
+          "summary": "Tavily: Full text evidence refreshed",
+          "target": "cell-tavily-content"
+        },
+        {
+          "summary": "Tavily: Country evidence refreshed",
+          "target": "cell-tavily-country"
+        },
+        {
+          "summary": "Tavily: Date range evidence refreshed",
+          "target": "cell-tavily-date"
+        },
+        {
+          "summary": "Tavily: Domain filters evidence refreshed",
+          "target": "cell-tavily-domains"
+        },
+        {
+          "summary": "Tavily: Env vars evidence refreshed",
+          "target": "cell-tavily-env-keys"
+        },
+        {
+          "summary": "Tavily: Mode updated to fast, balanced, deep",
+          "target": "cell-tavily-mode"
+        },
+        {
+          "summary": "Tavily: News evidence refreshed",
+          "target": "cell-tavily-news"
+        },
+        {
+          "summary": "Tavily: pip extra evidence refreshed",
+          "target": "cell-tavily-python-extra"
+        },
+        {
+          "summary": "Tavily: API key required evidence refreshed",
+          "target": "cell-tavily-requires-key"
+        },
+        {
+          "summary": "Tavily: Snippet evidence refreshed",
+          "target": "cell-tavily-snippet"
+        },
+        {
+          "summary": "You: AI Answer evidence refreshed",
+          "target": "cell-you-answer"
+        },
+        {
+          "summary": "You: Full text evidence refreshed",
+          "target": "cell-you-content"
+        },
+        {
+          "summary": "You: Country evidence refreshed",
+          "target": "cell-you-country"
+        },
+        {
+          "summary": "You: Date range evidence refreshed",
+          "target": "cell-you-date"
+        },
+        {
+          "summary": "You: Domain filters evidence refreshed",
+          "target": "cell-you-domains"
+        },
+        {
+          "summary": "You: Env vars evidence refreshed",
+          "target": "cell-you-env-keys"
+        },
+        {
+          "summary": "You: Highlights evidence refreshed",
+          "target": "cell-you-highlights"
+        },
+        {
+          "summary": "You: Language evidence refreshed",
+          "target": "cell-you-language"
+        },
+        {
+          "summary": "You: Mode updated to fast, balanced, deep",
+          "target": "cell-you-mode"
+        },
+        {
+          "summary": "You: News evidence refreshed",
+          "target": "cell-you-news"
+        },
+        {
+          "summary": "You: pip extra evidence refreshed",
+          "target": "cell-you-python-extra"
+        },
+        {
+          "summary": "You: API key required evidence refreshed",
+          "target": "cell-you-requires-key"
+        },
+        {
+          "summary": "You: Safe search evidence refreshed",
+          "target": "cell-you-safe-search"
+        },
+        {
+          "summary": "You: Snippet evidence refreshed",
+          "target": "cell-you-snippet"
+        },
+        {
+          "summary": "You: Summary evidence refreshed",
+          "target": "cell-you-summary"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "commit": "5dc9f7c",
+      "title": "Fix env var cell wrapping and move repo to personal GitHub.",
+      "items": [
+        {
+          "summary": "Brave: pip extra evidence refreshed",
+          "target": "cell-brave-python-extra"
+        },
+        {
+          "summary": "DuckDuckGo: pip extra evidence refreshed",
+          "target": "cell-duckduckgo-python-extra"
+        },
+        {
+          "summary": "Exa: pip extra evidence refreshed",
+          "target": "cell-exa-python-extra"
+        },
+        {
+          "summary": "Firecrawl: pip extra evidence refreshed",
+          "target": "cell-firecrawl-python-extra"
+        },
+        {
+          "summary": "Google PSE: pip extra evidence refreshed",
+          "target": "cell-google-pse-python-extra"
+        },
+        {
+          "summary": "Jina: pip extra evidence refreshed",
+          "target": "cell-jina-python-extra"
+        },
+        {
+          "summary": "Kagi: pip extra evidence refreshed",
+          "target": "cell-kagi-python-extra"
+        },
+        {
+          "summary": "Linkup: pip extra evidence refreshed",
+          "target": "cell-linkup-python-extra"
+        },
+        {
+          "summary": "Parallel: pip extra evidence refreshed",
+          "target": "cell-parallel-python-extra"
+        },
+        {
+          "summary": "Perplexity: pip extra evidence refreshed",
+          "target": "cell-perplexity-python-extra"
+        },
+        {
+          "summary": "Searchapi: pip extra evidence refreshed",
+          "target": "cell-searchapi-python-extra"
+        },
+        {
+          "summary": "SearXNG: pip extra evidence refreshed",
+          "target": "cell-searxng-python-extra"
+        },
+        {
+          "summary": "Serper: pip extra evidence refreshed",
+          "target": "cell-serper-python-extra"
+        },
+        {
+          "summary": "Tavily: pip extra evidence refreshed",
+          "target": "cell-tavily-python-extra"
+        },
+        {
+          "summary": "You: pip extra evidence refreshed",
+          "target": "cell-you-python-extra"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "commit": "0fef6d5",
+      "title": "docs: install from latest GitHub main, not PyPI/npm.",
+      "items": [
+        {
+          "summary": "Brave: pip extra evidence refreshed",
+          "target": "cell-brave-python-extra"
+        },
+        {
+          "summary": "DuckDuckGo: pip extra evidence refreshed",
+          "target": "cell-duckduckgo-python-extra"
+        },
+        {
+          "summary": "Exa: pip extra evidence refreshed",
+          "target": "cell-exa-python-extra"
+        },
+        {
+          "summary": "Firecrawl: pip extra evidence refreshed",
+          "target": "cell-firecrawl-python-extra"
+        },
+        {
+          "summary": "Google PSE: pip extra evidence refreshed",
+          "target": "cell-google-pse-python-extra"
+        },
+        {
+          "summary": "Jina: pip extra evidence refreshed",
+          "target": "cell-jina-python-extra"
+        },
+        {
+          "summary": "Kagi: pip extra evidence refreshed",
+          "target": "cell-kagi-python-extra"
+        },
+        {
+          "summary": "Linkup: pip extra evidence refreshed",
+          "target": "cell-linkup-python-extra"
+        },
+        {
+          "summary": "Parallel: pip extra evidence refreshed",
+          "target": "cell-parallel-python-extra"
+        },
+        {
+          "summary": "Perplexity: pip extra evidence refreshed",
+          "target": "cell-perplexity-python-extra"
+        },
+        {
+          "summary": "Searchapi: pip extra evidence refreshed",
+          "target": "cell-searchapi-python-extra"
+        },
+        {
+          "summary": "SearXNG: pip extra evidence refreshed",
+          "target": "cell-searxng-python-extra"
+        },
+        {
+          "summary": "Serper: pip extra evidence refreshed",
+          "target": "cell-serper-python-extra"
+        },
+        {
+          "summary": "Tavily: pip extra evidence refreshed",
+          "target": "cell-tavily-python-extra"
+        },
+        {
+          "summary": "You: pip extra evidence refreshed",
+          "target": "cell-you-python-extra"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "commit": "bed0d85",
+      "title": "Initial release: unified search adapter for 16 providers.",
+      "items": [
+        {
+          "summary": "Brave added to the comparison",
+          "target": "cell-brave-requires-key"
+        },
+        {
+          "summary": "DuckDuckGo added to the comparison",
+          "target": "cell-duckduckgo-requires-key"
+        },
+        {
+          "summary": "Exa added to the comparison",
+          "target": "cell-exa-requires-key"
+        },
+        {
+          "summary": "Firecrawl added to the comparison",
+          "target": "cell-firecrawl-requires-key"
+        },
+        {
+          "summary": "Google PSE added to the comparison",
+          "target": "cell-google-pse-requires-key"
+        },
+        {
+          "summary": "Jina added to the comparison",
+          "target": "cell-jina-requires-key"
+        },
+        {
+          "summary": "Kagi added to the comparison",
+          "target": "cell-kagi-requires-key"
+        },
+        {
+          "summary": "Linkup added to the comparison",
+          "target": "cell-linkup-requires-key"
+        },
+        {
+          "summary": "Parallel added to the comparison",
+          "target": "cell-parallel-requires-key"
+        },
+        {
+          "summary": "Perplexity added to the comparison",
+          "target": "cell-perplexity-requires-key"
+        },
+        {
+          "summary": "Searchapi added to the comparison",
+          "target": "cell-searchapi-requires-key"
+        },
+        {
+          "summary": "SearXNG added to the comparison",
+          "target": "cell-searxng-requires-key"
+        },
+        {
+          "summary": "Serper added to the comparison",
+          "target": "cell-serper-requires-key"
+        },
+        {
+          "summary": "Tavily added to the comparison",
+          "target": "cell-tavily-requires-key"
+        },
+        {
+          "summary": "You added to the comparison",
+          "target": "cell-you-requires-key"
+        }
+      ]
+    }
+  ]
+}

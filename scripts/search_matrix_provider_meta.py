@@ -275,9 +275,9 @@ PRICING_META: dict[str, dict[str, str]] = {
         "comment": "Per 1K requests with up to 10 results; summaries and additional results are billed separately.",
     },
     "parallel": {
-        "value": "fast/search: $5; balanced/task: $10-$25; deep/task: $100-$300+",
-        "source_url": "https://docs.parallel.ai/resources/pricing",
-        "comment": "Search API is $5/1K requests; Task processors map roughly from Base/Core to Pro/Ultra for deeper modes.",
+        "value": "search: $1-$5; task: $5-$2,400",
+        "source_url": "https://parallel.ai/pricing",
+        "comment": "Search varies by mode; Task processors range from Lite through Ultra8x per 1K requests.",
     },
     "tavily": {
         "value": "fast/basic: ~$8; balanced/advanced: ~$16; deep/research: plan/model dependent",
@@ -285,9 +285,9 @@ PRICING_META: dict[str, dict[str, str]] = {
         "comment": "Uses API credits; pay-as-you-go credits are listed at $0.008/credit, with higher-depth calls consuming more credits.",
     },
     "brave": {
-        "value": "balanced/search: $5-$9; deep/answers: $4 + tokens",
+        "value": "balanced/search: $5; deep/answers: $4 + tokens",
         "source_url": "https://brave.com/search/api/",
-        "comment": "Search API pricing depends on Base AI vs Pro AI plan; Answers adds token charges.",
+        "comment": "Search is $5/1K requests; Answers is $4/1K plus input/output token charges.",
     },
     "keiro": {
         "value": "fast/balanced: ~$0.50; content: ~$1.50; batch: ~$0.50",
@@ -295,9 +295,9 @@ PRICING_META: dict[str, dict[str, str]] = {
         "comment": "Keiro docs list credit costs per v2 endpoint and headline cost per 1,000 searches.",
     },
     "linkup": {
-        "value": "fast: €5; balanced/standard: €5; deep: €50",
-        "source_url": "https://linkup-api.readme.io/reference/credits",
-        "comment": "Fast and standard cost one credit/call; deep costs ten credits/call. Fast docs list €0.005/call.",
+        "value": "fast/standard: $5-$6; deep: $50-$55",
+        "source_url": "https://docs.linkup.so/pages/documentation/platform/pricing",
+        "comment": "Raw search results cost $5/$50 per 1K; sourced answers and structured output cost $6/$55.",
     },
     "perplexity": {
         "value": "search: $5; fast/sonar low: $5; balanced: $8-$10; deep/high/pro: $12-$22 + tokens",
@@ -315,19 +315,19 @@ PRICING_META: dict[str, dict[str, str]] = {
         "comment": "Top-up credit pricing; exact per-1K rate decreases with larger credit packs.",
     },
     "serpapi": {
-        "value": "balanced: $25 starter; ~$7.25-$15 volume",
+        "value": "balanced: $25 starter; ~$3.75-$15 volume",
         "source_url": "https://serpapi.com/pricing",
         "comment": "Monthly plan price divided by included searches; applies to all SerpApi engine rows.",
     },
     "searchapi": {
-        "value": "balanced: published plans vary; roughly $2-$4+",
+        "value": "balanced: $4 starter; $1-$3 volume",
         "source_url": "https://www.searchapi.io/pricing",
         "comment": "Pricing is plan/volume based; verify current SearchApi.io plan before budgeting.",
     },
     "you": {
-        "value": "search: $5; research lite: $12; deeper research: tier dependent",
-        "source_url": "https://you.com/pricing",
-        "comment": "Search API is $5/1K calls; Research API starts at $12/1K and increases by effort tier.",
+        "value": "search: $5; research: $12/$50/$100/$450 by effort",
+        "source_url": "https://you.com/docs/administration/billing",
+        "comment": "Research prices map to lite, standard, deep, and exhaustive effort tiers.",
     },
     "jina": {
         "value": "token-based; no fixed per-query CPM",
@@ -340,9 +340,9 @@ PRICING_META: dict[str, dict[str, str]] = {
         "comment": "Kagi documents pay-per-use API portal billing but not a stable public Search API CPM in docs.",
     },
     "firecrawl": {
-        "value": "balanced/search: 1 credit; with scrape: +1 credit/result",
-        "source_url": "https://docs.firecrawl.dev/api-reference/endpoint/search",
-        "comment": "Convert credits to dollars from your Firecrawl plan; search without scrape costs one credit.",
+        "value": "balanced/search: 2 credits per 10 results",
+        "source_url": "https://www.firecrawl.dev/pricing",
+        "comment": "Convert credits to dollars from your Firecrawl plan; advanced formats and extraction add credits.",
     },
     "google_pse": {
         "value": "balanced: $5",
@@ -358,6 +358,99 @@ PRICING_META: dict[str, dict[str, str]] = {
         "value": "$0 API fee via keyless DDGS client; unofficial/fragile",
         "source_url": "https://pypi.org/project/ddgs/",
         "comment": "No paid official web search API is used by anysearch's keyless fallback.",
+    },
+}
+
+FREE_TIER_META: dict[str, dict[str, str]] = {
+    "exa": {
+        "value": "$10/month (~1,428 base searches) + $20 signup (~2,857)",
+        "source_url": "https://exa.ai/pricing",
+        "comment": "Calculated from $10 recurring and $20 signup credits at the published $7 per 1K base-search rate.",
+    },
+    "parallel": {
+        "value": "1,000 requests/month; up to $80 signup + $5/month",
+        "source_url": "https://parallel.ai/pricing",
+        "comment": "Parallel publishes a monthly free request allowance plus promotional signup and recurring credits.",
+    },
+    "tavily": {
+        "value": "1,000 basic or 500 advanced searches/month; no card",
+        "source_url": "https://help.tavily.com/articles/8816424538-pricing",
+        "comment": "Researcher plan includes 1,000 credits monthly; basic search costs one and advanced costs two credits.",
+    },
+    "brave": {
+        "value": "$5 credits/month (~1,000 Search requests)",
+        "source_url": "https://brave.com/search/api/",
+        "comment": "Credits are applied automatically each month to Search or Answers usage.",
+    },
+    "keiro": {
+        "value": "500 searches/month; 30 req/min; no card",
+        "source_url": "https://keirolabs.cloud/",
+        "comment": "Explorer is a hard-capped free plan with no overage and no batch endpoint.",
+    },
+    "linkup": {
+        "value": "$20/month (~4,000 standard or 400 deep searches; eligible)",
+        "source_url": "https://docs.linkup.so/pages/documentation/platform/pricing",
+        "comment": "At raw-search rates this covers about 4,000 standard or 400 deep calls; eligibility is provider-controlled.",
+    },
+    "perplexity": {
+        "value": "No standing free API credits documented",
+        "source_url": "https://docs.perplexity.ai/docs/getting-started/api-groups",
+        "comment": "Tier 0 is a rate-limit tier, not a published free-credit allowance; API usage draws from prepaid credits.",
+    },
+    "gemini": {
+        "value": "500 grounded prompts/day on eligible Flash models",
+        "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "comment": "Free-tier Google Search grounding is shared across eligible Flash and Flash-Lite models; model availability varies.",
+    },
+    "serper": {
+        "value": "2,500 one-time queries; no card",
+        "source_url": "https://serper.dev/",
+        "comment": "Complimentary signup queries do not renew monthly.",
+    },
+    "serpapi": {
+        "value": "250 searches/month; 50/hour",
+        "source_url": "https://serpapi.com/pricing",
+        "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota.",
+    },
+    "searchapi": {
+        "value": "100 one-time requests; no card",
+        "source_url": "https://www.searchapi.io/pricing",
+        "comment": "Complimentary requests are for newly registered accounts and do not renew monthly.",
+    },
+    "you": {
+        "value": "$100 signup (~20,000 searches); keyless MCP: 100/day",
+        "source_url": "https://you.com/docs/welcome",
+        "comment": "Signup credit covers roughly 20,000 base Search calls; the no-signup MCP profile has a separate daily limit.",
+    },
+    "jina": {
+        "value": "10M tokens for new users; 500 RPM / 1M TPM",
+        "source_url": "https://api.jina.ai/docs",
+        "comment": "Free Search Foundation tier also limits concurrency to five requests.",
+    },
+    "kagi": {
+        "value": "No free Search API allowance documented",
+        "source_url": "https://help.kagi.com/kagi/api/quick-start.html",
+        "comment": "API billing is separate from Kagi's consumer trial and requires a payment method or prepaid API credit.",
+    },
+    "firecrawl": {
+        "value": "1,000 credits/month (~500 searches at 10 results)",
+        "source_url": "https://www.firecrawl.dev/pricing",
+        "comment": "Search costs two credits per ten results; advanced features consume additional credits.",
+    },
+    "google_pse": {
+        "value": "100 queries/day; existing customers only",
+        "source_url": "https://developers.google.com/custom-search/v1/overview",
+        "comment": "Custom Search JSON API is closed to new customers; existing customers must migrate by January 1, 2027.",
+    },
+    "searxng": {
+        "value": "No software quota when self-hosted; instance limits apply",
+        "source_url": "https://docs.searxng.org/dev/search_api.html",
+        "comment": "SearXNG has no vendor billing tier; capacity and upstream-engine limits depend on the deployment.",
+    },
+    "duckduckgo": {
+        "value": "No fixed quota or API fee; upstream rate limits apply",
+        "source_url": "https://pypi.org/project/ddgs/",
+        "comment": "DDGS is a keyless metasearch client rather than a contracted DuckDuckGo API service.",
     },
 }
 

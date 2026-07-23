@@ -88,5 +88,10 @@
     "source_url": "https://serper.dev/",
     "comment": "Top-up credit pricing; exact per-1K rate decreases with larger credit packs."
   },
+  "free_tier_limits": {
+    "value": "2,500 one-time queries; no card",
+    "source_url": "https://serper.dev/",
+    "comment": "Complimentary signup queries do not renew monthly."
+  },
   "notes": ""
 }

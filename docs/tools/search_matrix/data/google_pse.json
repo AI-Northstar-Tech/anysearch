@@ -88,5 +88,10 @@
     "source_url": "https://support.google.com/programmable-search/answer/9069107",
     "comment": "Custom Search JSON API and Programmable Search Element paid API are listed at $5/1K queries."
   },
+  "free_tier_limits": {
+    "value": "100 queries/day; existing customers only",
+    "source_url": "https://developers.google.com/custom-search/v1/overview",
+    "comment": "Custom Search JSON API is closed to new customers; existing customers must migrate by January 1, 2027."
+  },
   "notes": ""
 }

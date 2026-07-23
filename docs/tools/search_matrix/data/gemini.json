@@ -88,5 +88,10 @@
     "source_url": "https://cloud.google.com/generative-ai-app-builder/pricing",
     "comment": "Grounding with Google Search is billed per 1K grounded requests plus Gemini model token charges."
   },
+  "free_tier_limits": {
+    "value": "500 grounded prompts/day on eligible Flash models",
+    "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+    "comment": "Free-tier Google Search grounding is shared across eligible Flash and Flash-Lite models; model availability varies."
+  },
   "notes": "Native SDK package: google-genai."
 }

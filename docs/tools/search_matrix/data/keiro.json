@@ -90,5 +90,10 @@
     "source_url": "https://keirolabs.cloud/",
     "comment": "Keiro docs list credit costs per v2 endpoint and headline cost per 1,000 searches."
   },
+  "free_tier_limits": {
+    "value": "500 searches/month; 30 req/min; no card",
+    "source_url": "https://keirolabs.cloud/",
+    "comment": "Explorer is a hard-capped free plan with no overage and no batch endpoint."
+  },
   "notes": "KeiroLabs v2 search is wired in the anysearch SDK as REST-only. The provider expects `apiKey`, `query`, and `maxResults` in the JSON request body."
 }

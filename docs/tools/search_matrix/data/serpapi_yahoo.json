@@ -84,9 +84,14 @@
     "comment": "Fixed SerpApi backend `engine=yahoo` (set via anysearch `engine=\"yahoo\"` with `provider=\"serpapi\"`). No separate fast/deep tier on this engine."
   },
   "pricing_per_1k": {
-    "value": "balanced: $25 starter; ~$7.25-$15 volume",
+    "value": "balanced: $25 starter; ~$3.75-$15 volume",
     "source_url": "https://serpapi.com/pricing",
     "comment": "Monthly plan price divided by included searches; applies to all SerpApi engine rows."
+  },
+  "free_tier_limits": {
+    "value": "250 searches/month; 50/hour",
+    "source_url": "https://serpapi.com/pricing",
+    "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
   },
   "notes": "SerpApi proxy to Yahoo (`engine=yahoo`). Native SDK package: google-search-results."
 }

@@ -90,5 +90,10 @@
     "source_url": "https://exa.ai/pricing",
     "comment": "Per 1K requests with up to 10 results; summaries and additional results are billed separately."
   },
+  "free_tier_limits": {
+    "value": "$10/month (~1,428 base searches) + $20 signup (~2,857)",
+    "source_url": "https://exa.ai/pricing",
+    "comment": "Calculated from $10 recurring and $20 signup credits at the published $7 per 1K base-search rate."
+  },
   "notes": "Native SDK package: exa-py."
 }

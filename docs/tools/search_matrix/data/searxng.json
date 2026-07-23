@@ -88,5 +88,10 @@
     "source_url": "https://docs.searxng.org/",
     "comment": "Open-source self-hosted metasearch; operating costs depend on deployment."
   },
+  "free_tier_limits": {
+    "value": "No software quota when self-hosted; instance limits apply",
+    "source_url": "https://docs.searxng.org/dev/search_api.html",
+    "comment": "SearXNG has no vendor billing tier; capacity and upstream-engine limits depend on the deployment."
+  },
   "notes": "No API key required (keyless fallback)."
 }

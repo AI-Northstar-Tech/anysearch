@@ -90,5 +90,10 @@
     "source_url": "https://help.tavily.com/articles/8816424538-pricing",
     "comment": "Uses API credits; pay-as-you-go credits are listed at $0.008/credit, with higher-depth calls consuming more credits."
   },
+  "free_tier_limits": {
+    "value": "1,000 basic or 500 advanced searches/month; no card",
+    "source_url": "https://help.tavily.com/articles/8816424538-pricing",
+    "comment": "Researcher plan includes 1,000 credits monthly; basic search costs one and advanced costs two credits."
+  },
   "notes": "Native SDK package: tavily-python. Search API is in the anysearch SDK; Research API (`POST /research`) is documented in the matrix (use `tavily-python` `research()` / `get_research()`)."
 }

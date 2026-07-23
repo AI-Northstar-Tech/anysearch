@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "matrix:generate": "python3 scripts/generate_search_matrix_data.py",
+    "matrix:changelog": "python3 scripts/generate_matrix_changelog.py --matrix-dir docs/tools/search_matrix",
     "matrix:validate": "python3 docs/tools/search_matrix/data_utils.py validate",
     "matrix:bundle": "python3 docs/tools/search_matrix/data_utils.py bundle",
     "matrix:llms-txt": "python3 docs/tools/search_matrix/data_utils.py llms-txt",
-    "matrix:sync": "npm run matrix:generate && npm run matrix:validate && npm run matrix:bundle && npm run matrix:llms-txt",
+    "matrix:sync": "npm run matrix:generate && npm run matrix:validate && npm run matrix:bundle && npm run matrix:llms-txt && npm run matrix:changelog",
     "matrix:verify-page": "node scripts/verify_matrix_page.mjs",
     "deploy:matrix": "npm run matrix:sync && npm run matrix:verify-page && wrangler deploy --config wrangler.toml"
   },

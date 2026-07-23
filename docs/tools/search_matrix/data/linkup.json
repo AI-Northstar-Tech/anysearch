@@ -86,9 +86,14 @@
     "comment": "Native `depth`: `fast`, `standard` (balanced), or `deep` (multi-iteration agentic search-and-scrape). Cited synthesis uses `outputType=sourcedAnswer` (`answer=true` in anysearch), including at `deep` depth. anysearch: fast/balanced/deep\u2192matching depth."
   },
   "pricing_per_1k": {
-    "value": "fast: \u20ac5; balanced/standard: \u20ac5; deep: \u20ac50",
-    "source_url": "https://linkup-api.readme.io/reference/credits",
-    "comment": "Fast and standard cost one credit/call; deep costs ten credits/call. Fast docs list \u20ac0.005/call."
+    "value": "fast/standard: $5-$6; deep: $50-$55",
+    "source_url": "https://docs.linkup.so/pages/documentation/platform/pricing",
+    "comment": "Raw search results cost $5/$50 per 1K; sourced answers and structured output cost $6/$55."
+  },
+  "free_tier_limits": {
+    "value": "$20/month (~4,000 standard or 400 deep searches; eligible)",
+    "source_url": "https://docs.linkup.so/pages/documentation/platform/pricing",
+    "comment": "At raw-search rates this covers about 4,000 standard or 400 deep calls; eligibility is provider-controlled."
   },
   "notes": "Native SDK package: linkup-sdk."
 }

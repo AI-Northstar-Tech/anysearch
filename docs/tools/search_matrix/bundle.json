@@ -85,9 +85,14 @@
       "comment": "Fixed SerpApi backend `engine=baidu` (set via anysearch `engine=\"baidu\"` with `provider=\"serpapi\"`). No separate fast/deep tier on this engine."
     },
     "pricing_per_1k": {
-      "value": "balanced: $25 starter; ~$7.25-$15 volume",
+      "value": "balanced: $25 starter; ~$3.75-$15 volume",
       "source_url": "https://serpapi.com/pricing",
       "comment": "Monthly plan price divided by included searches; applies to all SerpApi engine rows."
+    },
+    "free_tier_limits": {
+      "value": "250 searches/month; 50/hour",
+      "source_url": "https://serpapi.com/pricing",
+      "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
     },
     "notes": "SerpApi proxy to Baidu (`engine=baidu`). Native SDK package: google-search-results."
   },
@@ -177,9 +182,14 @@
       "comment": "Fixed SerpApi backend `engine=bing` (set via anysearch `engine=\"bing\"` with `provider=\"serpapi\"`). No separate fast/deep tier on this engine."
     },
     "pricing_per_1k": {
-      "value": "balanced: $25 starter; ~$7.25-$15 volume",
+      "value": "balanced: $25 starter; ~$3.75-$15 volume",
       "source_url": "https://serpapi.com/pricing",
       "comment": "Monthly plan price divided by included searches; applies to all SerpApi engine rows."
+    },
+    "free_tier_limits": {
+      "value": "250 searches/month; 50/hour",
+      "source_url": "https://serpapi.com/pricing",
+      "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
     },
     "notes": "SerpApi proxy to Bing (`engine=bing`). Native SDK package: google-search-results."
   },
@@ -270,9 +280,14 @@
       "comment": "**Web/news SERP** (`/res/v1/web/search`) \u2192 matrix `balanced`. **Answers API** (`POST /res/v1/chat/completions`, `model=brave`) \u2192 balanced (single-pass grounded answer); `enable_research=true` (streaming)\u2192deep. Same `BRAVE_API_KEY`."
     },
     "pricing_per_1k": {
-      "value": "balanced/search: $5-$9; deep/answers: $4 + tokens",
+      "value": "balanced/search: $5; deep/answers: $4 + tokens",
       "source_url": "https://brave.com/search/api/",
-      "comment": "Search API pricing depends on Base AI vs Pro AI plan; Answers adds token charges."
+      "comment": "Search is $5/1K requests; Answers is $4/1K plus input/output token charges."
+    },
+    "free_tier_limits": {
+      "value": "$5 credits/month (~1,000 Search requests)",
+      "source_url": "https://brave.com/search/api/",
+      "comment": "Credits are applied automatically each month to Search or Answers usage."
     },
     "notes": "Web/news Search API is in the anysearch SDK; Answers API (`/res/v1/chat/completions`) is documented in the matrix but not wired in the SDK yet."
   },
@@ -366,6 +381,11 @@
       "source_url": "https://pypi.org/project/ddgs/",
       "comment": "No paid official web search API is used by anysearch's keyless fallback."
     },
+    "free_tier_limits": {
+      "value": "No fixed quota or API fee; upstream rate limits apply",
+      "source_url": "https://pypi.org/project/ddgs/",
+      "comment": "DDGS is a keyless metasearch client rather than a contracted DuckDuckGo API service."
+    },
     "notes": "No API key required (keyless fallback). Native SDK package: ddgs."
   },
   {
@@ -454,9 +474,14 @@
       "comment": "Fixed SerpApi backend `engine=duckduckgo` (set via anysearch `engine=\"duckduckgo\"` with `provider=\"serpapi\"`). No separate fast/deep tier on this engine."
     },
     "pricing_per_1k": {
-      "value": "balanced: $25 starter; ~$7.25-$15 volume",
+      "value": "balanced: $25 starter; ~$3.75-$15 volume",
       "source_url": "https://serpapi.com/pricing",
       "comment": "Monthly plan price divided by included searches; applies to all SerpApi engine rows."
+    },
+    "free_tier_limits": {
+      "value": "250 searches/month; 50/hour",
+      "source_url": "https://serpapi.com/pricing",
+      "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
     },
     "notes": "SerpApi proxy to DuckDuckGo (`engine=duckduckgo`). Native SDK package: google-search-results."
   },
@@ -552,6 +577,11 @@
       "source_url": "https://exa.ai/pricing",
       "comment": "Per 1K requests with up to 10 results; summaries and additional results are billed separately."
     },
+    "free_tier_limits": {
+      "value": "$10/month (~1,428 base searches) + $20 signup (~2,857)",
+      "source_url": "https://exa.ai/pricing",
+      "comment": "Calculated from $10 recurring and $20 signup credits at the published $7 per 1K base-search rate."
+    },
     "notes": "Native SDK package: exa-py."
   },
   {
@@ -640,9 +670,14 @@
       "comment": "Single search tier (title, URL, description). `scrapeOptions` fetches page bodies but is not an AI synthesis `mode`."
     },
     "pricing_per_1k": {
-      "value": "balanced/search: 1 credit; with scrape: +1 credit/result",
-      "source_url": "https://docs.firecrawl.dev/api-reference/endpoint/search",
-      "comment": "Convert credits to dollars from your Firecrawl plan; search without scrape costs one credit."
+      "value": "balanced/search: 2 credits per 10 results",
+      "source_url": "https://www.firecrawl.dev/pricing",
+      "comment": "Convert credits to dollars from your Firecrawl plan; advanced formats and extraction add credits."
+    },
+    "free_tier_limits": {
+      "value": "1,000 credits/month (~500 searches at 10 results)",
+      "source_url": "https://www.firecrawl.dev/pricing",
+      "comment": "Search costs two credits per ten results; advanced features consume additional credits."
     },
     "notes": "Native SDK package: firecrawl-py."
   },
@@ -736,6 +771,11 @@
       "source_url": "https://cloud.google.com/generative-ai-app-builder/pricing",
       "comment": "Grounding with Google Search is billed per 1K grounded requests plus Gemini model token charges."
     },
+    "free_tier_limits": {
+      "value": "500 grounded prompts/day on eligible Flash models",
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "comment": "Free-tier Google Search grounding is shared across eligible Flash and Flash-Lite models; model availability varies."
+    },
     "notes": "Native SDK package: google-genai."
   },
   {
@@ -828,6 +868,11 @@
       "source_url": "https://support.google.com/programmable-search/answer/9069107",
       "comment": "Custom Search JSON API and Programmable Search Element paid API are listed at $5/1K queries."
     },
+    "free_tier_limits": {
+      "value": "100 queries/day; existing customers only",
+      "source_url": "https://developers.google.com/custom-search/v1/overview",
+      "comment": "Custom Search JSON API is closed to new customers; existing customers must migrate by January 1, 2027."
+    },
     "notes": ""
   },
   {
@@ -916,9 +961,14 @@
       "comment": "Fixed SerpApi backend `engine=google` (set via anysearch `engine=\"google\"` with `provider=\"serpapi\"`). No separate fast/deep tier on this engine."
     },
     "pricing_per_1k": {
-      "value": "balanced: $25 starter; ~$7.25-$15 volume",
+      "value": "balanced: $25 starter; ~$3.75-$15 volume",
       "source_url": "https://serpapi.com/pricing",
       "comment": "Monthly plan price divided by included searches; applies to all SerpApi engine rows."
+    },
+    "free_tier_limits": {
+      "value": "250 searches/month; 50/hour",
+      "source_url": "https://serpapi.com/pricing",
+      "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
     },
     "notes": "SerpApi proxy to Google (`engine=google`). Native SDK package: google-search-results."
   },
@@ -1012,6 +1062,11 @@
       "source_url": "https://jina.ai/reader/",
       "comment": "Reader/Search usage is priced by tokens/usage tiers rather than a fixed per-1K query price."
     },
+    "free_tier_limits": {
+      "value": "10M tokens for new users; 500 RPM / 1M TPM",
+      "source_url": "https://api.jina.ai/docs",
+      "comment": "Free Search Foundation tier also limits concurrency to five requests."
+    },
     "notes": ""
   },
   {
@@ -1103,6 +1158,11 @@
       "value": "not publicly itemized per 1K for Search API",
       "source_url": "https://help.kagi.com/kagi/api/overview.html",
       "comment": "Kagi documents pay-per-use API portal billing but not a stable public Search API CPM in docs."
+    },
+    "free_tier_limits": {
+      "value": "No free Search API allowance documented",
+      "source_url": "https://help.kagi.com/kagi/api/quick-start.html",
+      "comment": "API billing is separate from Kagi's consumer trial and requires a payment method or prepaid API credit."
     },
     "notes": ""
   },
@@ -1198,6 +1258,11 @@
       "source_url": "https://keirolabs.cloud/",
       "comment": "Keiro docs list credit costs per v2 endpoint and headline cost per 1,000 searches."
     },
+    "free_tier_limits": {
+      "value": "500 searches/month; 30 req/min; no card",
+      "source_url": "https://keirolabs.cloud/",
+      "comment": "Explorer is a hard-capped free plan with no overage and no batch endpoint."
+    },
     "notes": "KeiroLabs v2 search is wired in the anysearch SDK as REST-only. The provider expects `apiKey`, `query`, and `maxResults` in the JSON request body."
   },
   {
@@ -1288,9 +1353,14 @@
       "comment": "Native `depth`: `fast`, `standard` (balanced), or `deep` (multi-iteration agentic search-and-scrape). Cited synthesis uses `outputType=sourcedAnswer` (`answer=true` in anysearch), including at `deep` depth. anysearch: fast/balanced/deep\u2192matching depth."
     },
     "pricing_per_1k": {
-      "value": "fast: \u20ac5; balanced/standard: \u20ac5; deep: \u20ac50",
-      "source_url": "https://linkup-api.readme.io/reference/credits",
-      "comment": "Fast and standard cost one credit/call; deep costs ten credits/call. Fast docs list \u20ac0.005/call."
+      "value": "fast/standard: $5-$6; deep: $50-$55",
+      "source_url": "https://docs.linkup.so/pages/documentation/platform/pricing",
+      "comment": "Raw search results cost $5/$50 per 1K; sourced answers and structured output cost $6/$55."
+    },
+    "free_tier_limits": {
+      "value": "$20/month (~4,000 standard or 400 deep searches; eligible)",
+      "source_url": "https://docs.linkup.so/pages/documentation/platform/pricing",
+      "comment": "At raw-search rates this covers about 4,000 standard or 400 deep calls; eligibility is provider-controlled."
     },
     "notes": "Native SDK package: linkup-sdk."
   },
@@ -1382,9 +1452,14 @@
       "comment": "**Search API** `mode`: `basic`\u2192fast, `advanced`\u2192balanced (richer retrieval, not synthesis). **Task API** (`POST /v1/tasks/runs`) `processor`: Lite/Base\u2192fast, Core\u2192balanced, Pro/Ultra\u2192deep (structured output with citations). Same `PARALLEL_API_KEY`."
     },
     "pricing_per_1k": {
-      "value": "fast/search: $5; balanced/task: $10-$25; deep/task: $100-$300+",
-      "source_url": "https://docs.parallel.ai/resources/pricing",
-      "comment": "Search API is $5/1K requests; Task processors map roughly from Base/Core to Pro/Ultra for deeper modes."
+      "value": "search: $1-$5; task: $5-$2,400",
+      "source_url": "https://parallel.ai/pricing",
+      "comment": "Search varies by mode; Task processors range from Lite through Ultra8x per 1K requests."
+    },
+    "free_tier_limits": {
+      "value": "1,000 requests/month; up to $80 signup + $5/month",
+      "source_url": "https://parallel.ai/pricing",
+      "comment": "Parallel publishes a monthly free request allowance plus promotional signup and recurring credits."
     },
     "notes": "Native SDK package: parallel-web. Search API is in the anysearch SDK; Task API (`POST /v1/tasks/runs`) is documented in the matrix but not wired in the SDK yet."
   },
@@ -1479,6 +1554,11 @@
       "source_url": "https://docs.perplexity.ai/getting-started/pricing",
       "comment": "Search API is request-only; Sonar tiers add token charges and request fees by context size/search type."
     },
+    "free_tier_limits": {
+      "value": "No standing free API credits documented",
+      "source_url": "https://docs.perplexity.ai/docs/getting-started/api-groups",
+      "comment": "Tier 0 is a rate-limit tier, not a published free-credit allowance; API usage draws from prepaid credits."
+    },
     "notes": "Native SDK package: perplexityai. Search API (`POST /search`) is in the anysearch SDK; Sonar (`POST /chat/completions`) is documented in the matrix but not wired in the SDK yet."
   },
   {
@@ -1571,6 +1651,11 @@
       "source_url": "https://docs.searxng.org/",
       "comment": "Open-source self-hosted metasearch; operating costs depend on deployment."
     },
+    "free_tier_limits": {
+      "value": "No software quota when self-hosted; instance limits apply",
+      "source_url": "https://docs.searxng.org/dev/search_api.html",
+      "comment": "SearXNG has no vendor billing tier; capacity and upstream-engine limits depend on the deployment."
+    },
     "notes": "No API key required (keyless fallback)."
   },
   {
@@ -1659,9 +1744,14 @@
       "comment": "Google engine wrapper: single SERP depth per request (no native fast/deep tier)."
     },
     "pricing_per_1k": {
-      "value": "balanced: published plans vary; roughly $2-$4+",
+      "value": "balanced: $4 starter; $1-$3 volume",
       "source_url": "https://www.searchapi.io/pricing",
       "comment": "Pricing is plan/volume based; verify current SearchApi.io plan before budgeting."
+    },
+    "free_tier_limits": {
+      "value": "100 one-time requests; no card",
+      "source_url": "https://www.searchapi.io/pricing",
+      "comment": "Complimentary requests are for newly registered accounts and do not renew monthly."
     },
     "notes": ""
   },
@@ -1754,6 +1844,11 @@
       "value": "balanced: $1.00 starter; $0.30-$0.75 volume",
       "source_url": "https://serper.dev/",
       "comment": "Top-up credit pricing; exact per-1K rate decreases with larger credit packs."
+    },
+    "free_tier_limits": {
+      "value": "2,500 one-time queries; no card",
+      "source_url": "https://serper.dev/",
+      "comment": "Complimentary signup queries do not renew monthly."
     },
     "notes": ""
   },
@@ -1849,6 +1944,11 @@
       "source_url": "https://help.tavily.com/articles/8816424538-pricing",
       "comment": "Uses API credits; pay-as-you-go credits are listed at $0.008/credit, with higher-depth calls consuming more credits."
     },
+    "free_tier_limits": {
+      "value": "1,000 basic or 500 advanced searches/month; no card",
+      "source_url": "https://help.tavily.com/articles/8816424538-pricing",
+      "comment": "Researcher plan includes 1,000 credits monthly; basic search costs one and advanced costs two credits."
+    },
     "notes": "Native SDK package: tavily-python. Search API is in the anysearch SDK; Research API (`POST /research`) is documented in the matrix (use `tavily-python` `research()` / `get_research()`)."
   },
   {
@@ -1937,9 +2037,14 @@
       "comment": "Fixed SerpApi backend `engine=yahoo` (set via anysearch `engine=\"yahoo\"` with `provider=\"serpapi\"`). No separate fast/deep tier on this engine."
     },
     "pricing_per_1k": {
-      "value": "balanced: $25 starter; ~$7.25-$15 volume",
+      "value": "balanced: $25 starter; ~$3.75-$15 volume",
       "source_url": "https://serpapi.com/pricing",
       "comment": "Monthly plan price divided by included searches; applies to all SerpApi engine rows."
+    },
+    "free_tier_limits": {
+      "value": "250 searches/month; 50/hour",
+      "source_url": "https://serpapi.com/pricing",
+      "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
     },
     "notes": "SerpApi proxy to Yahoo (`engine=yahoo`). Native SDK package: google-search-results."
   },
@@ -2029,9 +2134,14 @@
       "comment": "Fixed SerpApi backend `engine=yandex` (set via anysearch `engine=\"yandex\"` with `provider=\"serpapi\"`). No separate fast/deep tier on this engine."
     },
     "pricing_per_1k": {
-      "value": "balanced: $25 starter; ~$7.25-$15 volume",
+      "value": "balanced: $25 starter; ~$3.75-$15 volume",
       "source_url": "https://serpapi.com/pricing",
       "comment": "Monthly plan price divided by included searches; applies to all SerpApi engine rows."
+    },
+    "free_tier_limits": {
+      "value": "250 searches/month; 50/hour",
+      "source_url": "https://serpapi.com/pricing",
+      "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
     },
     "notes": "SerpApi proxy to Yandex (`engine=yandex`). Native SDK package: google-search-results."
   },
@@ -2123,9 +2233,14 @@
       "comment": "**Search API** (`POST /v1/search`) \u2192 matrix `balanced` (ranked snippets, SDK). **Research API** (`POST /v1/research`) \u2192 `research_effort`: `lite`\u2192fast, `standard`\u2192balanced, `deep` / `exhaustive`\u2192deep (cited synthesis). Same `YDC_API_KEY`."
     },
     "pricing_per_1k": {
-      "value": "search: $5; research lite: $12; deeper research: tier dependent",
-      "source_url": "https://you.com/pricing",
-      "comment": "Search API is $5/1K calls; Research API starts at $12/1K and increases by effort tier."
+      "value": "search: $5; research: $12/$50/$100/$450 by effort",
+      "source_url": "https://you.com/docs/administration/billing",
+      "comment": "Research prices map to lite, standard, deep, and exhaustive effort tiers."
+    },
+    "free_tier_limits": {
+      "value": "$100 signup (~20,000 searches); keyless MCP: 100/day",
+      "source_url": "https://you.com/docs/welcome",
+      "comment": "Signup credit covers roughly 20,000 base Search calls; the no-signup MCP profile has a separate daily limit."
     },
     "notes": "Search API (`POST /v1/search`) is in the anysearch SDK; Research API (`POST /v1/research`) is documented in the matrix but not wired in the SDK yet."
   }

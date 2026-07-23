@@ -88,5 +88,10 @@
     "source_url": "https://pypi.org/project/ddgs/",
     "comment": "No paid official web search API is used by anysearch's keyless fallback."
   },
+  "free_tier_limits": {
+    "value": "No fixed quota or API fee; upstream rate limits apply",
+    "source_url": "https://pypi.org/project/ddgs/",
+    "comment": "DDGS is a keyless metasearch client rather than a contracted DuckDuckGo API service."
+  },
   "notes": "No API key required (keyless fallback). Native SDK package: ddgs."
 }
