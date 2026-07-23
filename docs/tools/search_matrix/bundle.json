@@ -1193,6 +1193,11 @@
       "source_url": "https://keirolabs.cloud/",
       "comment": "v2 search endpoints exposed through `mode`: balanced uses `/api/v2/keirolabs`, fast/deep use `/api/v2/search/fast`, and content requests use `/api/v2/search/content`. KeiroLabs expects the API key in the JSON body."
     },
+    "pricing_per_1k": {
+      "value": "fast/balanced: ~$0.50; content: ~$1.50; batch: ~$0.50",
+      "source_url": "https://keirolabs.cloud/",
+      "comment": "Keiro docs list credit costs per v2 endpoint and headline cost per 1,000 searches."
+    },
     "notes": "KeiroLabs v2 search is wired in the anysearch SDK as REST-only. The provider expects `apiKey`, `query`, and `maxResults` in the JSON request body."
   },
   {
