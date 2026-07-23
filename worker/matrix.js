@@ -5,6 +5,14 @@ import updatedMeta from "../docs/tools/search_matrix/updated.json";
 
 const CANONICAL_ORIGIN = "https://compare-anysearch.ainorthstar.tech";
 const GITHUB_REPO = "https://github.com/dhruv-anand-aintech/anysearch";
+const DEPLOYMENT_MARKER = "seo-discovery-2026-07-23";
+const PWA = {
+  name: "Anysearch Compare",
+  shortName: "Anysearch",
+  themeColor: "#176b5b",
+  backgroundColor: "#f6f4ee",
+  label: "AS",
+};
 
 const columns = Object.entries(schema.properties)
   .filter(([key]) => !["links", "notes"].includes(key))
@@ -25,14 +33,17 @@ function agentDomain(agent) {
 const FAVICON_OVERRIDES = {};
 
 function metaTags() {
-  const desc = "Compare web search API providers (including SerpApi Bing, Baidu, Yandex, and more) on unified anysearch parameters.";
+  const desc = `Compare ${matrix.length} web search APIs for AI agents by features, pricing, SDK support, search modes, and provider capabilities.`;
   return `
     <meta name="description" content="${htmlEscape(desc)}">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="${CANONICAL_ORIGIN}">
-    <meta property="og:title" content="Search API Provider Matrix — anysearch">
+    <link rel="canonical" href="${CANONICAL_ORIGIN}/">
+    <meta property="og:title" content="Compare Web Search APIs for AI Agents | anysearch">
+    <meta property="og:description" content="${htmlEscape(desc)}">
+    <meta property="og:url" content="${CANONICAL_ORIGIN}/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Search API Provider Matrix — anysearch">`;
+    <meta name="twitter:title" content="Compare Web Search APIs for AI Agents | anysearch">
+    <meta name="twitter:description" content="${htmlEscape(desc)}">`;
 }
 
 function feedbackIssueUrl() {
@@ -96,8 +107,9 @@ function render() {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Search API Provider Matrix — anysearch</title>
+<title>Compare Web Search APIs for AI Agents | anysearch</title>
 ${metaTags()}
+${pwaHead()}
 <style>
 :root {
   color-scheme: light; --bg: #f6f4ee; --panel: #fffdf8; --ink: #17130d; --muted: #766f63;
@@ -117,6 +129,7 @@ a { color: inherit; text-decoration: none; }
   position: sticky; top: 0; z-index: 30; backdrop-filter: blur(10px);
 }
 .brand { display: flex; gap: 6px; align-items: center; font-weight: 700; font-size: 13px; }
+.brand h1 { margin: 0; font: inherit; }
 .mark { width: 20px; height: 20px; border: 1px solid var(--ink); display: grid; place-items: center; font-size: 10px; }
 .topnav { display: flex; gap: 8px; align-items: center; }
 .gh-btn {
@@ -290,7 +303,7 @@ td.value .cell-value {
 </head>
 <body>
 <header class="topbar">
-  <a class="brand" href="/"><span class="mark">AS</span><span>Search API Provider Matrix</span></a>
+  <a class="brand" href="/"><span class="mark">AS</span><h1>Compare Web Search APIs</h1></a>
   <nav class="topnav">
     <a href="${htmlEscape(feedbackIssueUrl())}" class="gh-btn feedback-btn" target="_blank" rel="noreferrer">Report fix</a>
     <a href="${GITHUB_REPO}" class="gh-btn" target="_blank" rel="noreferrer">
@@ -300,7 +313,7 @@ td.value .cell-value {
   </nav>
 </header>
 <section class="hero">
-  <p>Compare ${htmlEscape(matrix.length)} search APIs on unified <strong>anysearch</strong> parameters. <strong>Name or icon</strong> opens the provider site; <strong>⊙</strong> hides or shows a column; drag headers to reorder; use the <strong>API docs</strong> row for official references.</p>
+  <p>Compare ${htmlEscape(matrix.length)} web search API providers for AI agents by features, pricing, SDK support, search modes, and unified <strong>anysearch</strong> parameters. <strong>Name or icon</strong> opens the provider site; <strong>⊙</strong> hides or shows a column; drag headers to reorder; use the <strong>API docs</strong> row for official references.</p>
   <div class="meta-row">
     <span class="pill">${htmlEscape(matrix.length)} providers</span>
     <span class="pill"><a href="${GITHUB_REPO}">anysearch SDK</a></span>
@@ -775,8 +788,45 @@ var state = loadState(); colOrder = state.cols; rowOrder = state.rows;
 renderHeader(); renderBody();
 window.addEventListener('resize', function(){ updateColWidths(); scheduleFitAgentHeaderNames(); });
 </script>
+${pwaScript()}
 </body>
 </html>`;
+}
+
+function pwaHead() {
+  return `<meta name="theme-color" content="${PWA.themeColor}">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/pwa-icon.svg">`;
+}
+
+function pwaScript() {
+  return `<script>
+if ('serviceWorker' in navigator) window.addEventListener('load', function(){ navigator.serviceWorker.register('/sw.js').catch(function(){}); });
+</script>`;
+}
+
+function pwaManifest() {
+  return JSON.stringify({
+    name: PWA.name,
+    short_name: PWA.shortName,
+    start_url: "/",
+    scope: "/",
+    display: "standalone",
+    background_color: PWA.backgroundColor,
+    theme_color: PWA.themeColor,
+    icons: [{ src: "/pwa-icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any maskable" }],
+  });
+}
+
+function pwaIcon() {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="96" fill="${PWA.themeColor}"/><text x="256" y="286" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="150" font-weight="800" fill="#fffdf8">${PWA.label}</text></svg>`;
+}
+
+function pwaAsset(url) {
+  if (url.pathname === "/manifest.json") return new Response(pwaManifest(), {headers: {"content-type":"application/manifest+json; charset=utf-8","cache-control":"public, max-age=300"}});
+  if (url.pathname === "/pwa-icon.svg") return new Response(pwaIcon(), {headers: {"content-type":"image/svg+xml; charset=utf-8","cache-control":"public, max-age=86400"}});
+  if (url.pathname === "/sw.js") return new Response("self.addEventListener('install',()=>self.skipWaiting());self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));", {headers: {"content-type":"text/javascript; charset=utf-8","cache-control":"no-cache"}});
+  return null;
 }
 
 function renderRobots() {
@@ -794,11 +844,18 @@ const bundleJson = JSON.stringify(matrix, null, 2);
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const pwa = pwaAsset(url);
+    if (pwa) return pwa;
     if (env.ASSETS) {
       const asset = await env.ASSETS.fetch(request);
       if (asset.status !== 404) return asset;
     }
     if (url.pathname === "/llms.txt") return new Response(llmsTxt, {headers: {"content-type":"text/plain; charset=utf-8","cache-control":"public, max-age=300"}});
+    if (url.pathname === "/deployment-info") return Response.json({
+      service: "anysearch-matrix",
+      buildMarker: DEPLOYMENT_MARKER,
+      providerCount: matrix.length,
+    }, {headers: {"cache-control":"no-store"}});
     if (url.pathname === "/robots.txt") return new Response(renderRobots(), {headers: {"content-type":"text/plain; charset=utf-8","cache-control":"public, max-age=86400"}});
     if (url.pathname === "/sitemap.xml") return new Response(renderSitemap(), {headers: {"content-type":"application/xml; charset=utf-8","cache-control":"public, max-age=3600"}});
     if (url.pathname === "/bundle.json") return new Response(bundleJson, {headers: {"content-type":"application/json; charset=utf-8","cache-control":"public, max-age=300","access-control-allow-origin":"*"}});
