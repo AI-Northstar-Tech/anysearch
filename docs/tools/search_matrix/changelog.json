@@ -3,8 +3,8 @@
   "entries": [
     {
       "date": "2026-07-28",
-      "commit": "",
-      "title": "Unreleased matrix update",
+      "commit": "95e4eeb",
+      "title": "feat(matrix): add tier-aware latency evidence",
       "items": [
         {
           "summary": "Brave: Latency by tier updated to Web: 0.77s p50 / 1.19s p95; Answers/research: not published",
