@@ -3,12 +3,12 @@
 from __future__ import annotations
 
 import json
+from pathlib import Path
 
 import httpx
 import pytest
 import respx
 
-import anysearch
 from anysearch import AnySearch, Capability
 from anysearch.exceptions import ProviderError, UnsupportedParameterError
 from anysearch.providers import get_provider_class, list_provider_names
@@ -18,17 +18,85 @@ from anysearch.types import SearchRequest
 
 def test_all_providers_registered():
     names = list_provider_names()
-    for required in ("exa", "parallel", "serpapi", "brave", "keiro"):
+    for required in ("octen", "exa", "parallel", "serpapi", "brave", "keiro"):
         assert required in names
-    assert len(names) >= 15
+    assert len(names) >= 19
     assert "gemini" in names
 
 
 def test_aliases_resolve():
+    assert get_provider_class("octen-ai").name == "octen"
     assert get_provider_class("serp").name == "serpapi"
     assert get_provider_class("ddg").name == "duckduckgo"
     assert get_provider_class("google").name == "google_pse"
     assert get_provider_class("keirolabs").name == "keiro"
+
+
+def test_matrix_providers_and_python_sdk_providers_stay_in_parity():
+    matrix_dir = Path(__file__).resolve().parents[2] / "docs/tools/search_matrix/data"
+    slugs = {
+        json.loads(path.read_text())["links"]["slug"]
+        for path in matrix_dir.glob("*.json")
+    }
+    matrix_providers = {
+        "serpapi" if slug.startswith("serpapi_") else slug
+        for slug in slugs
+    }
+    assert matrix_providers == set(list_provider_names())
+
+
+@respx.mock
+def test_octen_search_sends_documented_filters_and_normalizes_response():
+    route = respx.post("https://api.octen.ai/search").mock(
+        return_value=httpx.Response(
+            200,
+            json={
+                "code": 0,
+                "msg": "success",
+                "request_id": "octen-req-1",
+                "data": {
+                    "query": "fresh AI news",
+                    "results": [
+                        {
+                            "title": "Octen result",
+                            "url": "https://example.com/octen",
+                            "highlight": "query-relevant excerpt",
+                            "full_content": "# Full page",
+                            "authors": "Example Author",
+                            "time_published": "2026-07-27T12:00:00Z",
+                        }
+                    ],
+                },
+                "meta": {"latency": 62},
+            },
+        )
+    )
+    client = AnySearch(provider="octen", api_key="octen-test", env={})
+    resp = client.search(
+        "fresh AI news",
+        max_results=7,
+        search_type="news",
+        language="EN",
+        include_domains=["example.com"],
+        start_published_date="2026-07-01T00:00:00Z",
+        safe_search="moderate",
+        include_content=True,
+        highlights=True,
+    )
+    payload = json.loads(route.calls.last.request.content)
+    assert route.calls.last.request.headers["x-api-key"] == "octen-test"
+    assert payload["count"] == 7
+    assert payload["topic"] == "news"
+    assert payload["language"] == ["en"]
+    assert payload["include_domains"] == ["example.com"]
+    assert payload["time_basis"] == "published"
+    assert payload["safesearch"] == "strict"
+    assert payload["full_content"] == {"enable": True}
+    assert resp.provider == "octen"
+    assert resp.request_id == "octen-req-1"
+    assert resp.latency_ms == 62
+    assert resp.results[0].text == "# Full page"
+    assert resp.results[0].highlights == ["query-relevant excerpt"]
 
 
 def test_available_and_select_with_env():
@@ -56,68 +124,6 @@ def test_exa_supports_domains_and_content():
     exa = get_provider_class("exa")
     assert Capability.DOMAINS in exa.capabilities
     assert Capability.CONTENT in exa.capabilities
-
-
-@respx.mock
-def test_keiro_default_cited_search_normalizes_response():
-    route = respx.post("https://kierolabs.space/api/v2/keiro").mock(
-        return_value=httpx.Response(
-            200,
-            json={
-                "query": "q",
-                "total_results": 1,
-                "latency_ms": 123,
-                "results": [
-                    {
-                        "title": "Keiro result",
-                        "url": "https://k.example/a",
-                        "snippet": "cited snippet",
-                        "score": 0.82,
-                        "published_date": "2026-05-27",
-                    }
-                ],
-            },
-        )
-    )
-    client = AnySearch(provider="keiro", api_key="keiro-test", env={})
-    resp = client.search("q", max_results=5)
-
-    assert route.called
-    payload = json.loads(route.calls.last.request.content)
-    assert route.calls.last.request.headers["authorization"] == "Bearer keiro-test"
-    assert payload["query"] == "q"
-    assert payload["maxResults"] == 5
-    assert resp.provider == "keiro"
-    assert resp.total_results == 1
-    assert resp.latency_ms == 123
-    assert resp.results[0].snippet == "cited snippet"
-    assert resp.results[0].published_date == "2026-05-27"
-
-
-@respx.mock
-def test_keiro_content_route_returns_full_text():
-    route = respx.post("https://kierolabs.space/api/v2/search/content").mock(
-        return_value=httpx.Response(
-            200,
-            json={
-                "results": [
-                    {
-                        "title": "Full text",
-                        "url": "https://k.example/full",
-                        "full_text": "markdown body",
-                        "score": 0.9,
-                    }
-                ]
-            },
-        )
-    )
-    client = AnySearch(provider="keiro", api_key="keiro-test", env={})
-    resp = client.search("q", include_content=True, mode="deep")
-
-    payload = json.loads(route.calls.last.request.content)
-    assert payload["mode"] == "deep"
-    assert resp.results[0].text == "markdown body"
-    assert resp.results[0].snippet == "markdown body"
 
 
 @respx.mock

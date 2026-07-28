@@ -93,5 +93,10 @@
     "source_url": "https://serper.dev/",
     "comment": "Complimentary signup queries do not renew monthly."
   },
+  "p50_latency": {
+    "value": "Not publicly documented",
+    "source_url": "https://serper.dev/docs",
+    "comment": "No provider-published p50 Web Search API latency was found."
+  },
   "notes": ""
 }

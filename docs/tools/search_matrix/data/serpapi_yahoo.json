@@ -93,5 +93,10 @@
     "source_url": "https://serpapi.com/pricing",
     "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
   },
+  "p50_latency": {
+    "value": "Not publicly documented",
+    "source_url": "https://serpapi.com/yahoo-search-api",
+    "comment": "No provider-published p50 Web Search API latency was found."
+  },
   "notes": "SerpApi proxy to Yahoo (`engine=yahoo`). Native SDK package: google-search-results."
 }

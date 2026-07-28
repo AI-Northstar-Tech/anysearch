@@ -95,5 +95,10 @@
     "source_url": "https://you.com/docs/welcome",
     "comment": "Signup credit covers roughly 20,000 base Search calls; the no-signup MCP profile has a separate daily limit."
   },
+  "p50_latency": {
+    "value": "Not publicly documented",
+    "source_url": "https://you.com/docs/search/overview",
+    "comment": "No provider-published p50 Web Search API latency was found."
+  },
   "notes": "Search API (`POST /v1/search`) is in the anysearch SDK; Research API (`POST /v1/research`) is documented in the matrix but not wired in the SDK yet."
 }

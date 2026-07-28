@@ -94,6 +94,11 @@
       "source_url": "https://serpapi.com/pricing",
       "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
     },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://serpapi.com/baidu-search-api",
+      "comment": "No provider-published p50 Web Search API latency was found."
+    },
     "notes": "SerpApi proxy to Baidu (`engine=baidu`). Native SDK package: google-search-results."
   },
   {
@@ -190,6 +195,11 @@
       "value": "250 searches/month; 50/hour",
       "source_url": "https://serpapi.com/pricing",
       "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
+    },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://serpapi.com/bing-search-api",
+      "comment": "No provider-published p50 Web Search API latency was found."
     },
     "notes": "SerpApi proxy to Bing (`engine=bing`). Native SDK package: google-search-results."
   },
@@ -289,6 +299,11 @@
       "source_url": "https://brave.com/search/api/",
       "comment": "Credits are applied automatically each month to Search or Answers usage."
     },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://api-dashboard.search.brave.com/app/documentation/web-search/get-started",
+      "comment": "No provider-published p50 Web Search API latency was found."
+    },
     "notes": "Web/news Search API is in the anysearch SDK; Answers API (`/res/v1/chat/completions`) is documented in the matrix but not wired in the SDK yet."
   },
   {
@@ -386,6 +401,11 @@
       "source_url": "https://pypi.org/project/ddgs/",
       "comment": "DDGS is a keyless metasearch client rather than a contracted DuckDuckGo API service."
     },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://pypi.org/project/ddgs/",
+      "comment": "No provider-published p50 Web Search API latency was found."
+    },
     "notes": "No API key required (keyless fallback). Native SDK package: ddgs."
   },
   {
@@ -482,6 +502,11 @@
       "value": "250 searches/month; 50/hour",
       "source_url": "https://serpapi.com/pricing",
       "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
+    },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://serpapi.com/duckduckgo-search-api",
+      "comment": "No provider-published p50 Web Search API latency was found."
     },
     "notes": "SerpApi proxy to DuckDuckGo (`engine=duckduckgo`). Native SDK package: google-search-results."
   },
@@ -582,6 +607,11 @@
       "source_url": "https://exa.ai/pricing",
       "comment": "Calculated from $10 recurring and $20 signup credits at the published $7 per 1K base-search rate."
     },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://exa.ai/docs/reference/search",
+      "comment": "No provider-published p50 Web Search API latency was found."
+    },
     "notes": "Native SDK package: exa-py."
   },
   {
@@ -678,6 +708,11 @@
       "value": "1,000 credits/month (~500 searches at 10 results)",
       "source_url": "https://www.firecrawl.dev/pricing",
       "comment": "Search costs two credits per ten results; advanced features consume additional credits."
+    },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://docs.firecrawl.dev/api-reference/endpoint/search",
+      "comment": "No provider-published p50 Web Search API latency was found."
     },
     "notes": "Native SDK package: firecrawl-py."
   },
@@ -776,6 +811,11 @@
       "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
       "comment": "Free-tier Google Search grounding is shared across eligible Flash and Flash-Lite models; model availability varies."
     },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://ai.google.dev/gemini-api/docs/google-search",
+      "comment": "No provider-published p50 Web Search API latency was found."
+    },
     "notes": "Native SDK package: google-genai."
   },
   {
@@ -872,6 +912,11 @@
       "value": "100 queries/day; existing customers only",
       "source_url": "https://developers.google.com/custom-search/v1/overview",
       "comment": "Custom Search JSON API is closed to new customers; existing customers must migrate by January 1, 2027."
+    },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://developers.google.com/custom-search/v1/reference/rest/v1/cse/list",
+      "comment": "No provider-published p50 Web Search API latency was found."
     },
     "notes": ""
   },
@@ -970,6 +1015,11 @@
       "source_url": "https://serpapi.com/pricing",
       "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
     },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://serpapi.com/search-api",
+      "comment": "No provider-published p50 Web Search API latency was found."
+    },
     "notes": "SerpApi proxy to Google (`engine=google`). Native SDK package: google-search-results."
   },
   {
@@ -1067,6 +1117,11 @@
       "source_url": "https://api.jina.ai/docs",
       "comment": "Free Search Foundation tier also limits concurrency to five requests."
     },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://jina.ai/reader/",
+      "comment": "No provider-published p50 Web Search API latency was found."
+    },
     "notes": ""
   },
   {
@@ -1163,6 +1218,11 @@
       "value": "No free Search API allowance documented",
       "source_url": "https://help.kagi.com/kagi/api/quick-start.html",
       "comment": "API billing is separate from Kagi's consumer trial and requires a payment method or prepaid API credit."
+    },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://help.kagi.com/kagi/api/search.html",
+      "comment": "No provider-published p50 Web Search API latency was found."
     },
     "notes": ""
   },
@@ -1263,6 +1323,11 @@
       "source_url": "https://keirolabs.cloud/",
       "comment": "Explorer is a hard-capped free plan with no overage and no batch endpoint."
     },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://keirolabs.cloud/",
+      "comment": "No provider-published p50 Web Search API latency was found."
+    },
     "notes": "KeiroLabs v2 search is wired in the anysearch SDK as REST-only. The provider expects `apiKey`, `query`, and `maxResults` in the JSON request body."
   },
   {
@@ -1362,7 +1427,114 @@
       "source_url": "https://docs.linkup.so/pages/documentation/platform/pricing",
       "comment": "At raw-search rates this covers about 4,000 standard or 400 deep calls; eligibility is provider-controlled."
     },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://docs.linkup.so/pages/documentation/endpoints/search/overview",
+      "comment": "No provider-published p50 Web Search API latency was found."
+    },
     "notes": "Native SDK package: linkup-sdk."
+  },
+  {
+    "name": "Octen",
+    "links": {
+      "docs": "https://docs.octen.ai/api-reference/search",
+      "github": "https://github.com/dhruv-anand-aintech/anysearch",
+      "website": "https://octen.ai",
+      "slug": "octen"
+    },
+    "env_keys": {
+      "value": "OCTEN_API_KEY",
+      "source_url": "https://docs.octen.ai/overview/quickstart",
+      "comment": "API keys and configuration variables documented by the provider."
+    },
+    "python_extra": {
+      "value": "octen",
+      "source_url": "https://pypi.org/project/octen/",
+      "comment": "Optional PyPI package: octen (install via anysearch-sdk extra `octen`)."
+    },
+    "requires_key": {
+      "support": "full",
+      "source_url": "https://docs.octen.ai/overview/quickstart",
+      "comment": "Valid API key required for every request."
+    },
+    "snippet": {
+      "support": "full",
+      "source_url": "https://docs.octen.ai/api-reference/search",
+      "comment": "Short description field returned with each result."
+    },
+    "domains": {
+      "support": "full",
+      "source_url": "https://docs.octen.ai/api-reference/search",
+      "comment": "`include_domains` / `exclude_domains` on POST /search."
+    },
+    "country": {
+      "support": "none",
+      "source_url": "https://docs.octen.ai/api-reference/search",
+      "comment": "Country (gl)"
+    },
+    "language": {
+      "support": "full",
+      "source_url": "https://docs.octen.ai/api-reference/search",
+      "comment": "`language` accepts ISO 639-1 language codes."
+    },
+    "date": {
+      "support": "full",
+      "source_url": "https://docs.octen.ai/api-reference/search",
+      "comment": "`time_basis=published` with ISO 8601 `start_time` / `end_time`."
+    },
+    "safe_search": {
+      "support": "full",
+      "source_url": "https://docs.octen.ai/api-reference/search",
+      "comment": "`safesearch` accepts `off` or `strict`; anysearch moderate maps to strict."
+    },
+    "answer": {
+      "support": "none",
+      "source_url": "https://docs.octen.ai/api-reference/search",
+      "comment": "AI answer"
+    },
+    "content": {
+      "support": "full",
+      "source_url": "https://docs.octen.ai/api-reference/search",
+      "comment": "`full_content.enable=true` returns page content."
+    },
+    "summary": {
+      "support": "none",
+      "source_url": "https://docs.octen.ai/api-reference/search",
+      "comment": "AI per-result summary"
+    },
+    "highlights": {
+      "support": "full",
+      "source_url": "https://docs.octen.ai/api-reference/search",
+      "comment": "`highlight.enable=true` returns a query-relevant excerpt."
+    },
+    "news": {
+      "support": "full",
+      "source_url": "https://docs.octen.ai/api-reference/search",
+      "comment": "`topic=news` selects news-focused results."
+    },
+    "mode": {
+      "values": [
+        "balanced"
+      ],
+      "source_url": "https://docs.octen.ai/api-reference/search",
+      "comment": "POST `/search` exposes one Web Search tier. Octen's separate Broad Search and Deep Research endpoints are not mapped to the unified `mode` parameter."
+    },
+    "pricing_per_1k": {
+      "value": "balanced/search: $1",
+      "source_url": "https://docs.octen.ai/overview/pricing",
+      "comment": "Current promotional Web Search price per 1,000 API calls; full content is billed separately by tokens."
+    },
+    "free_tier_limits": {
+      "value": "$5 initial credit (~5,000 searches); 10 QPS free plan",
+      "source_url": "https://docs.octen.ai/overview/pricing",
+      "comment": "The $5 balance is granted after adding a payment method; the free plan's 10 QPS is a throughput limit, not a recurring call allowance."
+    },
+    "p50_latency": {
+      "value": "62 ms (provider-reported)",
+      "source_url": "https://octen.ai/blog/1",
+      "comment": "Octen's March 23, 2026 launch post reports 62 ms p50. A later public screenshot shows the same figure, but no independent head-to-head API rerun was found."
+    },
+    "notes": "Native SDK package: octen. Web Search (`POST /search`) is wired in both anysearch SDKs. The published 62 ms p50 is a provider claim, not an independently reproduced benchmark."
   },
   {
     "name": "Parallel",
@@ -1460,6 +1632,11 @@
       "value": "1,000 requests/month; up to $80 signup + $5/month",
       "source_url": "https://parallel.ai/pricing",
       "comment": "Parallel publishes a monthly free request allowance plus promotional signup and recurring credits."
+    },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://docs.parallel.ai/search/modes",
+      "comment": "No provider-published p50 Web Search API latency was found."
     },
     "notes": "Native SDK package: parallel-web. Search API is in the anysearch SDK; Task API (`POST /v1/tasks/runs`) is documented in the matrix but not wired in the SDK yet."
   },
@@ -1559,6 +1736,11 @@
       "source_url": "https://docs.perplexity.ai/docs/getting-started/api-groups",
       "comment": "Tier 0 is a rate-limit tier, not a published free-credit allowance; API usage draws from prepaid credits."
     },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://docs.perplexity.ai/api-reference/search-post",
+      "comment": "No provider-published p50 Web Search API latency was found."
+    },
     "notes": "Native SDK package: perplexityai. Search API (`POST /search`) is in the anysearch SDK; Sonar (`POST /chat/completions`) is documented in the matrix but not wired in the SDK yet."
   },
   {
@@ -1655,6 +1837,11 @@
       "value": "No software quota when self-hosted; instance limits apply",
       "source_url": "https://docs.searxng.org/dev/search_api.html",
       "comment": "SearXNG has no vendor billing tier; capacity and upstream-engine limits depend on the deployment."
+    },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://docs.searxng.org/dev/search_api.html",
+      "comment": "No provider-published p50 Web Search API latency was found."
     },
     "notes": "No API key required (keyless fallback)."
   },
@@ -1753,6 +1940,11 @@
       "source_url": "https://www.searchapi.io/pricing",
       "comment": "Complimentary requests are for newly registered accounts and do not renew monthly."
     },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://www.searchapi.io/docs/google",
+      "comment": "No provider-published p50 Web Search API latency was found."
+    },
     "notes": ""
   },
   {
@@ -1849,6 +2041,11 @@
       "value": "2,500 one-time queries; no card",
       "source_url": "https://serper.dev/",
       "comment": "Complimentary signup queries do not renew monthly."
+    },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://serper.dev/docs",
+      "comment": "No provider-published p50 Web Search API latency was found."
     },
     "notes": ""
   },
@@ -1949,6 +2146,11 @@
       "source_url": "https://help.tavily.com/articles/8816424538-pricing",
       "comment": "Researcher plan includes 1,000 credits monthly; basic search costs one and advanced costs two credits."
     },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://docs.tavily.com/documentation/api-reference/endpoint/search",
+      "comment": "No provider-published p50 Web Search API latency was found."
+    },
     "notes": "Native SDK package: tavily-python. Search API is in the anysearch SDK; Research API (`POST /research`) is documented in the matrix (use `tavily-python` `research()` / `get_research()`)."
   },
   {
@@ -2046,6 +2248,11 @@
       "source_url": "https://serpapi.com/pricing",
       "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
     },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://serpapi.com/yahoo-search-api",
+      "comment": "No provider-published p50 Web Search API latency was found."
+    },
     "notes": "SerpApi proxy to Yahoo (`engine=yahoo`). Native SDK package: google-search-results."
   },
   {
@@ -2142,6 +2349,11 @@
       "value": "250 searches/month; 50/hour",
       "source_url": "https://serpapi.com/pricing",
       "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
+    },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://serpapi.com/yandex-search-api",
+      "comment": "No provider-published p50 Web Search API latency was found."
     },
     "notes": "SerpApi proxy to Yandex (`engine=yandex`). Native SDK package: google-search-results."
   },
@@ -2241,6 +2453,11 @@
       "value": "$100 signup (~20,000 searches); keyless MCP: 100/day",
       "source_url": "https://you.com/docs/welcome",
       "comment": "Signup credit covers roughly 20,000 base Search calls; the no-signup MCP profile has a separate daily limit."
+    },
+    "p50_latency": {
+      "value": "Not publicly documented",
+      "source_url": "https://you.com/docs/search/overview",
+      "comment": "No provider-published p50 Web Search API latency was found."
     },
     "notes": "Search API (`POST /v1/search`) is in the anysearch SDK; Research API (`POST /v1/research`) is documented in the matrix but not wired in the SDK yet."
   }

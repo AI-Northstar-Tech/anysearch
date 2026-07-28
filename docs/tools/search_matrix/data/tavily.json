@@ -95,5 +95,10 @@
     "source_url": "https://help.tavily.com/articles/8816424538-pricing",
     "comment": "Researcher plan includes 1,000 credits monthly; basic search costs one and advanced costs two credits."
   },
+  "p50_latency": {
+    "value": "Not publicly documented",
+    "source_url": "https://docs.tavily.com/documentation/api-reference/endpoint/search",
+    "comment": "No provider-published p50 Web Search API latency was found."
+  },
   "notes": "Native SDK package: tavily-python. Search API is in the anysearch SDK; Research API (`POST /research`) is documented in the matrix (use `tavily-python` `research()` / `get_research()`)."
 }

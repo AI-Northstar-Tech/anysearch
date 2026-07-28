@@ -1,0 +1,102 @@
+{
+  "name": "Octen",
+  "links": {
+    "docs": "https://docs.octen.ai/api-reference/search",
+    "github": "https://github.com/dhruv-anand-aintech/anysearch",
+    "website": "https://octen.ai",
+    "slug": "octen"
+  },
+  "env_keys": {
+    "value": "OCTEN_API_KEY",
+    "source_url": "https://docs.octen.ai/overview/quickstart",
+    "comment": "API keys and configuration variables documented by the provider."
+  },
+  "python_extra": {
+    "value": "octen",
+    "source_url": "https://pypi.org/project/octen/",
+    "comment": "Optional PyPI package: octen (install via anysearch-sdk extra `octen`)."
+  },
+  "requires_key": {
+    "support": "full",
+    "source_url": "https://docs.octen.ai/overview/quickstart",
+    "comment": "Valid API key required for every request."
+  },
+  "snippet": {
+    "support": "full",
+    "source_url": "https://docs.octen.ai/api-reference/search",
+    "comment": "Short description field returned with each result."
+  },
+  "domains": {
+    "support": "full",
+    "source_url": "https://docs.octen.ai/api-reference/search",
+    "comment": "`include_domains` / `exclude_domains` on POST /search."
+  },
+  "country": {
+    "support": "none",
+    "source_url": "https://docs.octen.ai/api-reference/search",
+    "comment": "Country (gl)"
+  },
+  "language": {
+    "support": "full",
+    "source_url": "https://docs.octen.ai/api-reference/search",
+    "comment": "`language` accepts ISO 639-1 language codes."
+  },
+  "date": {
+    "support": "full",
+    "source_url": "https://docs.octen.ai/api-reference/search",
+    "comment": "`time_basis=published` with ISO 8601 `start_time` / `end_time`."
+  },
+  "safe_search": {
+    "support": "full",
+    "source_url": "https://docs.octen.ai/api-reference/search",
+    "comment": "`safesearch` accepts `off` or `strict`; anysearch moderate maps to strict."
+  },
+  "answer": {
+    "support": "none",
+    "source_url": "https://docs.octen.ai/api-reference/search",
+    "comment": "AI answer"
+  },
+  "content": {
+    "support": "full",
+    "source_url": "https://docs.octen.ai/api-reference/search",
+    "comment": "`full_content.enable=true` returns page content."
+  },
+  "summary": {
+    "support": "none",
+    "source_url": "https://docs.octen.ai/api-reference/search",
+    "comment": "AI per-result summary"
+  },
+  "highlights": {
+    "support": "full",
+    "source_url": "https://docs.octen.ai/api-reference/search",
+    "comment": "`highlight.enable=true` returns a query-relevant excerpt."
+  },
+  "news": {
+    "support": "full",
+    "source_url": "https://docs.octen.ai/api-reference/search",
+    "comment": "`topic=news` selects news-focused results."
+  },
+  "mode": {
+    "values": [
+      "balanced"
+    ],
+    "source_url": "https://docs.octen.ai/api-reference/search",
+    "comment": "POST `/search` exposes one Web Search tier. Octen's separate Broad Search and Deep Research endpoints are not mapped to the unified `mode` parameter."
+  },
+  "pricing_per_1k": {
+    "value": "balanced/search: $1",
+    "source_url": "https://docs.octen.ai/overview/pricing",
+    "comment": "Current promotional Web Search price per 1,000 API calls; full content is billed separately by tokens."
+  },
+  "free_tier_limits": {
+    "value": "$5 initial credit (~5,000 searches); 10 QPS free plan",
+    "source_url": "https://docs.octen.ai/overview/pricing",
+    "comment": "The $5 balance is granted after adding a payment method; the free plan's 10 QPS is a throughput limit, not a recurring call allowance."
+  },
+  "p50_latency": {
+    "value": "62 ms (provider-reported)",
+    "source_url": "https://octen.ai/blog/1",
+    "comment": "Octen's March 23, 2026 launch post reports 62 ms p50. A later public screenshot shows the same figure, but no independent head-to-head API rerun was found."
+  },
+  "notes": "Native SDK package: octen. Web Search (`POST /search`) is wired in both anysearch SDKs. The published 62 ms p50 is a provider claim, not an independently reproduced benchmark."
+}

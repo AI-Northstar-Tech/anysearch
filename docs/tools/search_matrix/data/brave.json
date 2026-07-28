@@ -94,5 +94,10 @@
     "source_url": "https://brave.com/search/api/",
     "comment": "Credits are applied automatically each month to Search or Answers usage."
   },
+  "p50_latency": {
+    "value": "Not publicly documented",
+    "source_url": "https://api-dashboard.search.brave.com/app/documentation/web-search/get-started",
+    "comment": "No provider-published p50 Web Search API latency was found."
+  },
   "notes": "Web/news Search API is in the anysearch SDK; Answers API (`/res/v1/chat/completions`) is documented in the matrix but not wired in the SDK yet."
 }

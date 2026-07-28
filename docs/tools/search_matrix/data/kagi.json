@@ -93,5 +93,10 @@
     "source_url": "https://help.kagi.com/kagi/api/quick-start.html",
     "comment": "API billing is separate from Kagi's consumer trial and requires a payment method or prepaid API credit."
   },
+  "p50_latency": {
+    "value": "Not publicly documented",
+    "source_url": "https://help.kagi.com/kagi/api/search.html",
+    "comment": "No provider-published p50 Web Search API latency was found."
+  },
   "notes": ""
 }

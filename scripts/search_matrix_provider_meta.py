@@ -7,6 +7,10 @@ from __future__ import annotations
 
 # Primary docs + website per slug (overrides generator defaults where set).
 LINKS: dict[str, dict[str, str]] = {
+    "octen": {
+        "docs": "https://docs.octen.ai/api-reference/search",
+        "website": "https://octen.ai",
+    },
     "exa": {"docs": "https://exa.ai/docs/reference/search", "website": "https://exa.ai"},
     "parallel": {
         "docs": "https://docs.parallel.ai/search/modes",
@@ -71,6 +75,7 @@ LINKS: dict[str, dict[str, str]] = {
 
 # PyPI or provider install docs for optional native SDK extras (never anysearch repo).
 EXTRA_SOURCES: dict[str, str] = {
+    "octen": "https://pypi.org/project/octen/",
     "exa": "https://pypi.org/project/exa-py/",
     "parallel": "https://pypi.org/project/parallel-web/",
     "tavily": "https://pypi.org/project/tavily-python/",
@@ -85,6 +90,7 @@ EXTRA_SOURCES: dict[str, str] = {
 
 # Env var documentation (authentication / configuration).
 ENV_SOURCES: dict[str, str] = {
+    "octen": "https://docs.octen.ai/overview/quickstart",
     "exa": "https://exa.ai/docs/reference/quickstart",
     "parallel": "https://docs.parallel.ai/getting-started/overview",
     "tavily": "https://docs.tavily.com/documentation/api-reference/endpoint/search",
@@ -106,6 +112,14 @@ ENV_SOURCES: dict[str, str] = {
 }
 
 MODE_META: dict[str, dict] = {
+    "octen": {
+        "values": ["balanced"],
+        "source": "https://docs.octen.ai/api-reference/search",
+        "comment": (
+            "POST `/search` exposes one Web Search tier. Octen's separate Broad Search and "
+            "Deep Research endpoints are not mapped to the unified `mode` parameter."
+        ),
+    },
     "exa": {
         "values": ["fast", "balanced", "deep"],
         "source": "https://exa.ai/docs/reference/search-api-guide",
@@ -269,6 +283,11 @@ MODE_META: dict[str, dict] = {
 }
 
 PRICING_META: dict[str, dict[str, str]] = {
+    "octen": {
+        "value": "balanced/search: $1",
+        "source_url": "https://docs.octen.ai/overview/pricing",
+        "comment": "Current promotional Web Search price per 1,000 API calls; full content is billed separately by tokens.",
+    },
     "exa": {
         "value": "fast/balanced: $7; deep: $12; deep reasoning: $15",
         "source_url": "https://exa.ai/pricing",
@@ -362,6 +381,11 @@ PRICING_META: dict[str, dict[str, str]] = {
 }
 
 FREE_TIER_META: dict[str, dict[str, str]] = {
+    "octen": {
+        "value": "$5 initial credit (~5,000 searches); 10 QPS free plan",
+        "source_url": "https://docs.octen.ai/overview/pricing",
+        "comment": "The $5 balance is granted after adding a payment method; the free plan's 10 QPS is a throughput limit, not a recurring call allowance.",
+    },
     "exa": {
         "value": "$10/month (~1,428 base searches) + $20 signup (~2,857)",
         "source_url": "https://exa.ai/pricing",
@@ -454,6 +478,17 @@ FREE_TIER_META: dict[str, dict[str, str]] = {
     },
 }
 
+P50_LATENCY_META: dict[str, dict[str, str]] = {
+    "octen": {
+        "value": "62 ms (provider-reported)",
+        "source_url": "https://octen.ai/blog/1",
+        "comment": (
+            "Octen's March 23, 2026 launch post reports 62 ms p50. A later public screenshot "
+            "shows the same figure, but no independent head-to-head API rerun was found."
+        ),
+    },
+}
+
 # Per-feature support overrides (when code supports more/less than capabilities frozenset).
 SUPPORT_OVERRIDE: dict[str, dict[str, str]] = {
     "google_pse": {
@@ -489,6 +524,10 @@ SUPPORT_OVERRIDE: dict[str, dict[str, str]] = {
 
 # Extra matrix footnotes (appended to generated provider notes).
 MATRIX_NOTES: dict[str, str] = {
+    "octen": (
+        "Web Search (`POST /search`) is wired in both anysearch SDKs. The published 62 ms p50 "
+        "is a provider claim, not an independently reproduced benchmark."
+    ),
     "perplexity": (
         "Search API (`POST /search`) is in the anysearch SDK; Sonar (`POST /chat/completions`) "
         "is documented in the matrix but not wired in the SDK yet."
@@ -522,6 +561,36 @@ MATRIX_NOTES: dict[str, str] = {
 # Per-feature comments and doc anchors (slug → feature key → {source, comment}).
 # Omitted keys fall back to generic labels from the generator.
 FEATURE_META: dict[str, dict[str, dict[str, str]]] = {
+    "octen": {
+        "domains": {
+            "source": "https://docs.octen.ai/api-reference/search",
+            "comment": "`include_domains` / `exclude_domains` on POST /search.",
+        },
+        "language": {
+            "source": "https://docs.octen.ai/api-reference/search",
+            "comment": "`language` accepts ISO 639-1 language codes.",
+        },
+        "date": {
+            "source": "https://docs.octen.ai/api-reference/search",
+            "comment": "`time_basis=published` with ISO 8601 `start_time` / `end_time`.",
+        },
+        "safe_search": {
+            "source": "https://docs.octen.ai/api-reference/search",
+            "comment": "`safesearch` accepts `off` or `strict`; anysearch moderate maps to strict.",
+        },
+        "content": {
+            "source": "https://docs.octen.ai/api-reference/search",
+            "comment": "`full_content.enable=true` returns page content.",
+        },
+        "highlights": {
+            "source": "https://docs.octen.ai/api-reference/search",
+            "comment": "`highlight.enable=true` returns a query-relevant excerpt.",
+        },
+        "news": {
+            "source": "https://docs.octen.ai/api-reference/search",
+            "comment": "`topic=news` selects news-focused results.",
+        },
+    },
     "exa": {
         "domains": {
             "source": "https://exa.ai/docs/reference/search",

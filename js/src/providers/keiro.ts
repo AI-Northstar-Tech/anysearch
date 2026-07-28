@@ -33,6 +33,7 @@ function endpointFor(req: SearchRequest): string {
 
 export const keiro: ProviderSpec = {
   name: "keiro",
+  aliases: ["keirolabs"],
   envKeys: ["KEIRO_API_KEY"],
   baseUrlEnv: ["KEIRO_BASE_URL"],
   defaultBaseUrl: "https://kierolabs.space",

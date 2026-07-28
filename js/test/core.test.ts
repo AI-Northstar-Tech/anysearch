@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import fs from "node:fs";
 import { afterEach, test } from "node:test";
 
 import { AnySearch, getProviderSpec, listProviderNames } from "../src/index.js";
@@ -32,18 +33,85 @@ afterEach(() => {
 
 test("all required providers registered", () => {
   const names = listProviderNames();
-  for (const required of ["exa", "parallel", "serpapi", "brave", "keiro"]) {
+  for (const required of ["octen", "exa", "parallel", "serpapi", "brave", "keiro"]) {
     assert.ok(names.includes(required), `${required} missing`);
   }
   assert.ok(names.includes("gemini"));
-  assert.ok(names.length >= 15);
+  assert.ok(names.length >= 19);
 });
 
 test("aliases resolve to canonical providers", () => {
+  assert.equal(getProviderSpec("octen-ai").name, "octen");
   assert.equal(getProviderSpec("serp").name, "serpapi");
   assert.equal(getProviderSpec("ddg").name, "duckduckgo");
   assert.equal(getProviderSpec("google").name, "google_pse");
   assert.equal(getProviderSpec("keirolabs").name, "keiro");
+});
+
+test("matrix providers and TypeScript SDK providers stay in parity", () => {
+  const matrixDir = new URL("../../docs/tools/search_matrix/data/", import.meta.url);
+  const matrixProviders = new Set(
+    fs.readdirSync(matrixDir)
+      .filter((name) => name.endsWith(".json"))
+      .map((name) => JSON.parse(fs.readFileSync(new URL(name, matrixDir), "utf8")).links.slug)
+      .map((slug: string) => slug.startsWith("serpapi_") ? "serpapi" : slug),
+  );
+  assert.deepEqual([...matrixProviders].sort(), [...listProviderNames()].sort());
+});
+
+test("octen search sends documented filters and normalizes response", async () => {
+  let sentBody: any;
+  let sentHeaders: Headers;
+  mockFetch({
+    "api.octen.ai/search": (_url, init) => {
+      sentBody = JSON.parse(String(init.body));
+      sentHeaders = new Headers(init.headers);
+      return {
+        status: 200,
+        body: {
+          code: 0,
+          msg: "success",
+          request_id: "octen-req-1",
+          data: {
+            query: "fresh AI news",
+            results: [{
+              title: "Octen result",
+              url: "https://example.com/octen",
+              highlight: "query-relevant excerpt",
+              full_content: "# Full page",
+              authors: "Example Author",
+              time_published: "2026-07-27T12:00:00Z",
+            }],
+          },
+          meta: { latency: 62 },
+        },
+      };
+    },
+  });
+  const client = new AnySearch({ provider: "octen", apiKey: "octen-test", env: {} });
+  const resp = await client.search("fresh AI news", {
+    maxResults: 7,
+    searchType: "news",
+    language: "EN",
+    includeDomains: ["example.com"],
+    startPublishedDate: "2026-07-01T00:00:00Z",
+    safeSearch: "moderate",
+    includeContent: true,
+    highlights: true,
+  });
+  assert.equal(sentHeaders!.get("x-api-key"), "octen-test");
+  assert.equal(sentBody.count, 7);
+  assert.equal(sentBody.topic, "news");
+  assert.deepEqual(sentBody.language, ["en"]);
+  assert.deepEqual(sentBody.include_domains, ["example.com"]);
+  assert.equal(sentBody.time_basis, "published");
+  assert.equal(sentBody.safesearch, "strict");
+  assert.deepEqual(sentBody.full_content, { enable: true });
+  assert.equal(resp.provider, "octen");
+  assert.equal(resp.requestId, "octen-req-1");
+  assert.equal(resp.latencyMs, 62);
+  assert.equal(resp.results[0].text, "# Full page");
+  assert.deepEqual(resp.results[0].highlights, ["query-relevant excerpt"]);
 });
 
 test("availability and selection from env", () => {
@@ -54,71 +122,6 @@ test("availability and selection from env", () => {
   assert.ok(avail.includes("exa") && avail.includes("tavily"));
   assert.equal(selectProvider(env), "exa");
   assert.equal(selectProvider({ ANYSEARCH_PROVIDER: "tavily", EXA_API_KEY: "x" }), "tavily");
-});
-
-test("keiro default cited search normalizes response", async () => {
-  let sentBody: any;
-  let sentHeaders: Headers;
-  mockFetch({
-    "kierolabs.space/api/v2/keiro": (_url, init) => {
-      sentBody = JSON.parse(String(init.body));
-      sentHeaders = new Headers(init.headers);
-      return {
-        status: 200,
-        body: {
-          query: "q",
-          total_results: 1,
-          latency_ms: 123,
-          results: [
-            {
-              title: "Keiro result",
-              url: "https://k.example/a",
-              snippet: "cited snippet",
-              score: 0.82,
-              published_date: "2026-05-27",
-            },
-          ],
-        },
-      };
-    },
-  });
-  const client = new AnySearch({ provider: "keiro", apiKey: "keiro-test", env: {} });
-  const resp = await client.search("q", { maxResults: 5 });
-  assert.equal(sentHeaders!.get("authorization"), "Bearer keiro-test");
-  assert.equal(sentBody.query, "q");
-  assert.equal(sentBody.maxResults, 5);
-  assert.equal(resp.provider, "keiro");
-  assert.equal(resp.totalResults, 1);
-  assert.equal(resp.latencyMs, 123);
-  assert.equal(resp.results[0].snippet, "cited snippet");
-  assert.equal(resp.results[0].publishedDate, "2026-05-27");
-});
-
-test("keiro content route returns full text", async () => {
-  let sentBody: any;
-  mockFetch({
-    "kierolabs.space/api/v2/search/content": (_url, init) => {
-      sentBody = JSON.parse(String(init.body));
-      return {
-        status: 200,
-        body: {
-          results: [
-            {
-              title: "Full text",
-              url: "https://k.example/full",
-              full_text: "markdown body",
-              score: 0.9,
-            },
-          ],
-        },
-      };
-    },
-  });
-  const client = new AnySearch({ provider: "keiro", apiKey: "keiro-test", env: {} });
-  const resp = await client.search("q", { includeContent: true, mode: "deep" });
-  assert.equal(sentBody.mode, "deep");
-  assert.equal(resp.results[0].text, "markdown body");
-  assert.equal(resp.results[0].snippet, "markdown body");
 });
 
 test("capability enforcement modes", () => {

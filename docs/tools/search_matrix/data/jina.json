@@ -93,5 +93,10 @@
     "source_url": "https://api.jina.ai/docs",
     "comment": "Free Search Foundation tier also limits concurrency to five requests."
   },
+  "p50_latency": {
+    "value": "Not publicly documented",
+    "source_url": "https://jina.ai/reader/",
+    "comment": "No provider-published p50 Web Search API latency was found."
+  },
   "notes": ""
 }

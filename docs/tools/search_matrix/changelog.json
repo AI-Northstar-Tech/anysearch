@@ -1,6 +1,105 @@
 {
-  "entry_count": 414,
+  "entry_count": 437,
   "entries": [
+    {
+      "date": "2026-07-28",
+      "commit": "",
+      "title": "Unreleased matrix update",
+      "items": [
+        {
+          "summary": "Brave: Published p50 latency updated to Not publicly documented",
+          "target": "cell-brave-p50-latency"
+        },
+        {
+          "summary": "DuckDuckGo: Published p50 latency updated to Not publicly documented",
+          "target": "cell-duckduckgo-p50-latency"
+        },
+        {
+          "summary": "Exa: Published p50 latency updated to Not publicly documented",
+          "target": "cell-exa-p50-latency"
+        },
+        {
+          "summary": "Firecrawl: Published p50 latency updated to Not publicly documented",
+          "target": "cell-firecrawl-p50-latency"
+        },
+        {
+          "summary": "Gemini: Published p50 latency updated to Not publicly documented",
+          "target": "cell-gemini-p50-latency"
+        },
+        {
+          "summary": "Google PSE: Published p50 latency updated to Not publicly documented",
+          "target": "cell-google-pse-p50-latency"
+        },
+        {
+          "summary": "Jina: Published p50 latency updated to Not publicly documented",
+          "target": "cell-jina-p50-latency"
+        },
+        {
+          "summary": "Kagi: Published p50 latency updated to Not publicly documented",
+          "target": "cell-kagi-p50-latency"
+        },
+        {
+          "summary": "Keiro: Published p50 latency updated to Not publicly documented",
+          "target": "cell-keiro-p50-latency"
+        },
+        {
+          "summary": "Linkup: Published p50 latency updated to Not publicly documented",
+          "target": "cell-linkup-p50-latency"
+        },
+        {
+          "summary": "Parallel: Published p50 latency updated to Not publicly documented",
+          "target": "cell-parallel-p50-latency"
+        },
+        {
+          "summary": "Perplexity: Published p50 latency updated to Not publicly documented",
+          "target": "cell-perplexity-p50-latency"
+        },
+        {
+          "summary": "Searchapi: Published p50 latency updated to Not publicly documented",
+          "target": "cell-searchapi-p50-latency"
+        },
+        {
+          "summary": "SearXNG: Published p50 latency updated to Not publicly documented",
+          "target": "cell-searxng-p50-latency"
+        },
+        {
+          "summary": "Baidu · SerpApi: Published p50 latency updated to Not publicly documented",
+          "target": "cell-serpapi-baidu-p50-latency"
+        },
+        {
+          "summary": "Bing · SerpApi: Published p50 latency updated to Not publicly documented",
+          "target": "cell-serpapi-bing-p50-latency"
+        },
+        {
+          "summary": "DuckDuckGo · SerpApi: Published p50 latency updated to Not publicly documented",
+          "target": "cell-serpapi-duckduckgo-p50-latency"
+        },
+        {
+          "summary": "Google · SerpApi: Published p50 latency updated to Not publicly documented",
+          "target": "cell-serpapi-google-p50-latency"
+        },
+        {
+          "summary": "Yahoo · SerpApi: Published p50 latency updated to Not publicly documented",
+          "target": "cell-serpapi-yahoo-p50-latency"
+        },
+        {
+          "summary": "Yandex · SerpApi: Published p50 latency updated to Not publicly documented",
+          "target": "cell-serpapi-yandex-p50-latency"
+        },
+        {
+          "summary": "Serper: Published p50 latency updated to Not publicly documented",
+          "target": "cell-serper-p50-latency"
+        },
+        {
+          "summary": "Tavily: Published p50 latency updated to Not publicly documented",
+          "target": "cell-tavily-p50-latency"
+        },
+        {
+          "summary": "You: Published p50 latency updated to Not publicly documented",
+          "target": "cell-you-p50-latency"
+        }
+      ]
+    },
     {
       "date": "2026-07-23",
       "commit": "f854fa5",

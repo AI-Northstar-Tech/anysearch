@@ -61,6 +61,7 @@ def _endpoint_for(req: SearchRequest) -> str:
 
 class KeiroProvider(BaseProvider):
     name = "keiro"
+    aliases = ("keirolabs",)
     env_keys = ("KEIRO_API_KEY",)
     base_url_env = ("KEIRO_BASE_URL",)
     default_base_url = "https://kierolabs.space"

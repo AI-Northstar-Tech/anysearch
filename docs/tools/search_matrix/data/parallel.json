@@ -95,5 +95,10 @@
     "source_url": "https://parallel.ai/pricing",
     "comment": "Parallel publishes a monthly free request allowance plus promotional signup and recurring credits."
   },
+  "p50_latency": {
+    "value": "Not publicly documented",
+    "source_url": "https://docs.parallel.ai/search/modes",
+    "comment": "No provider-published p50 Web Search API latency was found."
+  },
   "notes": "Native SDK package: parallel-web. Search API is in the anysearch SDK; Task API (`POST /v1/tasks/runs`) is documented in the matrix but not wired in the SDK yet."
 }

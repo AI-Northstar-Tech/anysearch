@@ -93,5 +93,10 @@
     "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
     "comment": "Free-tier Google Search grounding is shared across eligible Flash and Flash-Lite models; model availability varies."
   },
+  "p50_latency": {
+    "value": "Not publicly documented",
+    "source_url": "https://ai.google.dev/gemini-api/docs/google-search",
+    "comment": "No provider-published p50 Web Search API latency was found."
+  },
   "notes": "Native SDK package: google-genai."
 }

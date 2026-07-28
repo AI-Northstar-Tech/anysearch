@@ -3,8 +3,6 @@
 from __future__ import annotations
 
 import json
-import os
-
 from anysearch.mcp.migrate import scan_codebase
 from anysearch.mcp.server import Server
 

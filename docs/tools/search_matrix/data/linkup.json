@@ -95,5 +95,10 @@
     "source_url": "https://docs.linkup.so/pages/documentation/platform/pricing",
     "comment": "At raw-search rates this covers about 4,000 standard or 400 deep calls; eligibility is provider-controlled."
   },
+  "p50_latency": {
+    "value": "Not publicly documented",
+    "source_url": "https://docs.linkup.so/pages/documentation/endpoints/search/overview",
+    "comment": "No provider-published p50 Web Search API latency was found."
+  },
   "notes": "Native SDK package: linkup-sdk."
 }

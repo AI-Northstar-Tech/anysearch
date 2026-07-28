@@ -94,5 +94,10 @@
     "source_url": "https://docs.perplexity.ai/docs/getting-started/api-groups",
     "comment": "Tier 0 is a rate-limit tier, not a published free-credit allowance; API usage draws from prepaid credits."
   },
+  "p50_latency": {
+    "value": "Not publicly documented",
+    "source_url": "https://docs.perplexity.ai/api-reference/search-post",
+    "comment": "No provider-published p50 Web Search API latency was found."
+  },
   "notes": "Native SDK package: perplexityai. Search API (`POST /search`) is in the anysearch SDK; Sonar (`POST /chat/completions`) is documented in the matrix but not wired in the SDK yet."
 }

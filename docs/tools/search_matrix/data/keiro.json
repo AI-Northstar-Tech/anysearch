@@ -95,5 +95,10 @@
     "source_url": "https://keirolabs.cloud/",
     "comment": "Explorer is a hard-capped free plan with no overage and no batch endpoint."
   },
+  "p50_latency": {
+    "value": "Not publicly documented",
+    "source_url": "https://keirolabs.cloud/",
+    "comment": "No provider-published p50 Web Search API latency was found."
+  },
   "notes": "KeiroLabs v2 search is wired in the anysearch SDK as REST-only. The provider expects `apiKey`, `query`, and `maxResults` in the JSON request body."
 }
