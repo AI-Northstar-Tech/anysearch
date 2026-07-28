@@ -14,6 +14,7 @@ Legend: ✅ supported · — not supported (the param is ignored for that provid
 
 | Provider | domains | country | language | date | safe_search | mode | engine | answer | content | summary | highlights | news |
 | --- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| **octen** | ✅ | — | ✅ | ✅ | ✅ | — | — | — | ✅ | — | ✅ | ✅ |
 | **exa** | ✅ | ✅ | — | ✅ | ✅ | ✅ | — | — | ✅ | ✅ | ✅ | ✅ |
 | **parallel** | ✅ | ✅ | — | ✅ | — | ✅ | — | — | ✅ | — | ✅ | — |
 | **tavily** | ✅ | ✅ | — | ✅ | — | ✅ | — | ✅ | ✅ | — | — | ✅ |
@@ -72,6 +73,7 @@ synthesis/research APIs in one column when they share an API key (**Tavily**, **
 
 | Column | Matrix modes | Native API |
 | --- | --- | --- |
+| octen | balanced | `/search`; one Web Search tier |
 | exa | fast, balanced, deep | `/search` `type`: instant/fast, auto, deep/deep-lite/deep-reasoning |
 | tavily | fast, balanced, deep | Search `search_depth`; Research API `model`: mini/auto, pro |
 | parallel | fast, balanced, deep | Search `mode`: basic/advanced; Task API `processor`: Lite/Base, Core, Pro/Ultra |
@@ -104,6 +106,7 @@ the SDK still maps to Search `advanced` retrieval — matrix `deep` is the Resea
 
 | Provider | Credentials | Optional |
 | --- | --- | --- |
+| octen | `OCTEN_API_KEY` | extra `octen` → `octen` |
 | exa | `EXA_API_KEY` | extra `exa` → `exa-py` |
 | parallel | `PARALLEL_API_KEY` | extra `parallel` → `parallel-web` |
 | tavily | `TAVILY_API_KEY` | extra `tavily` → `tavily-python` |

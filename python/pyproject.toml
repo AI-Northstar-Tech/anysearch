@@ -33,6 +33,7 @@ dependencies = ["httpx>=0.24"]
 # so their extra is intentionally empty (the name still resolves for uniform
 # `pip install 'anysearch-sdk[name]'` selection).
 exa = ["exa-py>=1.0"]
+octen = ["octen>=0.7.5"]
 parallel = ["parallel-web>=0.4"]
 tavily = ["tavily-python>=0.5"]
 perplexity = ["perplexityai>=0.4"]
@@ -54,6 +55,7 @@ proxy = ["fastapi>=0.100", "uvicorn[standard]>=0.23"]
 
 # --- Aggregate extras ----------------------------------------------------
 all = [
+    "octen>=0.7.5",
     "exa-py>=1.0",
     "parallel-web>=0.4",
     "tavily-python>=0.5",

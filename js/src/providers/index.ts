@@ -12,6 +12,7 @@ import { jina } from "./jina.js";
 import { kagi } from "./kagi.js";
 import { keiro } from "./keiro.js";
 import { linkup } from "./linkup.js";
+import { octen } from "./octen.js";
 import { parallel } from "./parallel.js";
 import { perplexity } from "./perplexity.js";
 import { searchapi } from "./searchapi.js";
@@ -23,6 +24,7 @@ import { you } from "./you.js";
 
 // Auto-selection order; keyless DuckDuckGo fallback last so it works out of the box.
 export const PROVIDER_SPECS: ProviderSpec[] = [
+  octen,
   exa,
   parallel,
   tavily,

@@ -3,8 +3,8 @@
 **One interface for every web search API.** `anysearch` is an adapter layer for search
 providers — inspired by [LiteLLM](https://github.com/BerriAI/litellm) (one interface for
 every LLM) and [vector-io](https://github.com/AI-Northstar-Tech/vector-io) (one interface
-for every vector DB). Call Exa, Parallel, Brave, Tavily, Keiro, SerpAPI, Perplexity, Linkup,
-Firecrawl, and 8 more through a **single function**, with **common parameters** and a
+for every vector DB). Call Octen, Exa, Parallel, Brave, Tavily, Keiro, SerpAPI, Perplexity,
+Linkup, Firecrawl, and 9 more through a **single function**, with **common parameters** and a
 **common response shape**, in **Python and JavaScript/TypeScript** — plus a **stdio MCP
 server** and optional **FastAPI proxy** that adapt to whatever API keys you have set.
 
@@ -38,10 +38,11 @@ glue code each time. `anysearch` normalizes all of it:
 - **One response shape**: `title, url, snippet, text, summary, highlights, score,
   published_date, author, source, raw` + a top-level `answer`.
 
-## Providers (17)
+## Providers (19)
 
 | Provider | Name / aliases | Env var(s) | Highlights of support |
 | --- | --- | --- | --- |
+| [Octen](https://octen.ai) | `octen`, `octen_ai` | `OCTEN_API_KEY` | domains, language, dates, safe search, content, highlights, news |
 | [Exa](https://exa.ai) | `exa` | `EXA_API_KEY` | content, summary, highlights, domains, dates, news |
 | [Parallel](https://parallel.ai) | `parallel` | `PARALLEL_API_KEY` | content, highlights, domains, mode |
 | [Tavily](https://tavily.com) | `tavily` | `TAVILY_API_KEY` | answer, content, domains, mode, news |
@@ -184,12 +185,12 @@ Example client config (Cursor / Claude Desktop style):
 - **`list_providers`** — every provider, its capabilities, and whether it's configured.
 - **`check_providers`** — runs a tiny live query to report which providers actually work.
 - **`migrate_codebase`** — scans a repo for direct search-API usage (SDK imports, client
-  constructors, REST endpoints for all 17 providers) and returns precise call sites with
+  constructors, REST endpoints for the supported providers) and returns precise call sites with
   suggested unified `anysearch` replacements, so an agent can mechanically migrate it.
 
 ## Provider capability matrix
 
-Interactive comparison of all 17 providers (unified params + response fields), same
+Interactive comparison of all provider columns (unified params + response fields), same
 interaction model as [compare.ainorthstar.tech](https://compare.ainorthstar.tech/):
 
 **https://compare-anysearch.ainorthstar.tech**

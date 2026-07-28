@@ -1,7 +1,7 @@
 # anysearch (Python)
 
 **One interface for every web search API.** `anysearch` is an adapter layer — think
-LiteLLM, but for search providers — that lets you call Exa, Parallel, Brave, Tavily,
+LiteLLM, but for search providers — that lets you call Octen, Exa, Parallel, Brave, Tavily,
 SerpAPI, Perplexity, Linkup, Firecrawl, and more through a single function with a
 common set of parameters and a common response shape. It also ships a dependency-free
 **stdio MCP server** and optional **FastAPI proxy server** that adapt to whatever API
@@ -52,6 +52,7 @@ the selection syntax is uniform.
 
 | Provider | Name / aliases | Env var(s) | Extra (native SDK) |
 | --- | --- | --- | --- |
+| Octen | `octen`, `octen_ai` | `OCTEN_API_KEY` | `octen` |
 | Exa | `exa` | `EXA_API_KEY` | `exa-py` |
 | Parallel | `parallel` | `PARALLEL_API_KEY` | `parallel-web` |
 | Tavily | `tavily` | `TAVILY_API_KEY` | `tavily-python` |
@@ -59,6 +60,7 @@ the selection syntax is uniform.
 | Keiro | `keiro` | `KEIRO_API_KEY` | — |
 | Linkup | `linkup` | `LINKUP_API_KEY` | `linkup-sdk` |
 | Perplexity | `perplexity`, `pplx` | `PERPLEXITY_API_KEY` | `perplexityai` |
+| Gemini | `gemini`, `google_gemini` | `GEMINI_API_KEY` | `google-genai` |
 | Serper | `serper` | `SERPER_API_KEY` | — |
 | SerpApi | `serpapi`, `serp` | `SERPAPI_API_KEY` | `google-search-results` (engine: bing, baidu, yandex, …) |
 | SearchApi | `searchapi` | `SEARCHAPI_API_KEY` | — |

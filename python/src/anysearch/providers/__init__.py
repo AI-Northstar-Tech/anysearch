@@ -15,6 +15,7 @@ from .jina import JinaProvider
 from .kagi import KagiProvider
 from .keiro import KeiroProvider
 from .linkup import LinkupProvider
+from .octen import OctenProvider
 from .parallel import ParallelProvider
 from .perplexity import PerplexityProvider
 from .searchapi import SearchApiProvider
@@ -25,6 +26,7 @@ from .tavily import TavilyProvider
 from .you import YouProvider
 
 PROVIDER_CLASSES: List[Type[BaseProvider]] = [
+    OctenProvider,
     ExaProvider,
     ParallelProvider,
     TavilyProvider,
