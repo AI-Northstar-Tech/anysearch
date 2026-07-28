@@ -1,10 +1,10 @@
 {
-  "entry_count": 437,
+  "entry_count": 438,
   "entries": [
     {
       "date": "2026-07-28",
-      "commit": "",
-      "title": "Unreleased matrix update",
+      "commit": "3910580",
+      "title": "feat(matrix): add Octen latency and SDK parity guard",
       "items": [
         {
           "summary": "Brave: Published p50 latency updated to Not publicly documented",
@@ -45,6 +45,10 @@
         {
           "summary": "Linkup: Published p50 latency updated to Not publicly documented",
           "target": "cell-linkup-p50-latency"
+        },
+        {
+          "summary": "Octen added to the comparison",
+          "target": "cell-octen-requires-key"
         },
         {
           "summary": "Parallel: Published p50 latency updated to Not publicly documented",
