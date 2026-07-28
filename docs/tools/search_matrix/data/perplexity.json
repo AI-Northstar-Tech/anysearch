@@ -95,9 +95,13 @@
     "comment": "Tier 0 is a rate-limit tier, not a published free-credit allowance; API usage draws from prepaid credits."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
-    "source_url": "https://docs.perplexity.ai/api-reference/search-post",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "value": "Search: 0.35s p50 / 0.47s p95 independent; 0.358s p50 / 0.763s p95 provider; Sonar/deep: not published",
+    "source_url": "https://proxyway.com/research/search-apis-2026-report",
+    "comment": "Independent figures use three 2,000-query runs from the US East Coast. Perplexity's reproducible 2025 vendor benchmark ran from AWS us-east-1.",
+    "links": {
+      "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+      "Provider benchmark": "https://research.perplexity.ai/articles/architecting-and-evaluating-an-ai-first-search-api"
+    }
   },
   "notes": "Native SDK package: perplexityai. Search API (`POST /search`) is in the anysearch SDK; Sonar (`POST /chat/completions`) is documented in the matrix but not wired in the SDK yet."
 }

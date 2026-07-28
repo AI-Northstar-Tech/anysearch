@@ -94,9 +94,9 @@
     "comment": "DDGS is a keyless metasearch client rather than a contracted DuckDuckGo API service."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
+    "value": "No contracted API latency distribution for the DDGS fallback",
     "source_url": "https://pypi.org/project/ddgs/",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "comment": "anysearch uses the keyless DDGS metasearch client rather than an official DuckDuckGo Search API with a published latency SLA."
   },
   "notes": "No API key required (keyless fallback). Native SDK package: ddgs."
 }

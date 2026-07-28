@@ -94,9 +94,13 @@
     "comment": "The $5 balance is granted after adding a payment method; the free plan's 10 QPS is a throughput limit, not a recurring call allowance."
   },
   "p50_latency": {
-    "value": "62 ms (provider-reported)",
+    "value": "Web Search: 62 ms p50; 68 ms p90",
     "source_url": "https://octen.ai/blog/1",
-    "comment": "Octen's March 23, 2026 launch post reports 62 ms p50. A later public screenshot shows the same figure, but no independent head-to-head API rerun was found."
+    "comment": "Provider-reported March 2026 result. Octen publishes 62 ms p50; the 68 ms p90 comes from an archived screenshot/OCR record. No independent API rerun was found.",
+    "links": {
+      "Provider claim": "https://octen.ai/blog/1",
+      "Screenshot record": "https://krabarena.com/claims/octen-s-screenshot-reports-a-62-ms-p50-web-search-win"
+    }
   },
   "notes": "Native SDK package: octen. Web Search (`POST /search`) is wired in both anysearch SDKs. The published 62 ms p50 is a provider claim, not an independently reproduced benchmark."
 }

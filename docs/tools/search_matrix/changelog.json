@@ -1,49 +1,164 @@
 {
-  "entry_count": 438,
+  "entry_count": 465,
   "entries": [
+    {
+      "date": "2026-07-28",
+      "commit": "",
+      "title": "Unreleased matrix update",
+      "items": [
+        {
+          "summary": "Brave: Latency by tier updated to Web: 0.77s p50 / 1.19s p95; Answers/research: not published",
+          "target": "cell-brave-p50-latency"
+        },
+        {
+          "summary": "DuckDuckGo: Latency by tier updated to No contracted API latency distribution for the DDGS fallback",
+          "target": "cell-duckduckgo-p50-latency"
+        },
+        {
+          "summary": "Exa: Latency by tier updated to instant: 0.36s p50 / 0.52s p95; fast: 0.67s / 1.34s; auto: ~1.2s; deep:…",
+          "target": "cell-exa-p50-latency"
+        },
+        {
+          "summary": "Firecrawl: Latency by tier updated to Search: <2s avg cited workload; search + scrape: ~4–5s; 3.4s p95 overall",
+          "target": "cell-firecrawl-p50-latency"
+        },
+        {
+          "summary": "Gemini: Latency by tier updated to No published Google Search grounding latency distribution",
+          "target": "cell-gemini-p50-latency"
+        },
+        {
+          "summary": "Google PSE: Latency by tier updated to No published distribution; each response includes server searchTime",
+          "target": "cell-google-pse-p50-latency"
+        },
+        {
+          "summary": "Jina: Latency by tier updated to Search: 0.75s p50 / 1.32s p95 independent; 2.5s provider-reported avera…",
+          "target": "cell-jina-p50-latency"
+        },
+        {
+          "summary": "Kagi: Latency by tier updated to No published Search API latency distribution",
+          "target": "cell-kagi-p50-latency"
+        },
+        {
+          "summary": "Keiro: Full text evidence refreshed",
+          "target": "cell-keiro-content"
+        },
+        {
+          "summary": "Keiro: Mode evidence refreshed",
+          "target": "cell-keiro-mode"
+        },
+        {
+          "summary": "Keiro: Latency by tier updated to Flash: 0.312s p50 / 1.1s p99; indexed: 0.487s p50; balanced/deep: not p…",
+          "target": "cell-keiro-p50-latency"
+        },
+        {
+          "summary": "Keiro: Snippet evidence refreshed",
+          "target": "cell-keiro-snippet"
+        },
+        {
+          "summary": "Linkup: Latency by tier updated to fast: <1s; standard: 1–3s; deep: 5–30s; independent unspecified mode: 1…",
+          "target": "cell-linkup-p50-latency"
+        },
+        {
+          "summary": "Octen: Latency by tier updated to Web Search: 62 ms p50; 68 ms p90",
+          "target": "cell-octen-p50-latency"
+        },
+        {
+          "summary": "Parallel: Latency by tier updated to Search turbo: 0.216s p50; basic: 1.3s; advanced: 2.7s; Task: 10s–2h by…",
+          "target": "cell-parallel-p50-latency"
+        },
+        {
+          "summary": "Perplexity: Latency by tier updated to Search: 0.35s p50 / 0.47s p95 independent; 0.358s p50 / 0.763s p95 prov…",
+          "target": "cell-perplexity-p50-latency"
+        },
+        {
+          "summary": "Searchapi: Latency by tier updated to Light API: 1.07s p50 / 2.23s p95; standard API: not published",
+          "target": "cell-searchapi-p50-latency"
+        },
+        {
+          "summary": "SearXNG: Latency by tier updated to Deployment-dependent; no portable p50/p90/p95",
+          "target": "cell-searxng-p50-latency"
+        },
+        {
+          "summary": "Baidu · SerpApi: Latency by tier updated to Light API: 1.28s p50 independent; fastest Google API: 0.73s avg / 1.45s…",
+          "target": "cell-serpapi-baidu-p50-latency"
+        },
+        {
+          "summary": "Bing · SerpApi: Latency by tier updated to Light API: 1.28s p50 independent; fastest Google API: 0.73s avg / 1.45s…",
+          "target": "cell-serpapi-bing-p50-latency"
+        },
+        {
+          "summary": "DuckDuckGo · SerpApi: Latency by tier updated to Light API: 1.28s p50 independent; fastest Google API: 0.73s avg / 1.45s…",
+          "target": "cell-serpapi-duckduckgo-p50-latency"
+        },
+        {
+          "summary": "Google · SerpApi: Latency by tier updated to Light API: 1.28s p50 independent; fastest Google API: 0.73s avg / 1.45s…",
+          "target": "cell-serpapi-google-p50-latency"
+        },
+        {
+          "summary": "Yahoo · SerpApi: Latency by tier updated to Light API: 1.28s p50 independent; fastest Google API: 0.73s avg / 1.45s…",
+          "target": "cell-serpapi-yahoo-p50-latency"
+        },
+        {
+          "summary": "Yandex · SerpApi: Latency by tier updated to Light API: 1.28s p50 independent; fastest Google API: 0.73s avg / 1.45s…",
+          "target": "cell-serpapi-yandex-p50-latency"
+        },
+        {
+          "summary": "Serper: Latency by tier updated to Search: 0.69s p50 / 1.15s p95",
+          "target": "cell-serper-p50-latency"
+        },
+        {
+          "summary": "Tavily: Latency by tier updated to ultra-fast: 0.37s p50 / 0.46s p95; fast/basic/advanced/research: not pu…",
+          "target": "cell-tavily-p50-latency"
+        },
+        {
+          "summary": "You: Latency by tier updated to Search: 0.73s p50 / 1.22s p95 independent; 0.445s p50 provider; Researc…",
+          "target": "cell-you-p50-latency"
+        }
+      ]
+    },
     {
       "date": "2026-07-28",
       "commit": "3910580",
       "title": "feat(matrix): add Octen latency and SDK parity guard",
       "items": [
         {
-          "summary": "Brave: Published p50 latency updated to Not publicly documented",
+          "summary": "Brave: Latency by tier updated to Not publicly documented",
           "target": "cell-brave-p50-latency"
         },
         {
-          "summary": "DuckDuckGo: Published p50 latency updated to Not publicly documented",
+          "summary": "DuckDuckGo: Latency by tier updated to Not publicly documented",
           "target": "cell-duckduckgo-p50-latency"
         },
         {
-          "summary": "Exa: Published p50 latency updated to Not publicly documented",
+          "summary": "Exa: Latency by tier updated to Not publicly documented",
           "target": "cell-exa-p50-latency"
         },
         {
-          "summary": "Firecrawl: Published p50 latency updated to Not publicly documented",
+          "summary": "Firecrawl: Latency by tier updated to Not publicly documented",
           "target": "cell-firecrawl-p50-latency"
         },
         {
-          "summary": "Gemini: Published p50 latency updated to Not publicly documented",
+          "summary": "Gemini: Latency by tier updated to Not publicly documented",
           "target": "cell-gemini-p50-latency"
         },
         {
-          "summary": "Google PSE: Published p50 latency updated to Not publicly documented",
+          "summary": "Google PSE: Latency by tier updated to Not publicly documented",
           "target": "cell-google-pse-p50-latency"
         },
         {
-          "summary": "Jina: Published p50 latency updated to Not publicly documented",
+          "summary": "Jina: Latency by tier updated to Not publicly documented",
           "target": "cell-jina-p50-latency"
         },
         {
-          "summary": "Kagi: Published p50 latency updated to Not publicly documented",
+          "summary": "Kagi: Latency by tier updated to Not publicly documented",
           "target": "cell-kagi-p50-latency"
         },
         {
-          "summary": "Keiro: Published p50 latency updated to Not publicly documented",
+          "summary": "Keiro: Latency by tier updated to Not publicly documented",
           "target": "cell-keiro-p50-latency"
         },
         {
-          "summary": "Linkup: Published p50 latency updated to Not publicly documented",
+          "summary": "Linkup: Latency by tier updated to Not publicly documented",
           "target": "cell-linkup-p50-latency"
         },
         {
@@ -51,55 +166,55 @@
           "target": "cell-octen-requires-key"
         },
         {
-          "summary": "Parallel: Published p50 latency updated to Not publicly documented",
+          "summary": "Parallel: Latency by tier updated to Not publicly documented",
           "target": "cell-parallel-p50-latency"
         },
         {
-          "summary": "Perplexity: Published p50 latency updated to Not publicly documented",
+          "summary": "Perplexity: Latency by tier updated to Not publicly documented",
           "target": "cell-perplexity-p50-latency"
         },
         {
-          "summary": "Searchapi: Published p50 latency updated to Not publicly documented",
+          "summary": "Searchapi: Latency by tier updated to Not publicly documented",
           "target": "cell-searchapi-p50-latency"
         },
         {
-          "summary": "SearXNG: Published p50 latency updated to Not publicly documented",
+          "summary": "SearXNG: Latency by tier updated to Not publicly documented",
           "target": "cell-searxng-p50-latency"
         },
         {
-          "summary": "Baidu · SerpApi: Published p50 latency updated to Not publicly documented",
+          "summary": "Baidu · SerpApi: Latency by tier updated to Not publicly documented",
           "target": "cell-serpapi-baidu-p50-latency"
         },
         {
-          "summary": "Bing · SerpApi: Published p50 latency updated to Not publicly documented",
+          "summary": "Bing · SerpApi: Latency by tier updated to Not publicly documented",
           "target": "cell-serpapi-bing-p50-latency"
         },
         {
-          "summary": "DuckDuckGo · SerpApi: Published p50 latency updated to Not publicly documented",
+          "summary": "DuckDuckGo · SerpApi: Latency by tier updated to Not publicly documented",
           "target": "cell-serpapi-duckduckgo-p50-latency"
         },
         {
-          "summary": "Google · SerpApi: Published p50 latency updated to Not publicly documented",
+          "summary": "Google · SerpApi: Latency by tier updated to Not publicly documented",
           "target": "cell-serpapi-google-p50-latency"
         },
         {
-          "summary": "Yahoo · SerpApi: Published p50 latency updated to Not publicly documented",
+          "summary": "Yahoo · SerpApi: Latency by tier updated to Not publicly documented",
           "target": "cell-serpapi-yahoo-p50-latency"
         },
         {
-          "summary": "Yandex · SerpApi: Published p50 latency updated to Not publicly documented",
+          "summary": "Yandex · SerpApi: Latency by tier updated to Not publicly documented",
           "target": "cell-serpapi-yandex-p50-latency"
         },
         {
-          "summary": "Serper: Published p50 latency updated to Not publicly documented",
+          "summary": "Serper: Latency by tier updated to Not publicly documented",
           "target": "cell-serper-p50-latency"
         },
         {
-          "summary": "Tavily: Published p50 latency updated to Not publicly documented",
+          "summary": "Tavily: Latency by tier updated to Not publicly documented",
           "target": "cell-tavily-p50-latency"
         },
         {
-          "summary": "You: Published p50 latency updated to Not publicly documented",
+          "summary": "You: Latency by tier updated to Not publicly documented",
           "target": "cell-you-p50-latency"
         }
       ]

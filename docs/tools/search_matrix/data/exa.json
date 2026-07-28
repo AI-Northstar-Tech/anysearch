@@ -96,9 +96,13 @@
     "comment": "Calculated from $10 recurring and $20 signup credits at the published $7 per 1K base-search rate."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
-    "source_url": "https://exa.ai/docs/reference/search",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "value": "instant: 0.36s p50 / 0.52s p95; fast: 0.67s / 1.34s; auto: ~1.2s; deep: 4.3s avg",
+    "source_url": "https://proxyway.com/research/search-apis-2026-report",
+    "comment": "Instant and fast percentiles are independent: three runs of 2,000 queries from the US East Coast. Auto and deep are current provider-reported benchmark figures.",
+    "links": {
+      "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+      "Provider tiers": "https://exa.ai/products/search"
+    }
   },
   "notes": "Native SDK package: exa-py."
 }

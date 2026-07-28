@@ -94,9 +94,13 @@
     "comment": "Free plan applies across SerpApi engines; only successful uncached searches consume quota."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
-    "source_url": "https://serpapi.com/search-api",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "value": "Light API: 1.28s p50 independent; fastest Google API: 0.73s avg / 1.45s p99 vendor-run",
+    "source_url": "https://proxyway.com/research/search-apis-2026-report",
+    "comment": "Independent p50 is for SerpApi Light, not a specific engine. SerpApi's own 100-plus-query comparison reports average and p99 for its fastest Google API; anysearch engine-specific latency remains unreported.",
+    "links": {
+      "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+      "Provider benchmark": "https://serpapi.com/blog/who-has-the-fastest-google-search-api/"
+    }
   },
   "notes": "SerpApi proxy to Google (`engine=google`). Native SDK package: google-search-results."
 }

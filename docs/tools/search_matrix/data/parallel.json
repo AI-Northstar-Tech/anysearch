@@ -96,9 +96,14 @@
     "comment": "Parallel publishes a monthly free request allowance plus promotional signup and recurring credits."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
-    "source_url": "https://docs.parallel.ai/search/modes",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "value": "Search turbo: 0.216s p50; basic: 1.3s; advanced: 2.7s; Task: 10s\u20132h by processor",
+    "source_url": "https://parallel.ai/benchmarks",
+    "comment": "Turbo is Parallel's vendor-run July 2026 p50 from us-central. Basic and advanced are competitor-run figures published by Exa. Task API ranges are provider docs and vary from lite-fast (10\u201320s) through ultra8x (5m\u20132h).",
+    "links": {
+      "Turbo benchmark": "https://parallel.ai/benchmarks",
+      "Basic and advanced": "https://exa.ai/products/search",
+      "Task processors": "https://docs.parallel.ai/task-api/guides/choose-a-processor"
+    }
   },
   "notes": "Native SDK package: parallel-web. Search API is in the anysearch SDK; Task API (`POST /v1/tasks/runs`) is documented in the matrix but not wired in the SDK yet."
 }

@@ -94,9 +94,9 @@
     "comment": "Custom Search JSON API is closed to new customers; existing customers must migrate by January 1, 2027."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
-    "source_url": "https://developers.google.com/custom-search/v1/reference/rest/v1/cse/list",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "value": "No published distribution; each response includes server searchTime",
+    "source_url": "https://developers.google.com/custom-search/v1/reference/rest/v1/Search",
+    "comment": "Google exposes per-request server search time in searchInformation, but publishes no aggregate p50/p90/p95 latency for Custom Search JSON API."
   },
   "notes": ""
 }

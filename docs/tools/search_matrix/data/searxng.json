@@ -94,9 +94,9 @@
     "comment": "SearXNG has no vendor billing tier; capacity and upstream-engine limits depend on the deployment."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
-    "source_url": "https://docs.searxng.org/dev/search_api.html",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "value": "Deployment-dependent; no portable p50/p90/p95",
+    "source_url": "https://docs.searxng.org/admin/settings/settings_search/",
+    "comment": "Latency depends on the self-hosted instance, enabled upstream engines, and timeout configuration, so a provider-wide number would be misleading."
   },
   "notes": "No API key required (keyless fallback)."
 }

@@ -96,9 +96,13 @@
     "comment": "Researcher plan includes 1,000 credits monthly; basic search costs one and advanced costs two credits."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
-    "source_url": "https://docs.tavily.com/documentation/api-reference/endpoint/search",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "value": "ultra-fast: 0.37s p50 / 0.46s p95; fast/basic/advanced/research: not published",
+    "source_url": "https://proxyway.com/research/search-apis-2026-report",
+    "comment": "Ultra-fast is independently measured across three 2,000-query runs from the US East Coast. Tavily documents its other depth tiers but not percentile latency.",
+    "links": {
+      "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+      "Depth documentation": "https://docs.tavily.com/api-reference/endpoint/search"
+    }
   },
   "notes": "Native SDK package: tavily-python. Search API is in the anysearch SDK; Research API (`POST /research`) is documented in the matrix (use `tavily-python` `research()` / `get_research()`)."
 }

@@ -96,9 +96,13 @@
     "comment": "At raw-search rates this covers about 4,000 standard or 400 deep calls; eligibility is provider-controlled."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
+    "value": "fast: <1s; standard: 1\u20133s; deep: 5\u201330s; independent unspecified mode: 1.55s p50 / 2.36s p95",
     "source_url": "https://docs.linkup.so/pages/documentation/endpoints/search/overview",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "comment": "Tier ranges are provider documentation. The independent January 2026 benchmark predates Linkup fast's February beta and did not name the tested depth.",
+    "links": {
+      "Tier ranges": "https://docs.linkup.so/pages/documentation/endpoints/search/overview",
+      "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report"
+    }
   },
   "notes": "Native SDK package: linkup-sdk."
 }

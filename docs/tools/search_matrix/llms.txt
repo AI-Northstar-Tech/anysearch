@@ -13,7 +13,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: balanced: $25 starter; ~$3.75-$15 volume
 - Free tier limits: 250 searches/month; 50/hour
-- Published p50 latency: Not publicly documented
+- Latency by tier: Light API: 1.28s p50 independent; fastest Google API: 0.73s avg / 1.45s p99 vendor-run
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -31,7 +31,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: balanced: $25 starter; ~$3.75-$15 volume
 - Free tier limits: 250 searches/month; 50/hour
-- Published p50 latency: Not publicly documented
+- Latency by tier: Light API: 1.28s p50 independent; fastest Google API: 0.73s avg / 1.45s p99 vendor-run
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -49,7 +49,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced, deep
 - Pricing / 1K: balanced/search: $5; deep/answers: $4 + tokens
 - Free tier limits: $5 credits/month (~1,000 Search requests)
-- Published p50 latency: Not publicly documented
+- Latency by tier: Web: 0.77s p50 / 1.19s p95; Answers/research: not published
 - AI Answer: full
 - Full text: partial
 - Summary: none
@@ -67,7 +67,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: $0 API fee via keyless DDGS client; unofficial/fragile
 - Free tier limits: No fixed quota or API fee; upstream rate limits apply
-- Published p50 latency: Not publicly documented
+- Latency by tier: No contracted API latency distribution for the DDGS fallback
 - AI Answer: none
 - Full text: none
 - Summary: none
@@ -85,7 +85,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: balanced: $25 starter; ~$3.75-$15 volume
 - Free tier limits: 250 searches/month; 50/hour
-- Published p50 latency: Not publicly documented
+- Latency by tier: Light API: 1.28s p50 independent; fastest Google API: 0.73s avg / 1.45s p99 vendor-run
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -103,7 +103,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: fast, balanced, deep
 - Pricing / 1K: fast/balanced: $7; deep: $12; deep reasoning: $15
 - Free tier limits: $10/month (~1,428 base searches) + $20 signup (~2,857)
-- Published p50 latency: Not publicly documented
+- Latency by tier: instant: 0.36s p50 / 0.52s p95; fast: 0.67s / 1.34s; auto: ~1.2s; deep: 4.3s avg
 - AI Answer: none
 - Full text: full
 - Summary: full
@@ -121,7 +121,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: balanced/search: 2 credits per 10 results
 - Free tier limits: 1,000 credits/month (~500 searches at 10 results)
-- Published p50 latency: Not publicly documented
+- Latency by tier: Search: <2s avg cited workload; search + scrape: ~4–5s; 3.4s p95 overall
 - AI Answer: none
 - Full text: full
 - Summary: none
@@ -139,7 +139,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: balanced grounding: $35 + model tokens
 - Free tier limits: 500 grounded prompts/day on eligible Flash models
-- Published p50 latency: Not publicly documented
+- Latency by tier: No published Google Search grounding latency distribution
 - AI Answer: full
 - Full text: none
 - Summary: none
@@ -157,7 +157,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: balanced: $5
 - Free tier limits: 100 queries/day; existing customers only
-- Published p50 latency: Not publicly documented
+- Latency by tier: No published distribution; each response includes server searchTime
 - AI Answer: none
 - Full text: none
 - Summary: none
@@ -175,7 +175,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: balanced: $25 starter; ~$3.75-$15 volume
 - Free tier limits: 250 searches/month; 50/hour
-- Published p50 latency: Not publicly documented
+- Latency by tier: Light API: 1.28s p50 independent; fastest Google API: 0.73s avg / 1.45s p99 vendor-run
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -193,7 +193,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: token-based; no fixed per-query CPM
 - Free tier limits: 10M tokens for new users; 500 RPM / 1M TPM
-- Published p50 latency: Not publicly documented
+- Latency by tier: Search: 0.75s p50 / 1.32s p95 independent; 2.5s provider-reported average
 - AI Answer: none
 - Full text: full
 - Summary: none
@@ -211,7 +211,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: not publicly itemized per 1K for Search API
 - Free tier limits: No free Search API allowance documented
-- Published p50 latency: Not publicly documented
+- Latency by tier: No published Search API latency distribution
 - AI Answer: none
 - Full text: none
 - Summary: none
@@ -229,7 +229,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: fast, balanced, deep
 - Pricing / 1K: fast/balanced: ~$0.50; content: ~$1.50; batch: ~$0.50
 - Free tier limits: 500 searches/month; 30 req/min; no card
-- Published p50 latency: Not publicly documented
+- Latency by tier: Flash: 0.312s p50 / 1.1s p99; indexed: 0.487s p50; balanced/deep: not published
 - AI Answer: none
 - Full text: full
 - Summary: none
@@ -247,7 +247,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: fast, balanced, deep
 - Pricing / 1K: fast/standard: $5-$6; deep: $50-$55
 - Free tier limits: $20/month (~4,000 standard or 400 deep searches; eligible)
-- Published p50 latency: Not publicly documented
+- Latency by tier: fast: <1s; standard: 1–3s; deep: 5–30s; independent unspecified mode: 1.55s p50 / 2.36s p95
 - AI Answer: full
 - Full text: full
 - Summary: none
@@ -265,7 +265,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: balanced/search: $1
 - Free tier limits: $5 initial credit (~5,000 searches); 10 QPS free plan
-- Published p50 latency: 62 ms (provider-reported)
+- Latency by tier: Web Search: 62 ms p50; 68 ms p90
 - AI Answer: none
 - Full text: full
 - Summary: none
@@ -283,7 +283,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: fast, balanced, deep
 - Pricing / 1K: search: $1-$5; task: $5-$2,400
 - Free tier limits: 1,000 requests/month; up to $80 signup + $5/month
-- Published p50 latency: Not publicly documented
+- Latency by tier: Search turbo: 0.216s p50; basic: 1.3s; advanced: 2.7s; Task: 10s–2h by processor
 - AI Answer: full
 - Full text: full
 - Summary: none
@@ -301,7 +301,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced, deep
 - Pricing / 1K: search: $5; fast/sonar low: $5; balanced: $8-$10; deep/high/pro: $12-$22 + tokens
 - Free tier limits: No standing free API credits documented
-- Published p50 latency: Not publicly documented
+- Latency by tier: Search: 0.35s p50 / 0.47s p95 independent; 0.358s p50 / 0.763s p95 provider; Sonar/deep: not published
 - AI Answer: full
 - Full text: full
 - Summary: none
@@ -319,7 +319,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: $0 API fee if self-hosted; infra/proxy costs separate
 - Free tier limits: No software quota when self-hosted; instance limits apply
-- Published p50 latency: Not publicly documented
+- Latency by tier: Deployment-dependent; no portable p50/p90/p95
 - AI Answer: full
 - Full text: none
 - Summary: none
@@ -337,7 +337,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: balanced: $4 starter; $1-$3 volume
 - Free tier limits: 100 one-time requests; no card
-- Published p50 latency: Not publicly documented
+- Latency by tier: Light API: 1.07s p50 / 2.23s p95; standard API: not published
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -355,7 +355,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: balanced: $1.00 starter; $0.30-$0.75 volume
 - Free tier limits: 2,500 one-time queries; no card
-- Published p50 latency: Not publicly documented
+- Latency by tier: Search: 0.69s p50 / 1.15s p95
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -373,7 +373,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: fast, balanced, deep
 - Pricing / 1K: fast/basic: ~$8; balanced/advanced: ~$16; deep/research: plan/model dependent
 - Free tier limits: 1,000 basic or 500 advanced searches/month; no card
-- Published p50 latency: Not publicly documented
+- Latency by tier: ultra-fast: 0.37s p50 / 0.46s p95; fast/basic/advanced/research: not published
 - AI Answer: full
 - Full text: partial
 - Summary: none
@@ -391,7 +391,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: balanced: $25 starter; ~$3.75-$15 volume
 - Free tier limits: 250 searches/month; 50/hour
-- Published p50 latency: Not publicly documented
+- Latency by tier: Light API: 1.28s p50 independent; fastest Google API: 0.73s avg / 1.45s p99 vendor-run
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -409,7 +409,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: balanced
 - Pricing / 1K: balanced: $25 starter; ~$3.75-$15 volume
 - Free tier limits: 250 searches/month; 50/hour
-- Published p50 latency: Not publicly documented
+- Latency by tier: Light API: 1.28s p50 independent; fastest Google API: 0.73s avg / 1.45s p99 vendor-run
 - AI Answer: partial
 - Full text: none
 - Summary: none
@@ -427,7 +427,7 @@ Providers: 24. Unified parameters and response fields supported via anysearch.
 - Mode: fast, balanced, deep
 - Pricing / 1K: search: $5; research: $12/$50/$100/$450 by effort
 - Free tier limits: $100 signup (~20,000 searches); keyless MCP: 100/day
-- Published p50 latency: Not publicly documented
+- Latency by tier: Search: 0.73s p50 / 1.22s p95 independent; 0.445s p50 provider; Research: 5–60s by effort
 - AI Answer: full
 - Full text: partial
 - Summary: none

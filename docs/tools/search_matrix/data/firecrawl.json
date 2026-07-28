@@ -94,9 +94,14 @@
     "comment": "Search costs two credits per ten results; advanced features consume additional credits."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
-    "source_url": "https://docs.firecrawl.dev/api-reference/endpoint/search",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "value": "Search: <2s avg cited workload; search + scrape: ~4\u20135s; 3.4s p95 overall",
+    "source_url": "https://www.firecrawl.dev/glossary/web-search-apis/search-latency-ai-agents",
+    "comment": "Provider-reported figures with different scopes: a cited Stanford workload averaged under two seconds per search, search plus scrape is about 4\u20135 seconds, and Firecrawl advertises 3.4 seconds p95 across millions of pages.",
+    "links": {
+      "Search workload": "https://www.firecrawl.dev/glossary/web-search-apis/search-latency-ai-agents",
+      "Search plus scrape": "https://www.firecrawl.dev/blog/llm-grounding",
+      "Overall p95": "https://github.com/firecrawl/firecrawl"
+    }
   },
   "notes": "Native SDK package: firecrawl-py."
 }

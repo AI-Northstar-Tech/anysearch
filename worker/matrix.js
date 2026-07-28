@@ -6,7 +6,7 @@ import changelog from "../docs/tools/search_matrix/changelog.json";
 
 const CANONICAL_ORIGIN = "https://compare-anysearch.ainorthstar.tech";
 const GITHUB_REPO = "https://github.com/dhruv-anand-aintech/anysearch";
-const DEPLOYMENT_MARKER = "octen-p50-2026-07-28";
+const DEPLOYMENT_MARKER = "tiered-latency-2026-07-28";
 const PWA = {
   name: "Anysearch Compare",
   shortName: "Anysearch",
@@ -636,7 +636,7 @@ function cell(agent, col) {
     if (agent.deprecated) tagHtml += '<span class="form-tag deprecated-tag">deprecated</span>';
     return '<td'+idAttr+' class="cell-wrap"><div class="form-tags">'+tagHtml+'</div>'+tip+'</td>';
   }
-  var tip = cellTipHtml(v.comment, v.source_url);
+  var tip = cellTipHtml(v.comment, v.source_url, v.links || {});
   var hasSrc = !!v.source_url;
   var link = hasSrc ? '<a class="cell-link" href="'+esc(v.source_url)+'" target="_blank" rel="noreferrer" title="Open source" aria-label="Open source"></a>' : '';
   var mark = hasSrc ? '<span class="source-mark" aria-hidden="true"></span>' : '';

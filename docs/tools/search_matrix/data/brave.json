@@ -95,9 +95,13 @@
     "comment": "Credits are applied automatically each month to Search or Answers usage."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
-    "source_url": "https://api-dashboard.search.brave.com/app/documentation/web-search/get-started",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "value": "Web: 0.77s p50 / 1.19s p95; Answers/research: not published",
+    "source_url": "https://proxyway.com/research/search-apis-2026-report",
+    "comment": "Web Search is independently measured across three 2,000-query runs from the US East Coast. Brave publishes no percentile latency for Answers or research mode.",
+    "links": {
+      "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+      "Provider API": "https://brave.com/search/api/"
+    }
   },
   "notes": "Web/news Search API is in the anysearch SDK; Answers API (`/res/v1/chat/completions`) is documented in the matrix but not wired in the SDK yet."
 }

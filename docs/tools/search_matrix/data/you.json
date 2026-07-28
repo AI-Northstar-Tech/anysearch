@@ -96,9 +96,14 @@
     "comment": "Signup credit covers roughly 20,000 base Search calls; the no-signup MCP profile has a separate daily limit."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
-    "source_url": "https://you.com/docs/search/overview",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "value": "Search: 0.73s p50 / 1.22s p95 independent; 0.445s p50 provider; Research: 5\u201360s by effort",
+    "source_url": "https://proxyway.com/research/search-apis-2026-report",
+    "comment": "Search percentiles are independent three-run results; You separately reports 445 ms p50. Research's provider range spans effort levels but is not broken out into lite, standard, deep, exhaustive, and frontier percentiles.",
+    "links": {
+      "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+      "Provider p50": "https://you.com/resources/api-latency",
+      "Research range": "https://you.com/resources/building-with-the-research-api"
+    }
   },
   "notes": "Search API (`POST /v1/search`) is in the anysearch SDK; Research API (`POST /v1/research`) is documented in the matrix but not wired in the SDK yet."
 }

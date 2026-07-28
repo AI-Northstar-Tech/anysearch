@@ -94,9 +94,12 @@
     "comment": "Complimentary signup queries do not renew monthly."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
-    "source_url": "https://serper.dev/docs",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "value": "Search: 0.69s p50 / 1.15s p95",
+    "source_url": "https://proxyway.com/research/search-apis-2026-report",
+    "comment": "Independent result from three runs of 2,000 randomly generated queries from a US East Coast server.",
+    "links": {
+      "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report"
+    }
   },
   "notes": ""
 }

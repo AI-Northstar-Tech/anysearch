@@ -174,15 +174,6 @@ MODE_META: dict[str, dict] = {
             "`enable_research=true` (streaming)→deep. Same `BRAVE_API_KEY`."
         ),
     },
-    "keiro": {
-        "values": ["fast", "balanced", "deep"],
-        "source": "https://keirolabs.cloud/",
-        "comment": (
-            "v2 search endpoints exposed through `mode`: balanced uses `/api/v2/keirolabs`, "
-            "fast/deep use `/api/v2/search/fast`, and content requests use `/api/v2/search/content`. "
-            "KeiroLabs expects the API key in the JSON body."
-        ),
-    },
     "jina": {
         "values": ["balanced"],
         "source": "https://jina.ai/reader/",
@@ -478,13 +469,272 @@ FREE_TIER_META: dict[str, dict[str, str]] = {
     },
 }
 
-P50_LATENCY_META: dict[str, dict[str, str]] = {
+P50_LATENCY_META: dict[str, dict] = {
     "octen": {
-        "value": "62 ms (provider-reported)",
+        "value": "Web Search: 62 ms p50; 68 ms p90",
         "source_url": "https://octen.ai/blog/1",
         "comment": (
-            "Octen's March 23, 2026 launch post reports 62 ms p50. A later public screenshot "
-            "shows the same figure, but no independent head-to-head API rerun was found."
+            "Provider-reported March 2026 result. Octen publishes 62 ms p50; the 68 ms p90 "
+            "comes from an archived screenshot/OCR record. No independent API rerun was found."
+        ),
+        "links": {
+            "Provider claim": "https://octen.ai/blog/1",
+            "Screenshot record": (
+                "https://krabarena.com/claims/"
+                "octen-s-screenshot-reports-a-62-ms-p50-web-search-win"
+            ),
+        },
+    },
+    "exa": {
+        "value": (
+            "instant: 0.36s p50 / 0.52s p95; fast: 0.67s / 1.34s; "
+            "auto: ~1.2s; deep: 4.3s avg"
+        ),
+        "source_url": "https://proxyway.com/research/search-apis-2026-report",
+        "comment": (
+            "Instant and fast percentiles are independent: three runs of 2,000 queries from "
+            "the US East Coast. Auto and deep are current provider-reported benchmark figures."
+        ),
+        "links": {
+            "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+            "Provider tiers": "https://exa.ai/products/search",
+        },
+    },
+    "tavily": {
+        "value": (
+            "ultra-fast: 0.37s p50 / 0.46s p95; "
+            "fast/basic/advanced/research: not published"
+        ),
+        "source_url": "https://proxyway.com/research/search-apis-2026-report",
+        "comment": (
+            "Ultra-fast is independently measured across three 2,000-query runs from the US "
+            "East Coast. Tavily documents its other depth tiers but not percentile latency."
+        ),
+        "links": {
+            "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+            "Depth documentation": "https://docs.tavily.com/api-reference/endpoint/search",
+        },
+    },
+    "parallel": {
+        "value": (
+            "Search turbo: 0.216s p50; basic: 1.3s; advanced: 2.7s; "
+            "Task: 10s–2h by processor"
+        ),
+        "source_url": "https://parallel.ai/benchmarks",
+        "comment": (
+            "Turbo is Parallel's vendor-run July 2026 p50 from us-central. Basic and advanced "
+            "are competitor-run figures published by Exa. Task API ranges are provider docs "
+            "and vary from lite-fast (10–20s) through ultra8x (5m–2h)."
+        ),
+        "links": {
+            "Turbo benchmark": "https://parallel.ai/benchmarks",
+            "Basic and advanced": "https://exa.ai/products/search",
+            "Task processors": (
+                "https://docs.parallel.ai/task-api/guides/choose-a-processor"
+            ),
+        },
+    },
+    "linkup": {
+        "value": (
+            "fast: <1s; standard: 1–3s; deep: 5–30s; "
+            "independent unspecified mode: 1.55s p50 / 2.36s p95"
+        ),
+        "source_url": (
+            "https://docs.linkup.so/pages/documentation/endpoints/search/overview"
+        ),
+        "comment": (
+            "Tier ranges are provider documentation. The independent January 2026 benchmark "
+            "predates Linkup fast's February beta and did not name the tested depth."
+        ),
+        "links": {
+            "Tier ranges": (
+                "https://docs.linkup.so/pages/documentation/endpoints/search/overview"
+            ),
+            "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+        },
+    },
+    "keiro": {
+        "value": (
+            "Flash: 0.312s p50 / 1.1s p99; indexed: 0.487s p50; "
+            "balanced/deep: not published"
+        ),
+        "source_url": (
+            "https://keirolabs.cloud/blogs/ai-agents/"
+            "ai-agent-search-benchmarks-keiro-vs-competitors/"
+        ),
+        "comment": (
+            "Provider-run May 2026 benchmark of 1,000 agent queries. No independent rerun or "
+            "latency distribution for Keiro's balanced and deep paths was found."
+        ),
+        "links": {
+            "Provider benchmark": (
+                "https://keirolabs.cloud/blogs/ai-agents/"
+                "ai-agent-search-benchmarks-keiro-vs-competitors/"
+            ),
+        },
+    },
+    "brave": {
+        "value": "Web: 0.77s p50 / 1.19s p95; Answers/research: not published",
+        "source_url": "https://proxyway.com/research/search-apis-2026-report",
+        "comment": (
+            "Web Search is independently measured across three 2,000-query runs from the US "
+            "East Coast. Brave publishes no percentile latency for Answers or research mode."
+        ),
+        "links": {
+            "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+            "Provider API": "https://brave.com/search/api/",
+        },
+    },
+    "perplexity": {
+        "value": (
+            "Search: 0.35s p50 / 0.47s p95 independent; "
+            "0.358s p50 / 0.763s p95 provider; Sonar/deep: not published"
+        ),
+        "source_url": "https://proxyway.com/research/search-apis-2026-report",
+        "comment": (
+            "Independent figures use three 2,000-query runs from the US East Coast. "
+            "Perplexity's reproducible 2025 vendor benchmark ran from AWS us-east-1."
+        ),
+        "links": {
+            "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+            "Provider benchmark": (
+                "https://research.perplexity.ai/articles/"
+                "architecting-and-evaluating-an-ai-first-search-api"
+            ),
+        },
+    },
+    "you": {
+        "value": (
+            "Search: 0.73s p50 / 1.22s p95 independent; 0.445s p50 provider; "
+            "Research: 5–60s by effort"
+        ),
+        "source_url": "https://proxyway.com/research/search-apis-2026-report",
+        "comment": (
+            "Search percentiles are independent three-run results; You separately reports "
+            "445 ms p50. Research's provider range spans effort levels but is not broken out "
+            "into lite, standard, deep, exhaustive, and frontier percentiles."
+        ),
+        "links": {
+            "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+            "Provider p50": "https://you.com/resources/api-latency",
+            "Research range": "https://you.com/resources/building-with-the-research-api",
+        },
+    },
+    "jina": {
+        "value": (
+            "Search: 0.75s p50 / 1.32s p95 independent; "
+            "2.5s provider-reported average"
+        ),
+        "source_url": "https://proxyway.com/research/search-apis-2026-report",
+        "comment": (
+            "Independent percentiles use three 2,000-query runs from the US East Coast. "
+            "Jina's current rate-limit table reports a 2.5-second average for s.jina.ai."
+        ),
+        "links": {
+            "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+            "Provider average": "https://jina.ai/deepsearch/",
+        },
+    },
+    "firecrawl": {
+        "value": "Search: <2s avg cited workload; search + scrape: ~4–5s; 3.4s p95 overall",
+        "source_url": (
+            "https://www.firecrawl.dev/glossary/web-search-apis/"
+            "search-latency-ai-agents"
+        ),
+        "comment": (
+            "Provider-reported figures with different scopes: a cited Stanford workload "
+            "averaged under two seconds per search, search plus scrape is about 4–5 seconds, "
+            "and Firecrawl advertises 3.4 seconds p95 across millions of pages."
+        ),
+        "links": {
+            "Search workload": (
+                "https://www.firecrawl.dev/glossary/web-search-apis/"
+                "search-latency-ai-agents"
+            ),
+            "Search plus scrape": "https://www.firecrawl.dev/blog/llm-grounding",
+            "Overall p95": "https://github.com/firecrawl/firecrawl",
+        },
+    },
+    "serper": {
+        "value": "Search: 0.69s p50 / 1.15s p95",
+        "source_url": "https://proxyway.com/research/search-apis-2026-report",
+        "comment": (
+            "Independent result from three runs of 2,000 randomly generated queries from a "
+            "US East Coast server."
+        ),
+        "links": {
+            "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+        },
+    },
+    "searchapi": {
+        "value": "Light API: 1.07s p50 / 2.23s p95; standard API: not published",
+        "source_url": "https://proxyway.com/research/search-apis-2026-report",
+        "comment": (
+            "Independent three-run benchmark. The figure is for SearchAPI Light; the standard "
+            "Google endpoint used by anysearch was not separately reported."
+        ),
+        "links": {
+            "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+        },
+    },
+    "serpapi": {
+        "value": (
+            "Light API: 1.28s p50 independent; fastest Google API: "
+            "0.73s avg / 1.45s p99 vendor-run"
+        ),
+        "source_url": "https://proxyway.com/research/search-apis-2026-report",
+        "comment": (
+            "Independent p50 is for SerpApi Light, not a specific engine. SerpApi's own "
+            "100-plus-query comparison reports average and p99 for its fastest Google API; "
+            "anysearch engine-specific latency remains unreported."
+        ),
+        "links": {
+            "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+            "Provider benchmark": (
+                "https://serpapi.com/blog/who-has-the-fastest-google-search-api/"
+            ),
+        },
+    },
+    "google_pse": {
+        "value": "No published distribution; each response includes server searchTime",
+        "source_url": (
+            "https://developers.google.com/custom-search/v1/reference/rest/v1/Search"
+        ),
+        "comment": (
+            "Google exposes per-request server search time in searchInformation, but publishes "
+            "no aggregate p50/p90/p95 latency for Custom Search JSON API."
+        ),
+    },
+    "gemini": {
+        "value": "No published Google Search grounding latency distribution",
+        "source_url": "https://ai.google.dev/gemini-api/docs/google-search",
+        "comment": (
+            "Grounding may issue one or multiple searches and includes model generation time. "
+            "No comparable public latency percentile or tier range was found."
+        ),
+    },
+    "kagi": {
+        "value": "No published Search API latency distribution",
+        "source_url": "https://help.kagi.com/kagi/api/search.html",
+        "comment": (
+            "Kagi publishes browser-page speed measurements, but those are not API response "
+            "latency and are intentionally excluded."
+        ),
+    },
+    "searxng": {
+        "value": "Deployment-dependent; no portable p50/p90/p95",
+        "source_url": "https://docs.searxng.org/admin/settings/settings_search/",
+        "comment": (
+            "Latency depends on the self-hosted instance, enabled upstream engines, and timeout "
+            "configuration, so a provider-wide number would be misleading."
+        ),
+    },
+    "duckduckgo": {
+        "value": "No contracted API latency distribution for the DDGS fallback",
+        "source_url": "https://pypi.org/project/ddgs/",
+        "comment": (
+            "anysearch uses the keyless DDGS metasearch client rather than an official "
+            "DuckDuckGo Search API with a published latency SLA."
         ),
     },
 }
@@ -551,10 +801,6 @@ MATRIX_NOTES: dict[str, str] = {
     "tavily": (
         "Search API is in the anysearch SDK; Research API (`POST /research`) is documented "
         "in the matrix (use `tavily-python` `research()` / `get_research()`)."
-    ),
-    "keiro": (
-        "KeiroLabs v2 search is wired in the anysearch SDK as REST-only. "
-        "The provider expects `apiKey`, `query`, and `maxResults` in the JSON request body."
     ),
 }
 
@@ -792,16 +1038,6 @@ FEATURE_META: dict[str, dict[str, dict[str, str]]] = {
         "news": {
             "source": "https://api-dashboard.search.brave.com/app/documentation/web-search/get-started",
             "comment": "Dedicated `/res/v1/news/search` endpoint (not Answers API).",
-        },
-    },
-    "keiro": {
-        "content": {
-            "source": "https://keirolabs.cloud/",
-            "comment": "`include_content=true` routes to `/api/v2/search/content` and maps `full_text`.",
-        },
-        "snippet": {
-            "source": "https://keirolabs.cloud/",
-            "comment": "Source rows are normalized from v2 `results` or compatible source arrays.",
         },
     },
     "perplexity": {
@@ -1281,8 +1517,16 @@ def feat(support: str, source_url: str, comment: str) -> dict:
     return {"support": support, "source_url": source_url, "comment": comment}
 
 
-def string_val(value: str, source_url: str, comment: str) -> dict:
-    return {"value": value, "source_url": source_url, "comment": comment}
+def string_val(
+    value: str,
+    source_url: str,
+    comment: str,
+    links: dict[str, str] | None = None,
+) -> dict:
+    result = {"value": value, "source_url": source_url, "comment": comment}
+    if links:
+        result["links"] = links
+    return result
 
 
 def list_val(values: list[str], source_url: str, comment: str) -> dict:

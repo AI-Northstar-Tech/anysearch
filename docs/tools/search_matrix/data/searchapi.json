@@ -94,9 +94,12 @@
     "comment": "Complimentary requests are for newly registered accounts and do not renew monthly."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
-    "source_url": "https://www.searchapi.io/docs/google",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "value": "Light API: 1.07s p50 / 2.23s p95; standard API: not published",
+    "source_url": "https://proxyway.com/research/search-apis-2026-report",
+    "comment": "Independent three-run benchmark. The figure is for SearchAPI Light; the standard Google endpoint used by anysearch was not separately reported.",
+    "links": {
+      "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report"
+    }
   },
   "notes": ""
 }

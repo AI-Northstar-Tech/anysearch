@@ -94,9 +94,13 @@
     "comment": "Free Search Foundation tier also limits concurrency to five requests."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
-    "source_url": "https://jina.ai/reader/",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "value": "Search: 0.75s p50 / 1.32s p95 independent; 2.5s provider-reported average",
+    "source_url": "https://proxyway.com/research/search-apis-2026-report",
+    "comment": "Independent percentiles use three 2,000-query runs from the US East Coast. Jina's current rate-limit table reports a 2.5-second average for s.jina.ai.",
+    "links": {
+      "Independent benchmark": "https://proxyway.com/research/search-apis-2026-report",
+      "Provider average": "https://jina.ai/deepsearch/"
+    }
   },
   "notes": ""
 }

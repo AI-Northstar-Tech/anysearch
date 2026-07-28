@@ -183,15 +183,19 @@ def build_provider(row: dict, *, slug: str | None = None, display: str | None = 
         free_tier["source_url"],
         free_tier["comment"],
     )
-    latency = P50_LATENCY_META.get(slug) or {
+    latency = P50_LATENCY_META.get(slug)
+    if latency is None and slug.startswith("serpapi_"):
+        latency = P50_LATENCY_META.get("serpapi")
+    latency = latency or {
         "value": "Not publicly documented",
         "source_url": docs or website,
-        "comment": "No provider-published p50 Web Search API latency was found.",
+        "comment": "No public p50/p90/p95 latency or documented tier range was found for this API.",
     }
     out["p50_latency"] = string_val(
         latency["value"],
         latency["source_url"],
         latency["comment"],
+        latency.get("links"),
     )
 
     notes = []
@@ -320,15 +324,19 @@ def build_ai_matrix_provider(base_row: dict, entry: dict) -> dict:
         free_tier["source_url"],
         free_tier["comment"],
     )
-    latency = P50_LATENCY_META.get(slug) or {
+    latency = P50_LATENCY_META.get(slug)
+    if latency is None and slug.startswith("serpapi_"):
+        latency = P50_LATENCY_META.get("serpapi")
+    latency = latency or {
         "value": "Not publicly documented",
         "source_url": docs,
-        "comment": "No provider-published p50 latency was found for this API.",
+        "comment": "No public p50/p90/p95 latency or documented tier range was found for this API.",
     }
     out["p50_latency"] = string_val(
         latency["value"],
         latency["source_url"],
         latency["comment"],
+        latency.get("links"),
     )
     note = str(entry.get("notes") or "")
     endpoint = entry.get("endpoint")

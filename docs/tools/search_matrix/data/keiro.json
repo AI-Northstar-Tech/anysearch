@@ -24,7 +24,7 @@
   "snippet": {
     "support": "full",
     "source_url": "https://keirolabs.cloud/",
-    "comment": "Source rows are normalized from v2 `results` or compatible source arrays."
+    "comment": "`results[]` include title, URL, snippet, score, and optional published date."
   },
   "domains": {
     "support": "none",
@@ -59,7 +59,7 @@
   "content": {
     "support": "full",
     "source_url": "https://keirolabs.cloud/",
-    "comment": "`include_content=true` routes to `/api/v2/search/content` and maps `full_text`."
+    "comment": "`/api/v2/search/content` returns full page markdown (`full_text`) and optional chunks."
   },
   "summary": {
     "support": "none",
@@ -83,7 +83,7 @@
       "deep"
     ],
     "source_url": "https://keirolabs.cloud/",
-    "comment": "v2 search endpoints exposed through `mode`: balanced uses `/api/v2/keirolabs`, fast/deep use `/api/v2/search/fast`, and content requests use `/api/v2/search/content`. KeiroLabs expects the API key in the JSON body."
+    "comment": "v2 Search `mode`: `light`\u2192fast, `ai`\u2192balanced, `deep`\u2192deep. anysearch uses `/api/v2/search/flash` for fast mode, `/api/v2/keiro` by default, and `/api/v2/search/content` for full-text content."
   },
   "pricing_per_1k": {
     "value": "fast/balanced: ~$0.50; content: ~$1.50; batch: ~$0.50",
@@ -96,9 +96,12 @@
     "comment": "Explorer is a hard-capped free plan with no overage and no batch endpoint."
   },
   "p50_latency": {
-    "value": "Not publicly documented",
-    "source_url": "https://keirolabs.cloud/",
-    "comment": "No provider-published p50 Web Search API latency was found."
+    "value": "Flash: 0.312s p50 / 1.1s p99; indexed: 0.487s p50; balanced/deep: not published",
+    "source_url": "https://keirolabs.cloud/blogs/ai-agents/ai-agent-search-benchmarks-keiro-vs-competitors/",
+    "comment": "Provider-run May 2026 benchmark of 1,000 agent queries. No independent rerun or latency distribution for Keiro's balanced and deep paths was found.",
+    "links": {
+      "Provider benchmark": "https://keirolabs.cloud/blogs/ai-agents/ai-agent-search-benchmarks-keiro-vs-competitors/"
+    }
   },
-  "notes": "KeiroLabs v2 search is wired in the anysearch SDK as REST-only. The provider expects `apiKey`, `query`, and `maxResults` in the JSON request body."
+  "notes": "SDK maps default v2 search to `/api/v2/keiro`, `mode=fast` to `/api/v2/search/flash`, and `include_content=true` to `/api/v2/search/content`."
 }
