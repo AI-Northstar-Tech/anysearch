@@ -6,7 +6,7 @@ import changelog from "../docs/tools/search_matrix/changelog.json";
 
 const CANONICAL_ORIGIN = "https://compare-anysearch.ainorthstar.tech";
 const GITHUB_REPO = "https://github.com/dhruv-anand-aintech/anysearch";
-const DEPLOYMENT_MARKER = "changelog-free-tier-2026-07-23";
+const DEPLOYMENT_MARKER = "octen-p50-2026-07-28";
 const PWA = {
   name: "Anysearch Compare",
   shortName: "Anysearch",
