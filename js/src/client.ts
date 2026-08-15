@@ -127,11 +127,12 @@ export class AnySearch {
 
   // -- internals -------------------------------------------------------------
 
-  private context(spec: ProviderSpec): ProviderContext {
-    const isNamed = this.provider != null && getProviderSpec(this.provider).name === spec.name;
-    const apiKey = (isNamed ? this.apiKey : undefined) ?? keyFromEnv(spec, this.env);
+  private context(spec: ProviderSpec, requestProvider?: string, apiKeyOverride?: string, baseUrlOverride?: string): ProviderContext {
+    const configuredProvider = requestProvider ?? this.provider;
+    const isNamed = configuredProvider != null && getProviderSpec(configuredProvider).name === spec.name;
+    const apiKey = (isNamed ? apiKeyOverride ?? this.apiKey : undefined) ?? keyFromEnv(spec, this.env);
     const baseUrl = (
-      (isNamed ? this.baseUrl : undefined) ??
+      (isNamed ? baseUrlOverride ?? this.baseUrl : undefined) ??
       baseUrlFromEnv(spec, this.env) ??
       spec.defaultBaseUrl ??
       ""
@@ -183,7 +184,7 @@ export class AnySearch {
     let lastError: unknown;
     for (const name of chain) {
       const spec = getProviderSpec(name);
-      const ctx = this.context(spec);
+      const ctx = this.context(spec, provider, params.apiKey, params.baseUrl);
       try {
         this.requireConfigured(spec, ctx);
         const req = enforceCapabilities(spec, this.buildRequest(spec, query, params), onUnsupported);

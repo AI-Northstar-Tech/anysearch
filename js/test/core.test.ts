@@ -171,6 +171,28 @@ test("exa search normalizes response", async () => {
   assert.equal(r.source, "example.com");
 });
 
+test("per-call provider overrides set API key and base URL", async () => {
+  let sentHeaders: Headers;
+  mockFetch({
+    "override.example/search": (_url, init) => {
+      sentHeaders = new Headers(init.headers);
+      return {
+        status: 200,
+        body: { results: [{ title: "Override", url: "https://override.example/r", text: "ok" }] },
+      };
+    },
+  });
+  const client = new AnySearch({ env: {} });
+  const resp = await client.search("q", {
+    provider: "exa",
+    apiKey: "call-key",
+    baseUrl: "https://override.example",
+  });
+  assert.equal(sentHeaders!.get("x-api-key"), "call-key");
+  assert.equal(resp.provider, "exa");
+  assert.equal(resp.results[0].title, "Override");
+});
+
 test("tavily answer and raw content", async () => {
   mockFetch({
     "api.tavily.com/search": () => ({
